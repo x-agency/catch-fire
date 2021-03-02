@@ -1,2 +1,4 @@
 node_modules
-node_modules
+wpgulp.config.js
+/css/main.css.map
+/css/main.min.css
