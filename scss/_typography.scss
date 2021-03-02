@@ -1,11 +1,12 @@
 // Header and Body Font Mixins. If a third font is used can name special-font or something similar.
-@mixin header-font {
-    // font-family: ;
+@mixin main-font {
+    font-family: 'Helvetica Neue', sans-serif;
     font-style: normal;
+    font-weight: 400;
 }
 
-@mixin body-font {
-    // font-family: ;
+@mixin title-font {
+    font-family: 'Source Code Pro', monospace;
 }
 
 // If Custom Font - Drop the @font-face items here
