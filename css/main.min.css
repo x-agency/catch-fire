@@ -1,4 +1,5 @@
 h1 a,.h1 a{color:green}
+.subtitle{font-family:'Source Code Pro',monospace;font-size:28px;text-transform:uppercase;letter-spacing:.25rem}
 .btn{font-family:'Helvetica Neue',sans-serif;font-style:normal;font-weight:400;cursor:pointer;-webkit-transition:.3s ease all;transition:.3s ease all}
 .btn:hover{-webkit-transition:.3s;transition:.3s}
 .navbar.scrolled{-webkit-box-shadow:0 10px 22px 0 rgba(0,0,0,0.54);box-shadow:0 10px 22px 0 rgba(0,0,0,0.54);-webkit-transition:.3s ease;transition:.3s ease}
