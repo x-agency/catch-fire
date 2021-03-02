@@ -20,6 +20,9 @@
         </div>
     </div>
 </div>
+<div style="min-height: 500px;">
+
+</div>
 
 <?php get_template_part('template-parts/cta') ?>
 <?php get_footer(); ?>

@@ -18,10 +18,21 @@
     }
 }
 
+// **GLOBAL STYLES ** //
+
+body {
+    background-color: #1b1b1b;
+}
+
+.site-content {
+    max-width: 1920px;
+    background-color: #dfdfdf;
+    margin: 0 auto;
+}
+
 // ** HOME PAGE ** //
 
 // Hero
-
 
 #hero {
     height: 100vh;
