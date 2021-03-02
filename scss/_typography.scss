@@ -1,0 +1,49 @@
+// Header and Body Font Mixins. If a third font is used can name special-font or something similar.
+@mixin header-font {
+    // font-family: ;
+    font-style: normal;
+}
+
+@mixin body-font {
+    // font-family: ;
+}
+
+// If Custom Font - Drop the @font-face items here
+// @font-face {
+
+// }
+
+
+
+// Preliminary Theme Fonts, Sizes and Colors - This overrides Bootstraps predefined settings
+h1 {
+
+    a {
+        color: green;
+    }
+
+
+
+    // H1 on Mobile
+    @include respond-below(md) {}
+
+    // If Font has special Highlighted Words
+    // span {
+
+    // }
+
+}
+
+h2 {}
+
+h3 {}
+
+h4 {}
+
+h5 {}
+
+p {}
+
+#main-menu {
+    .menu-item {}
+}

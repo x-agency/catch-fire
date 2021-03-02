@@ -1,0 +1,35 @@
+// Grouped Responsive Queries
+
+// Above and Below Breakpoint Extra Small - 399px
+@include respond-below(xs) {}
+
+@include respond-above(xs) {}
+
+// Above and Below Breakpoint Small - 576px
+@include respond-below(sm) {}
+
+@include respond-above(sm) {}
+
+// Above and Below Breakpoint Medium - 768px
+@include respond-below(md) {}
+
+@include respond-above(md) {}
+
+// Above and Below Breakpoint Large - 992px
+@include respond-below(lg) {}
+
+@include respond-above(lg) {}
+
+// Above and Below Breakpoint Extra Large - 1200px
+@include respond-below(xl) {}
+
+@include respond-above(xl) {}
+
+
+// Above and Below Breakpoint XXL - 1400px
+@include respond-below(xxl) {}
+
+@include respond-above(xxl) {}
+
+// Can do Respond Between Sizes
+// @include respond-between(#, #) {}

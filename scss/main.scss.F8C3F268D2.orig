@@ -1,0 +1,1037 @@
+@import "custom-variables";
+@import "media-queries";
+@import "../bootstrap/scss/bootstrap";
+@import "typography";
+@import "button";
+@import "cta";
+@import "navigation";
+
+body {
+    background-color: #f1f1f1 !important;
+}
+
+.site-content {
+    width: 100% !important;
+}
+
+#wpadminbar {
+    @media (max-width: 600px) {
+        position: fixed;
+    }
+}
+/* Sass we write */
+.navbar {
+    position: fixed;
+    top: 0;
+    @include admin-sticky-fix;
+    @include respond-below(md) {
+        flex-wrap: nowrap;
+    }
+
+    .nav-right {
+        @include respond-below(md) {
+            flex-wrap: nowrap;
+        }
+
+        .nav-btn-wrapper {
+            @include respond-below(md) {
+                margin: 0 5px;
+            }
+        }
+
+        .hamburger-menu {
+            @include respond-below(md) {
+                padding-left: 2em;
+            }
+        }
+    }
+}
+
+.img-shadow {
+    filter: drop-shadow(13px 8px 14px rgba(0,0,0,0.27));
+    -webkit-filter: drop-shadow(13px 8px 14px rgba(0,0,0,0.27));
+    -moz-filter: drop-shadow(13px 8px 14px rgba(0,0,0,0.27));
+}
+
+a:active,
+a:focus,
+a:hover {
+    outline: none;
+    border: 0;
+}
+// .admin-bar .site-content {
+//     padding-top: 32px;
+// }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+#home-header {
+    height: 100vh;
+    background-image: url("/wp-content/themes/clutch/img/clutch-home.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+
+    .header-outer {
+        @include respond-below(sm) {
+            padding-top: 30%;
+        }
+
+        .title-block {
+            padding: 0 7%;
+        }
+
+        .subtitle {
+            @include body-font;
+            font-weight: 500;
+            color: white;
+            font-size: 20px;
+
+            span {
+                color: $clutch-orange;
+            }
+        }
+
+        h1 {
+            color: white;
+        }
+    }
+}
+
+.play-btn {
+    img,
+    p {
+        display: inline-block;
+    }
+
+    p {
+        color: white;
+        padding-left: 1.5em;
+    }
+}
+
+#get-started {
+    .home-content-intro {
+        padding: 5% 0;
+
+        h2 {
+            color: $clutch-gray;
+        }
+    }
+
+    .home-welcome {
+        .welcome-block-1 {
+            padding: 3% 7%;
+        }
+
+        .welcome-block-2 {
+            background-color: $clutch-purple;
+            background-image: url("/wp-content/themes/clutch/img/home-shape-bg.png");
+            padding: 2%;
+            @include respond-below(md) {
+                padding: 10%;
+            }
+
+            .sub-text-2 {
+                margin-bottom: 25px;
+            }
+
+            .divider {
+                margin-bottom: 50px;
+                height: 1px;
+                width: 25%;
+                background-color: $clutch-orange;
+                transform: translateX(-50%);
+            }
+
+            h2 {
+                color: white;
+            }
+
+            .block-2-inner {
+                padding: 12% 5%;
+
+                p {
+                    color: #e8def0;
+                    line-height: 2.3rem;
+                    padding: 0 20% 0 0;
+                    @include respond-below(md) {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .welcome-img {
+        @include respond-above(md) {
+            margin-top: -425px;
+        }
+    }
+}
+
+.home-clutch-difference {
+    background-image: url("/wp-content/themes/clutch/img/home-shape-2-bg.png");
+    background-position: center;
+    padding: 5%;
+
+    h2 {
+        color: $clutch-purple-dark;
+        margin-bottom: 35px;
+    }
+
+    h3 {
+        margin-bottom: 35px;
+    }
+
+    .difference-block-1 {
+        padding: 0 5%;
+
+        a {
+            color: $clutch-orange;
+            transition: 0.3s ease;
+            font-family: sweet-sans-pro, sans-serif;
+
+            &:hover {
+                color: $clutch-purple;
+                transition: 0.3s ease;
+            }
+        }
+    }
+}
+
+.plain-link {
+    color: $clutch-orange;
+    transition: 0.3s ease;
+    font-family: sweet-sans-pro, sans-serif;
+
+    &:hover {
+        color: $clutch-purple;
+        transition: 0.3s ease;
+    }
+}
+
+#home-services {
+    background-color: #e4e7e8;
+    padding: 5% 5% 15%;
+
+    h2 {
+        color: $clutch-purple-dark;
+    }
+
+    .clutch-services {
+        margin-top: 50px;
+
+        .service-column {
+            padding: 0 1.5%;
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 400px;
+            @include respond-below(md) {
+                margin: 10% 0;
+            }
+        }
+
+        .service-icon {
+            text-align: center;
+            width: 100%;
+
+            img {
+                width: 85px;
+            }
+        }
+
+        .service-title {
+            color: $clutch-purple-dark;
+            @include header-font;
+            font-weight: 200;
+            font-size: 28px;
+            text-align: center;
+            width: 100%;
+
+            span {
+                color: #ab8de9;
+            }
+        }
+
+        .service-btn,
+        .service-text {
+            width: 100%;
+        }
+
+        .service-btn {
+            align-self: flex-end;
+            text-align: center;
+        }
+    }
+}
+
+#page-header {
+    padding: 5%;
+    height: 75vh;
+    min-height: 45em;
+    display: flex;
+    background-image: url("/wp-content/themes/clutch/img/difference-header.jpg");
+    background-size: cover;
+    background-position: center;
+    @include respond-below(md) {
+        min-height: 30em;
+    }
+
+    .header-inner {
+        align-self: flex-end;
+    }
+
+    .page-title {
+        margin-top: 50px;
+        @include header-font;
+        font-size: 45px;
+        color: white;
+        @include respond-below(md) {
+            font-size: 25px;
+        }
+
+        span {
+            color: $clutch-orange;
+        }
+    }
+
+    &.rx-header {
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rbga (255,255,255,0.7);
+        }
+
+        .page-title {
+            color: $clutch-orange;
+            margin-bottom: 0.5em;
+            line-height: 1.2;
+        }
+
+        .header-text {
+            color: $clutch-purple;
+            font-weight: bold;
+
+            span {
+                color: $clutch-orange;
+            }
+        }
+    }
+}
+
+#page-header.difference-header {
+    background-image: url("/wp-content/themes/clutch/img/difference-header.jpg");
+}
+
+#page-header.employer-header {
+    background-image: url("/wp-content/themes/clutch/img/employer-header.jpg");
+}
+
+#page-header.members-header {
+    background-image: url("/wp-content/themes/clutch/img/members-bg.jpg");
+}
+
+#page-header.rx-header {
+    background-image: url("/wp-content/themes/clutch/img/rx-header.jpg");
+
+    .page-title {
+        @include respond-below(md) {
+            margin-top: 10px;
+        }
+    }
+    @include respond-below(md) {
+        background-image: url("/wp-content/themes/clutch/img/rx-header-mobile.jpg");
+    }
+}
+
+.content-section {
+    padding: 5%;
+}
+
+#difference-sec-1 {
+    .divider {
+        margin-bottom: 50px;
+        margin-right: -90px;
+        height: 1px;
+        width: 50%;
+        background-color: $clutch-orange;
+    }
+}
+
+#difference-sec-2 {
+    background-color: #e4e7e8;
+}
+
+#clutch-team {
+    padding: 5%;
+
+    .team-title {
+        margin-bottom: 5%;
+        text-align: center;
+
+        h2 {
+            color: $clutch-gray;
+        }
+    }
+
+    .team-grid {
+        width: 80%;
+        margin: 0 auto;
+
+        .grid-item {
+            padding: 0 2%;
+            margin: 25px 0;
+
+            .team-name {
+                @include header-font;
+                color: $clutch-orange;
+                font-size: 28px;
+                margin: 20px 0 5px;
+                text-align: center;
+                font-weight: 200;
+            }
+
+            .team-title {
+                font-family: sweet-sans-pro, sans-serif;
+                font-weight: 700;
+                font-style: normal;
+                color: $clutch-purple-light;
+                font-size: 16px;
+                text-transform: uppercase;
+                letter-spacing: 0.25rem;
+            }
+        }
+    }
+}
+
+.icon-small {
+    @include respond-below(md) {
+        text-align: center;
+    }
+
+    img {
+        width: 55px;
+    }
+}
+
+.clutch-how {
+    margin: 100px 0;
+}
+
+.how-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 2%;
+    max-width: 1698px;
+    margin: 0 auto;
+
+    .how-card-wrapper {
+        position: relative;
+        width: 24%;
+        min-height: 400px;
+        @media (max-width: 1350px) {
+            width: 45%;
+            margin: 30px 0;
+        }
+        @include respond-below(md) {
+            width: 100%;
+            min-height: 300px;
+        }
+
+        .how-card {
+            background-color: white;
+            border-radius: 40px;
+            overflow: hidden;
+            height: 100%;
+            max-width: 375px;
+            @include respond-below(md) {
+                margin: 0 auto;
+            }
+
+            .how-title-wrapper {
+                background-color: #c6cdc9;
+                text-align: center;
+                padding: 5%;
+                min-height: 140px;
+                display: flex;
+                align-items: center;
+                @include respond-below(md) {
+                    min-height: 100px;
+                }
+
+                .how-title {
+                    font-family: sweet-sans-pro, sans-serif;
+                    font-weight: 700;
+                    font-style: normal;
+                    color: $clutch-purple-dark;
+                    font-size: 15px;
+                    text-transform: uppercase;
+                    @include respond-below(md) {
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            .how-content {
+                padding: 5%;
+
+                .how-icon {
+                    text-align: center;
+
+                    img {
+                        width: 105px;
+                        filter: drop-shadow(9px 9px 5px rgba(0,0,0,0.19));
+                        -webkit-filter: drop-shadow(9px 9px 5px rgba(0,0,0,0.19));
+                        -moz-filter: drop-shadow(9px 9px 5px rgba(0,0,0,0.19));
+                        @include respond-below(md) {
+                            width: 75px;
+                        }
+                    }
+                }
+
+                .how-text {
+                    @include body-font;
+                    text-align: center;
+                    padding: 3%;
+                }
+            }
+        }
+
+        .card-arrow {
+            position: absolute;
+            top: 50%;
+            z-index: 999;
+            right: -50px;
+            width: 25%;
+            @media (max-width: 1350px) {
+                display: none;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.how-info {
+    margin-top: 50px;
+
+    h4 {
+        line-height: 2.5rem;
+
+        span {
+            color: $clutch-orange;
+        }
+    }
+}
+
+.how-logos {
+    margin: 75px;
+
+    img {
+        width: 75%;
+    }
+}
+
+.title-bar {
+    background-color: $clutch-purple;
+    padding: 20px;
+    width: 45%;
+    z-index: 999;
+    position: relative;
+    margin-bottom: -50px;
+    @include respond-below(md) {
+        width: 70%;
+    }
+
+    .title-bar-text {
+        @include header-font;
+        color: $clutch-orange;
+        text-align: right;
+        width: 100%;
+        font-size: 38px;
+        @include respond-below(md) {
+            font-size: 20px;
+        }
+    }
+}
+
+#diagnostics {
+    margin-top: 100px;
+
+    h2,
+    p {
+        @include respond-below(md) {
+            text-align: center;
+        }
+    }
+}
+
+.diagnostics-content {
+    background-color: #e4e7e8;
+    padding: 7%;
+
+    .diagnostic-row-1 {
+        .divider {
+            margin-bottom: 40px;
+            height: 1px;
+            width: 50%;
+            background-color: $clutch-orange;
+            transform: translateX(-70%);
+        }
+    }
+
+    .diagnostic-row-2 {
+        .divider {
+            margin-bottom: 40px;
+            height: 1px;
+            width: 50%;
+            background-color: $clutch-orange;
+            transform: translateX(125%);
+        }
+    }
+}
+
+#digital {
+    .title-bar {
+        transform: translateY(-50%);
+        margin-bottom: -100px;
+    }
+
+    .digital-container {
+        background-image: url("/wp-content/themes/clutch/img/digital-bg.jpg");
+        background-position: center;
+        background-size: cover;
+        padding: 5% 5% 10%;
+
+        .digital-row {
+            .col-inner {
+                padding: 7%;
+            }
+
+            h2,
+            p {
+                color: white;
+            }
+        }
+    }
+}
+
+.page-template-employers #cta {
+    margin-top: -100px;
+    @include respond-below(md) {
+        margin-top: 0;
+    }
+}
+
+#clutch-app,
+#member-benefits {
+    background-color: #e4e7e8;
+}
+
+.benefit-grid {
+    margin: 5% 0;
+
+    .benefit-grid-item {
+        .benefit-title {
+            @include header-font;
+            font-size: 30px;
+            color: $clutch-purple-dark;
+            text-align: center;
+            font-weight: 200;
+        }
+    }
+}
+
+#clutch-app {
+    padding: 0 10%;
+    @include respond-above(md) {
+        padding-bottom: 400px;
+    }
+
+    .divider {
+        margin-bottom: 50px;
+        height: 1px;
+        width: 50%;
+        background-color: $clutch-orange;
+        transform: translateX(-50%);
+    }
+
+    .phone-img {
+        img {
+            @include respond-above(md) {
+                margin-top: -100px;
+            }
+        }
+    }
+}
+
+#video-player {
+    @include respond-above(md) {
+        margin-top: -300px;
+    }
+}
+
+.contact-wrapper {
+    height: 100vh;
+    width: 100%;
+    background-color: $clutch-purple;
+    padding: 6% 0;
+    margin-bottom: -4em;
+    @include respond-below(md) {
+        height: 100%;
+    }
+
+    .contact-title {
+        margin-top: 35%;
+
+        h2 {
+            color: white;
+            font-size: 50px;
+            @include respond-below(md) {
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .form-wrapper {
+        padding: 0 10%;
+    }
+}
+
+.divider {
+    @include respond-below(md) {
+        margin: 20px auto !important;
+        transform: translateX(0) !important;
+    }
+}
+
+.menu-btn-wrapper {
+    @include respond-above(lg) {
+        display: none;
+    }
+    @include respond-below(lg) {
+        margin-top: 45px;
+    }
+
+    a {
+        font-size: 12px;
+    }
+}
+
+.frm_style_formidable-style.with_frm_style .form-field {
+    @include respond-below(md) {
+        margin-bottom: 10px;
+    }
+}
+
+#member-intro {
+    .divider {
+        margin-bottom: 50px;
+        margin-right: -90px;
+        height: 1px;
+        width: 50%;
+        background-color: $clutch-orange;
+    }
+}
+
+#footer {
+    margin-bottom: 75px;
+
+    .footer-row-1 {
+        display: flex;
+        justify-content: flex-end;
+        @include respond-below(md) {
+            justify-content: center;
+        }
+
+        .social-wrapper {
+            display: flex;
+
+            .social-icon {
+                margin: 0 20px;
+                font-size: 25px;
+                color: $clutch-purple;
+
+                a {
+                    &:hover {
+                        color: $clutch-orange !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-row-2 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        @include respond-below(md) {
+            justify-content: center;
+        }
+
+        .quick-link {
+            margin: 0 20px;
+            color: #77727c;
+            @include body-font;
+            font-size: 14px;
+        }
+
+        .quick-link-wrapper {
+            display: flex;
+            @include respond-below(md) {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .quick-link {
+                margin: 0 20px;
+                color: #77727c;
+                @include body-font;
+                font-size: 14px;
+                @include respond-below(md) {
+                    margin-bottom: 1em;
+                }
+
+                a {
+                    &:hover {
+                        color: $clutch-orange !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#privacy-policy {
+    margin: 75px 0;
+}
+
+.policy-wrapper {
+    p {
+        color: #77727c !important;
+    }
+}
+
+#page-header.policy-header {
+    background-image: none;
+    height: 50vh;
+    background-color: $clutch-purple;
+}
+
+.frm_submit button {
+    width: auto !important;
+    padding: 10px 41px 30px !important;
+}
+/***RX form page***/
+.page-template-rx-card-forn {
+    .navbar {
+        background: $clutch-purple;
+    }
+
+    .site-content {
+        margin-top: 6em;
+    }
+
+    #page-header {
+        padding: 15em 5%;
+        @include respond-below(md) {
+            padding: 5em 5%;
+        }
+    }
+}
+
+.clutch-services {
+    margin-top: 50px;
+
+    .service-column {
+        padding: 0 1.5%;
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 400px;
+        @include respond-below(md) {
+            margin: 10% 0;
+        }
+    }
+
+    .service-icon {
+        text-align: center;
+        width: 100%;
+
+        img {
+            width: 85px;
+        }
+    }
+
+    .service-title {
+        color: $clutch-purple-dark;
+        @include header-font;
+        font-weight: 200;
+        font-size: 28px;
+        text-align: center;
+        width: 100%;
+
+        span {
+            color: #ab8de9;
+        }
+    }
+
+    .service-btn,
+    .service-text {
+        width: 100%;
+    }
+
+    .service-btn {
+        align-self: flex-end;
+        text-align: center;
+    }
+}
+
+.steps-wrapper {
+    margin: 7em 0;
+
+    h4 {
+        span {
+            color: $clutch-orange;
+        }
+    }
+}
+
+.page-template-contact #footer {
+    margin-top: 5em;
+}
+// Covid Rapid Test page
+
+.page-template-covid-testing {
+    .navbar {
+        display: none;
+    }
+}
+
+#covid-header {
+    margin-top: 100px;
+    padding: 10% 0;
+}
+
+.logo-bar {
+    background-color: #2f1d57;
+    display: flex;
+    justify-content: center;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+
+    img {
+        width: 120px;
+    }
+}
+
+#covid-test-intro {
+    padding: 10% 5%;
+    background-color: $clutch-purple;
+    @include respond-above(md) {
+        background-image: url("/wp-content/themes/clutch/img/rapid-test-bg.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    p {
+        color: white;
+    }
+}
+
+.test-list-wrapper {
+    background-color: $clutch-purple-light;
+    padding: 7% 12%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    ul {
+        margin: 0;
+
+        li {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+    }
+}
+
+#covid-test-policy {
+    margin: 100px 0;
+}
+
+#rapid-test-form {
+    background-color: $clutch-purple;
+    padding: 7% 0;
+
+    h2 {
+        color: white;
+    }
+}
+
+#related-info {
+    margin: 100px 0;
+
+    .pdf-card-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 50px 0;
+
+        .pdf-card {
+            width: 18%;
+            background-color: $clutch-purple-light;
+            border-radius: 25px;
+            padding: 3%;
+            @media (max-width: 1399px) {
+                width: 48%;
+                margin: 20px 0;
+            }
+            @include respond-below(md) {
+                width: 100%;
+            }
+
+            h3 {
+                line-height: normal;
+                text-align: center;
+                margin-bottom: 20px;
+                color: $clutch-purple;
+            }
+
+            .pdf-btn {
+                text-align: center;
+            }
+        }
+    }
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+    color: #111;
+}

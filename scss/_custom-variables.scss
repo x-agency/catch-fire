@@ -1,0 +1,31 @@
+//**CUSTOM VARIABLES AND MIXINS**
+
+// Predefined Theme Colors
+$red: #bf1e2e;
+$dark-gray: #3f3f3f;
+$light-gray: #959595;
+
+// Transition Variable
+$ease: 0.3s ease all;
+
+
+
+
+
+// @mixin admin-sticky-fix($offset: 0) {
+//     $narrow-offset: 46px;
+//     $wide-offset: 32px;
+
+//     @if $offset !=0 and type-of($offset)=="number" {
+//         $narrow-offset: $narrow-offset + $offset;
+//         $wide-offset: $wide-offset + $offset;
+//     }
+
+//     .admin-bar & {
+//         top: $narrow-offset;
+
+//         @media screen and (min-width: 783px) {
+//             top: $wide-offset;
+//         }
+//     }
+// }

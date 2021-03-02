@@ -1,0 +1,19 @@
+@import "custom-variables";
+@import "media-queries";
+@import "typography";
+@import "button";
+@import "cta";
+@import "navigation";
+@import "coming-soon";
+@import "../bootstrap/scss/bootstrap";
+
+
+.site-content {
+    width: 100% !important;
+}
+
+.ast-container #wpadminbar {
+    @media (max-width: 600px) {
+        position: fixed;
+    }
+}

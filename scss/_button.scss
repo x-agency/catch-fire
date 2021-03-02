@@ -1,0 +1,25 @@
+// Main Theme Button Style
+
+.btn {
+    // background-color: ;
+    // color: ;
+    // padding: 15px 40px;
+    @include body-font;
+    // font-weight: ;
+    cursor: pointer;
+    transition: .3s ease all;
+
+    &:hover {
+        // background-color: ;
+        // color: ;
+        transition: .3s;
+    }
+}
+
+// Extra Button Styles - Can be used for a simple link that is not formatted as buttons
+
+.simple-link {
+
+
+    &:hover {}
+}

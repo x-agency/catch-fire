@@ -1,0 +1,62 @@
+// Navbar Scrolled Styles
+.navbar.scrolled {
+    // background-color:;
+    -webkit-box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.54);
+    -moz-box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.54);
+    box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.54);
+    transition: 0.3s ease;
+
+    // Other elements to be changed on scroll within the navbar go here
+
+
+}
+
+.modal-open {
+    .navbar.scrolled {
+        background-color: white;
+        transition: 0.3s ease;
+        -webkit-box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0);
+        -moz-box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0);
+    }
+}
+
+
+//  Default Navbar Settings - Change as needed to match style
+.navbar {
+    width: 100%;
+    z-index: 9999;
+    transition: 0.3s ease;
+    position: fixed;
+    top: 0;
+    padding: 0 0 4px 0;
+
+
+    // Styles for Navigation Menu Items - USE Class .nav-right 
+    .nav-right {}
+
+    // Default Styles for Theme Logo - Change as Needed
+    .navbar-brand {
+        padding-left: 50px;
+
+        @include respond-below(md) {
+            padding-left: 25px;
+        }
+
+        svg {
+            width: 150px;
+        }
+    }
+}
+
+// Default Styles for Nav Menu Items - Font family and Size in typography.scss
+#menu-main {
+
+    .menu-item {
+        margin: 5px 25px;
+
+        @media (max-width: 1229px) {
+            font-size: 14px;
+        }
+    }
+}
