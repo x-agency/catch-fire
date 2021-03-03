@@ -104,3 +104,46 @@ body {
         }
     }
 }
+
+// ** Books and Publications Page ** //
+//hero
+
+#books-pub-hero {
+    position: relative;
+    margin-bottom: 10rem;
+
+    h1 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 17.5vw;
+        @include main-font;
+        font-size: calc(max(45px, min(15vw, 97px)));
+        line-height: 0.95em;
+        color: #dfdfdf;
+        max-width: 11ch;
+        font-weight: bold;
+    }
+
+    .arrow {
+        position: absolute;
+        left: 17.5vw;
+        transform: rotate(90deg) translateY(100%);
+        bottom: -20px;
+
+        svg * {
+            stroke: #bf1e2e;
+            fill: #bf1e2e;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    svg {
+        display: block;
+        margin: 1rem auto;
+        min-width: 60px;
+        min-height: 60px;
+    }
+}
