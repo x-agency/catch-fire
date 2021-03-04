@@ -9,7 +9,7 @@
 <?php get_header(); ?>
 <?php get_template_part('template-parts/books-pub-hero'); ?>
 
-<section class="container">
+<section class="container tools">
     <div class="row">
         <div class="col-12">
             <h2 class="subtitle">TOOLS FOR SUCCESS</h2>
@@ -47,7 +47,7 @@
         <div class="col-md-6 order-1">
             <h2 class="subtitle">LATEST RESOURCES</h2>
         </div>
-        <div class="col-md-6 order-3 order-lg-2">
+        <div class="col-md-6 order-3 order-lg-2 text-end pe-5">
             <div class="prev">
                 <img src="/wp-content/themes/catch-fire/img/scroll-arrow.png" alt="">
             </div>

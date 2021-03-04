@@ -147,3 +147,62 @@ a {
         min-height: 60px;
     }
 }
+
+.tools {
+    max-width: 1340px;
+    margin-bottom: 7.5rem;
+
+    .col-12 {
+        position: relative;
+        left: 25px;
+    }
+
+    .subtitle {
+        color: #141414;
+    }
+
+    h2 + h2 {
+        font-family: 'Helvetica Neue';
+        color: #929292;
+        font-size: calc(max(26px, min(3vw, 54px)));
+        letter-spacing: 0;
+        font-weight: normal;
+        margin: 3rem 0;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    svg * {
+        stroke: #929292;
+        fill: #929292;
+    }
+}
+
+.latest-resources {
+    max-width: 1400px;
+
+    .col-md-6:nth-child(1) {
+        position: relative;
+        left: 55px;
+    }
+}
+
+.prev, .next {
+    cursor: pointer;
+    display: inline-block;
+
+    img {
+        transform: rotate(90deg);
+        width: 45px;
+        height: 45px;
+    }
+}
+
+.next {
+    margin-left: 2rem;
+    img {
+        transform: rotate(-90deg);
+    }
+}
