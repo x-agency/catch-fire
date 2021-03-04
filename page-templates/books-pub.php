@@ -80,17 +80,17 @@
 
 <section class="container books-pubs">
     <div class="row">
-        <div class="col-12"></div>
-        <div class="col-lg-6 col-xl-3">
+        <div class="col-12"><h2 class="subtitle">BOOKS & PUBLICATIONS</h2></div>
+        <div class="col-lg-6 col-xl-3 book">
             <img src="/wp-content/themes/catch-fire/img/book-come-back.png" alt="">
         </div>
-        <div class="col-lg-6 col-xl-3" style="transform: scale(1.5); transform-origin: 50% 30%;">
+        <div class="col-lg-6 col-xl-3 book">
             <img src="/wp-content/themes/catch-fire/img/book-volunteer-survival.png" alt="">
         </div>
-        <div class="col-lg-6 col-xl-3">
+        <div class="col-lg-6 col-xl-3 book">
             <img src="/wp-content/themes/catch-fire/img/book-volunteer-effect.png" alt="">
         </div>
-        <div class="col-lg-6 col-xl-3">
+        <div class="col-lg-6 col-xl-3 book">
             <img src="/wp-content/themes/catch-fire/img/book-table-influence.png" alt="">
         </div>
     </div>
@@ -104,7 +104,7 @@
         <div class="podcast-links">
             <a href="">
                 <?php echo file_get_contents(__DIR__ . '/../img/play-btn.svg'); ?>
-                <p>Title<span>&nbsp;[12:32]</span></p>
+                <p>Title of podcast here<span>&nbsp;[12:32]</span></p>
             </a>
             <a href="">
                 <p><span></span></p>
@@ -119,8 +119,8 @@
                 <p><span></span></p>
             </a>
         </div>
-        <a href="">
-            <p>LISTEN TO MORE</p>
+        <a href="" class="more">
+            <p>Listen To More</p>
             <?php // Arrow is after pseudo element of p tag ?>
         </a>
     </div>
@@ -128,14 +128,16 @@
 
 <section class="container flash-papers">
     <div class="row">
-        <div class="col-12"></div>
-        <div class="col-12"></div>
+        <div class="col-12"><h2 class="subtitle">FLASH PAPER</h2></div>
+        <div class="col-12"><h2>We are all busy and at the same time, we want to be in the know about ideas and insights.</h2></div>
         <div class="col-lg-6 col-xl-4">
-            <div class="flash-paper">
-                <?php echo file_get_contents(__DIR__ . '/../img/document.svg'); ?>
-                <p>55</p>
-            </div>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <a href="">
+                <div class="flash-paper">
+                    <?php echo file_get_contents(__DIR__ . '/../img/document.svg'); ?>
+                    <p>55</p>
+                </div>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </a>
         </div>
     </div>
 </section>
