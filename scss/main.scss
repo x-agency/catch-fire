@@ -107,7 +107,6 @@ body {
 
 // ** Books and Publications Page ** //
 //hero
-
 #books-pub-hero {
     position: relative;
     margin-bottom: 10rem;
@@ -136,7 +135,16 @@ body {
             fill: #bf1e2e;
         }
     }
+
+    .featured {
+        position: absolute;
+        top: calc(50% + 150px);
+        right: 12.5%;
+        transform: translateY(-50%);
+    }
 }
+//show the box shadow on the covers but not the books
+.single-publications .featured { box-shadow: 0 0 25px 0 #0000007f;}
 
 a {
     text-decoration: none;
@@ -152,6 +160,7 @@ a {
     color: #141414;
 }
 
+//Tools for Success
 .tools {
     max-width: 1340px;
     margin-bottom: 7.5rem;
@@ -180,6 +189,7 @@ a {
     }
 }
 
+//Latest resources
 .latest-resources {
     max-width: 1400px;
     margin-bottom: 7.5rem;
@@ -213,6 +223,7 @@ a {
     max-height: 429px;
 }
 
+//Books and publications
 .books-pubs {
     max-width: 1400px;
 
@@ -235,6 +246,7 @@ a {
     }
 }
 
+//Podcast
 .podcast {
     position: relative;
     margin-bottom: 7.5rem;
@@ -321,6 +333,7 @@ a {
     }
 }
 
+//Flash Papers
 .flash-papers {
     max-width: 1400px;
     margin-bottom: 7.5rem;
@@ -373,5 +386,72 @@ a {
 
     .subtitle {
         margin-bottom: 1em;
+    }
+}
+
+// ** Publications Single ** //
+.single {
+
+    .container {
+        max-width: 1350px;
+        margin-bottom: 7.5rem;
+
+        .subtitle {
+            color: #3d3d3d;
+            margin-bottom: 1.5em;
+        }
+
+        h2:not(.subtitle) {
+            font-size: calc(max(30px, min(3vw, 54px)));
+            @include main-font;
+            letter-spacing: 0;
+            color: #929292;
+            margin: 0;
+            margin-bottom: 2em;
+            padding-bottom: 0.5em;
+            border-bottom: 1px solid #686767;
+        }
+    }
+}
+
+// ** Books Single ** //
+.single-books .content {
+    h2:not(.subtitle) {
+        color: #404040;
+        border-bottom: none;
+        padding: 0;
+        margin-bottom: 0.5em;
+    }
+
+    p {
+        max-width: 55ch;
+    }
+}
+
+.single-books #books-pub-hero .featured {
+    right: 20%;
+}
+
+.buy-now {
+    text-align: center;
+    position: relative;
+    left: -5%;
+
+    svg, img {
+        width: 229px;
+        height: auto;
+        min-width: unset;
+        min-height: unset;
+        margin: 0 auto 4rem;
+    }
+
+    a {
+        cursor: pointer;
+        display: block;
+    }
+
+    .btn {
+        display: inline-block;
+        font-size: 18px;
     }
 }
