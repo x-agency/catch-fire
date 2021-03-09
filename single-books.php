@@ -25,5 +25,7 @@
     </div>
 </section>
 
+<?php get_template_part('template-parts/books-pub-books'); ?>
+
 <?php get_template_part('template-parts/cta'); ?>
 <?php get_footer(); ?>
