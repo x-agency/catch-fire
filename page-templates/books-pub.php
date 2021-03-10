@@ -15,25 +15,25 @@
             <h2 class="subtitle">TOOLS FOR SUCCESS</h2>
             <h2>Resources and information for the modern-day leader.</h2>
         </div>
-        <div class="col-lg-6 col-xl-3">
+        <div class="col-lg-6 col-xl-3 text-center">
             <a href="#latest-resources">
                 <?php echo file_get_contents(__DIR__ . '/../img/latest.svg'); ?>
                 <button class="btn">LATEST RESOURCES</button>
             </a>
         </div>
-        <div class="col-lg-6 col-xl-3">
+        <div class="col-lg-6 col-xl-3 text-center">
             <a href="#books-and-publications">
                 <?php echo file_get_contents(__DIR__ . '/../img/book.svg'); ?>
                 <button class="btn">BOOKS & PUBLICATIONS</button>
             </a>
         </div>
-        <div class="col-lg-6 col-xl-3">
+        <div class="col-lg-6 col-xl-3 text-center">
             <a href="#catchfire-podcast">
                 <?php echo file_get_contents(__DIR__ . '/../img/mic.svg'); ?>
                 <button class="btn">CATCHFIRE PODCAST</button>
             </a>
         </div>
-        <div class="col-lg-6 col-xl-3">
+        <div class="col-lg-6 col-xl-3 text-center">
             <a href="#flash-paper">
                 <?php echo file_get_contents(__DIR__ . '/../img/flash-paper.svg'); ?>
                 <button class="btn">FLASH PAPER</button>
@@ -44,7 +44,7 @@
 
 <section class="container latest-resources">
     <div class="row">
-        <div class="col-lg-6 order-1 text-center text-lg-end">
+        <div class="col-lg-6 order-1 text-center text-lg-start">
             <h2 class="subtitle">LATEST RESOURCES</h2>
         </div>
         <div class="col-lg-6 order-3 order-lg-2 text-center text-lg-end mt-lg-0 mt-5">
@@ -124,7 +124,7 @@
 </section>
 
 <section class="container flash-papers">
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-12"><h2 class="subtitle">FLASH PAPER</h2></div>
         <div class="col-12"><h2>We are all busy and at the same time, we want to be in the know about ideas and insights.</h2></div>
         <div class="col-lg-6 col-xl-4">
@@ -184,18 +184,25 @@ jQuery(document).ready(function($) {
     }
 
     slideCountTotal = $('.slide').length;
-    if ( $(window).width() > 1199 ) {
+    if ( $(window).width() > 1439 ) {
         space = ( carouselWidth - ( width * 3 )) / 2;
         $('.track').css("width", (carouselWidth * (slideCountTotal / 3)) + space + "px");
     } else if ( $(window).width() > 991 ) {
         space = ( carouselWidth - ( width * 2 )) / 2;
-        $('.track').css("width", (carouselWidth * (slideCountTotal / 2)) - space + "px");
+        $('.track').css("width", (carouselWidth * (slideCountTotal / 2)) + "px");
     } else {
         $('.track').css("width", (width * slideCountTotal) + "px");
     }
 
     offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
-    $track.css("left", ( (-offsetWidth * (slideCount) ) + "px"));
+    if ( $(window).width() > 1439 ) {
+        $track.css("left", ( (-offsetWidth * (slideCount) ) + "px"));
+    } else if ( $(window).width() > 991 ) {
+        $track.css("left", ( (-offsetWidth * (slideCount) ) - ((offsetWidth - width) / 2) + "px"));
+    } else {
+        $track.css("left", ( (-offsetWidth * (slideCount) ) + "px"));
+    }
+    
 
     $('.slide').on('mousedown touchstart', function(e) {
         if ($track.hasClass('transition')) return; //if the carousel is in motion, prevent new movement until complete

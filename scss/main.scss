@@ -118,6 +118,16 @@ body {
 #books-pub-hero {
     position: relative;
     margin-bottom: 10rem;
+    min-height: 300px;
+
+    .bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include respond-below(lg) {
+            position: absolute;
+        }
+    }
 
     h1 {
         position: absolute;
@@ -125,7 +135,7 @@ body {
         transform: translateY(-50%);
         left: 17.5vw;
         @include main-font;
-        font-size: calc(max(45px, min(15vw, 97px)));
+        font-size: calc(max(45px, min(7vw, 97px)));
         line-height: 0.95em;
         color: #dfdfdf;
         max-width: 11ch;
@@ -171,7 +181,14 @@ a {
 //Tools for Success
 .tools {
     max-width: 1340px;
+    width: 95vw;
     margin-bottom: 7.5rem;
+
+    a {
+        display: inline-block;
+        width: 100%;
+        max-width: 315px;
+    }
 
     .col-12 {
         position: relative;
@@ -204,6 +221,7 @@ a {
 //Latest resources
 .latest-resources {
     max-width: 1400px;
+    width: 95vw;
     margin-bottom: 7.5rem;
 
     .col-md-6:nth-child(1) {
@@ -213,13 +231,14 @@ a {
 
     .carousel {
         overflow: hidden;
+        width: 100%;
 
         .track {
             display: flex;
             justify-content: space-between;
             position: relative;
 
-            @include respond-below(xl) {
+            @media (max-width: 1439px) {
                 justify-content: space-evenly;
             }
 
@@ -227,7 +246,7 @@ a {
                 width: 100vw;
                 flex-shrink: 0;
                 @include respond-below(lg) {
-                    min-width: 100vw;
+                    min-width: 95vw;
                     display: flex;
                     justify-content: center;
                 }
@@ -283,6 +302,7 @@ a {
 
     .row {
         max-width: 1400px;
+        width: 95vw;
         margin: 0 auto;
     }
 
@@ -292,20 +312,19 @@ a {
     }
 
     .book {
-        transform: scale(1);
-        transform-origin: 50% 30%;
-        transition: transform 0.6s;
-
-        &:hover {
-            transform: scale(1.5);
-        }
-
+        
         img {
             min-width: 429px;
             height: 429px;
             position: relative;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) scale(1);
+            transform-origin: 50% 30%;
+            transition: transform 0.6s;
+        }
+
+        &:hover img{
+            transform: translateX(-50%) scale(1.5);
         }
     }
 }
@@ -314,6 +333,16 @@ a {
 .podcast {
     position: relative;
     margin-bottom: 7.5rem;
+    min-height: 470px;
+
+    @include respond-below(xl) {
+        .bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+    }
 
     .content {
         position: absolute;
@@ -399,6 +428,7 @@ a {
 //Flash Papers
 .flash-papers {
     max-width: 1400px;
+    width: 95vw;
     margin-bottom: 7.5rem;
 
     a {
