@@ -1,5 +1,5 @@
-<section class="container books-pubs">
-    <div class="row">
+<section class="container books-pubs pb-5">
+    <div class="row pb-5 justify-content-center">
         <div class="col-12"><h2 class="subtitle">BOOKS & PUBLICATIONS</h2></div>
         <div class="col-lg-6 col-xl-3 book">
             <a href="/books/volunteer-effect/" target="_blank">
