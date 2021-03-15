@@ -2,3 +2,4 @@ node_modules
 wpgulp.config.js
 /css/main.css.map
 /css/main.min.css
+.DS_Store
