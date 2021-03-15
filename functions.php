@@ -80,3 +80,54 @@ acf_add_options_page(array(
 ));
 
 }
+
+function theme_slug_setup() {
+	add_theme_support( 'title-tag' );
+ }
+ add_action( 'after_setup_theme', 'theme_slug_setup' );
+
+ add_filter( 'astra_meta_box_options', 'default_disable_options' );
+
+/**
+* Default disable the Meta Options
+*
+* @param array $meta_option Page Meta.
+* @return array
+*/
+function default_disable_options( $meta_option ) {
+
+    $meta_option['ast-main-header-display'] = array(
+            'default'  => 'disabled',
+            'sanitize' => 'FILTER_DEFAULT',
+    );
+    $meta_option['footer-sml-layout'] = array(
+            'default'  => 'disabled',
+            'sanitize' => 'FILTER_DEFAULT',
+    );
+    $meta_option['footer-adv-display'] = array(
+            'default'  => 'disabled',
+            'sanitize' => 'FILTER_DEFAULT',
+    );
+    $meta_option['site-post-title'] = array(
+            'default'  => 'disabled',
+            'sanitize' => 'FILTER_DEFAULT',
+    );
+    $meta_option['site-sidebar-layout'] = array(
+            'default'  => 'disabled',
+            'sanitize' => 'FILTER_DEFAULT',
+    );
+    $meta_option['site-content-layout'] = array(
+            'default'  => 'disabled',
+            'sanitize' => 'FILTER_DEFAULT',
+    );
+    $meta_option['ast-featured-img'] = array(
+            'default'  => 'disabled',
+            'sanitize' => 'FILTER_DEFAULT',
+    );
+    $meta_option['ast-breadcrumbs-content'] = array(
+            'default'  => 'disabled',
+            'sanitize' => 'FILTER_DEFAULT',
+    );
+    
+    return $meta_option;
+}

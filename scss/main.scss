@@ -18,7 +18,15 @@
     }
 }
 
+#ast-mobile-popup, .ast-mobile-popup-overlay, #wpadminbar, #wp-toolbar, #wp-admin-bar-root-default {
+    max-width: 100vw;
+}
+
 // **GLOBAL STYLES ** //
+
+html {
+    overflow-x: hidden;
+}
 
 body {
     background-color: #1b1b1b;
@@ -102,5 +110,490 @@ body {
                 @include main-font;
             }
         }
+    }
+}
+
+// ** Books and Publications Page ** //
+//hero
+#books-pub-hero {
+    position: relative;
+    margin-bottom: 10rem;
+    min-height: 300px;
+
+    .bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include respond-below(lg) {
+            position: absolute;
+        }
+    }
+
+    h1 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 17.5vw;
+        @include main-font;
+        font-size: calc(max(45px, min(7vw, 97px)));
+        line-height: 0.95em;
+        color: #dfdfdf;
+        max-width: 11ch;
+        font-weight: bold;
+    }
+
+    .arrow {
+        position: absolute;
+        left: 17.5vw;
+        transform: rotate(90deg) translateY(100%);
+        bottom: -20px;
+
+        svg * {
+            stroke: #bf1e2e;
+            fill: #bf1e2e;
+        }
+    }
+
+    .featured {
+        position: absolute;
+        top: calc(50% + 150px);
+        right: 12.5%;
+        transform: translateY(-50%);
+    }
+}
+//show the box shadow on the covers but not the books
+.single-publications .featured { box-shadow: 0 0 25px 0 #0000007f;}
+
+a {
+    text-decoration: none;
+    svg {
+        display: block;
+        margin: 1rem auto;
+        min-width: 60px;
+        min-height: 60px;
+    }
+}
+
+.subtitle {
+    color: #141414;
+}
+
+//Tools for Success
+.tools {
+    max-width: 1340px;
+    width: 95vw;
+    margin-bottom: 7.5rem;
+
+    a {
+        display: inline-block;
+        width: 100%;
+        max-width: 315px;
+    }
+
+    .col-12 {
+        position: relative;
+        left: 25px;
+    }
+
+    h2 + h2 {
+        font-family: 'Helvetica Neue';
+        color: #929292;
+        font-size: calc(max(26px, min(3vw, 54px)));
+        letter-spacing: 0;
+        font-weight: normal;
+        margin: 3rem 0;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    svg * {
+        stroke: #929292;
+        fill: #929292;
+    }
+}
+
+.transition {
+    transition: all 0.6s;
+}
+
+//Latest resources
+.latest-resources {
+    max-width: 1400px;
+    width: 95vw;
+    margin-bottom: 7.5rem;
+
+    .col-md-6:nth-child(1) {
+        position: relative;
+        left: 55px;
+    }
+
+    .carousel {
+        overflow: hidden;
+        width: 100%;
+
+        .track {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+
+            @media (max-width: 1439px) {
+                justify-content: space-evenly;
+            }
+
+            .slide {
+                width: 100vw;
+                flex-shrink: 0;
+                @include respond-below(lg) {
+                    min-width: 95vw;
+                    display: flex;
+                    justify-content: center;
+                }
+                
+                a {display: block;}
+
+                img {
+                    transition: box-shadow 0.6s;
+                    width: 100%;
+                    object-fit: contain;
+                }
+
+                &:hover {
+
+                    img {
+                        box-shadow: 0 0 20px 0 #0000007f;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.prev, .next {
+    cursor: pointer;
+    display: inline-block;
+
+    img {
+        transform: rotate(90deg);
+        width: 45px;
+        height: 45px;
+    }
+}
+
+.next {
+    margin-left: 2rem;
+    img {
+        transform: rotate(-90deg);
+    }
+}
+
+.slide, .slide img {
+    max-width: 429px;
+    max-height: 429px;
+}
+
+//Books and publications
+.books-pubs {
+    position: relative;
+    z-index: 1;
+    background-image: linear-gradient(to bottom, transparent 30%, #c0c0c0 0%);
+    max-width: 100vw;
+
+    .row {
+        max-width: 1400px;
+        width: 95vw;
+        margin: 0 auto;
+    }
+
+    .subtitle {
+        margin: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .book {
+        max-width: 275px;
+        transition: max-width 0.6s;
+        
+        img {
+            min-width: 429px;
+            height: 429px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%) scale(1);
+            transform-origin: 45% 30%;
+            transition: transform 0.6s;
+        }
+
+        &:hover {
+            max-width: 350px;
+
+            img{
+                transform: translateX(-50%) scale(1.5);
+            }
+        }
+    }
+}
+
+//Podcast
+.podcast {
+    position: relative;
+    margin-bottom: 7.5rem;
+    min-height: 470px;
+
+    @include respond-below(xl) {
+        .bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+    }
+
+    @include respond-below(lg) {
+        &::before {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            content: '';
+            background: #0000007f;
+            z-index: 1;
+        }
+    }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 55%;
+        transform: translateY(-50%);
+        z-index: 1;
+
+        @include respond-below(xl) {
+            left: unset;
+            right: 5%;
+            min-width: 50%;
+        }
+
+        @include respond-below(lg) {
+            width: 90%;
+            right: unset;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .subtitle {
+            color: #dfdfdf;
+        }
+    }
+
+    h2:not(.subtitle) {
+        color: #dfdfdf;
+        font-family: 'Myriad Pro';
+        font-size: calc(max(28px, min(3vw, 64px)));
+        letter-spacing: 0;
+
+        span {
+            color: #bf1e2e;
+        }
+    }
+
+    .podcast-links {
+
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+
+            svg {
+                width: calc(min(3vw, 29px));
+                height: calc(min(3vw, 29px));
+                margin: 0;
+                min-height: 16px;
+                min-width: 16px;
+
+                * {
+                    fill: #ffffff;
+                }
+            }
+
+            p {
+                margin: 0;
+                margin-left: 1rem;
+                @include title-font;
+                font-size: calc(max(12px, min(3vw, 20px)));
+                letter-spacing: 0.14em;
+                color: #dfdfdf;
+                text-transform: uppercase;
+
+                span {
+                    color: #bf1e2e;
+                }
+            }
+        }
+    }
+
+    .more {
+        text-align: center;
+        display: block;
+
+        p {
+            color: #dfdfdf;
+            @include main-font;
+
+            &::after {
+                content: '';
+                width: 27px;
+                height: 19px;
+                background: $red;
+                display: block;
+                position: relative;
+                top: 0.5em;
+                left: 50%;
+                transform: translateX(-50%);
+                clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+            }
+        }
+    }
+}
+
+//Flash Papers
+.flash-papers {
+    max-width: 1400px;
+    width: 95vw;
+    margin-bottom: 7.5rem;
+
+    a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+
+        @include respond-below(lg) {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .flash-paper {
+            position: relative;
+
+            svg {
+                width: calc(max(40px, min(6vw, 47px)));
+                height: calc(max(65px, min(6vw, 70px)));
+                min-width: unset;
+                min-height: unset;
+                margin: 0;
+            }
+
+            p {
+                position: absolute;
+                margin: 0;
+                @include title-font;
+                color: $red;
+                top: calc(50% - 0.25em);
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: calc(max(16px, min(3vw, 23px)));
+            }
+        }
+    }
+
+    p {
+        color: $dark-gray;
+        @include main-font;
+        letter-spacing: 0;
+        font-size: calc(max(16px, min(3vw, 23px)));
+        margin: 0;
+        margin-left: 1rem;
+    }
+
+    h2:not(.subtitle) {
+        font-size: 20px;
+        @include main-font;
+        letter-spacing: 0;
+        color: $dark-gray;
+        margin-bottom: 4em;
+    }
+
+    .subtitle {
+        margin-bottom: 1em;
+    }
+}
+
+// ** Publications Single ** //
+.single {
+
+    .container {
+        max-width: 1350px;
+        margin-bottom: 7.5rem;
+
+        .subtitle {
+            color: #3d3d3d;
+            margin-bottom: 1.5em;
+        }
+
+        h2:not(.subtitle) {
+            font-size: calc(max(30px, min(3vw, 54px)));
+            @include main-font;
+            letter-spacing: 0;
+            color: #929292;
+            margin: 0;
+            margin-bottom: 2em;
+            padding-bottom: 0.5em;
+            border-bottom: 1px solid #686767;
+        }
+    }
+
+    .books-pubs {
+        max-width: 100vw;
+
+        .subtitle {
+            margin: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .row {
+            max-width: 1350px;
+        }
+    }
+}
+
+// ** Books Single ** //
+.single-books .content {
+    h2:not(.subtitle) {
+        color: #404040;
+        border-bottom: none;
+        padding: 0;
+        margin-bottom: 0.5em;
+    }
+
+    p {
+        max-width: 55ch;
+    }
+}
+
+.single-books #books-pub-hero .featured {
+    right: 20%;
+}
+
+.buy-now {
+    text-align: center;
+    position: relative;
+    left: -5%;
+
+    svg, img {
+        width: 229px;
+        height: auto;
+        min-width: unset;
+        min-height: unset;
+        margin: 0 auto 4rem;
+    }
+
+    a {
+        cursor: pointer;
+        display: block;
+    }
+
+    .btn {
+        display: inline-block;
+        font-size: 18px;
     }
 }

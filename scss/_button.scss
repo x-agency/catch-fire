@@ -1,18 +1,22 @@
 // Main Theme Button Style
 
-.btn {
-    // background-color: ;
-    // color: ;
-    // padding: 15px 40px;
+body .btn {
+    background-color: #bf1e2e;
+    color: #ffffff;
     @include main-font;
-    // font-weight: ;
+    font-weight: normal;
     cursor: pointer;
     transition: .3s ease all;
+    border-radius: 50px;
+    display: inline-block;
+    border: 2px solid #bf1e2e;
+    margin: 0 auto;
+    padding: 0.5em 2em;
+    display: block;
 
     &:hover {
-        // background-color: ;
-        // color: ;
-        transition: .3s;
+        background-color: transparent;
+        color: #bf1e2e;
     }
 }
 
