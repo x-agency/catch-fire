@@ -24,7 +24,7 @@
             <p><a target="_blank" href="https://www.Facebook.com/catchfiredaily">fb— Facebook.com/<span>catchfiredaily</span></a></p>
             <p><a target="_blank" href="https://www.instagram.com/catchfiredaily/"> ig— @<span>catchfiredaily</span></a></p>
             <p><a target="_blank" href="https://www.linked.in/catchfiredaily"> in— linked.in/<span>catchfiredaily</span></a></p>
-            <p class="phone"><a href="tel:8645551234"></a>(864) 555-1234</p>
+            <p class="phone"><a href="tel:8645551234">(864) 555-1234</a></p>
             <p><a href="mailto:hello@catchfiredaily.com">email— <span>hello@catchfiredaily.com</span></a></p>
         </div>
     </div>

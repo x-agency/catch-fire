@@ -646,7 +646,7 @@ a {
 
 .page-template-contact {
     
-    p, .contact .phone {
+    p, .contact .phone a {
         @include main-font;
     }
 
@@ -682,10 +682,10 @@ a {
         }
     }
 
-    .contact .phone {
+    .contact .phone, .contact .phone a {
         font-size: calc(max(30px, min(5vw, 40px)));
         color: #bbbbbb;
-        max-width: 17.25ch;
+        max-width: 16ch;
         margin: 4rem auto;
     }
 
