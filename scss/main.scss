@@ -597,3 +597,150 @@ a {
         font-size: 18px;
     }
 }
+
+// ** Contact Page ** //
+.hero {
+    min-height: 400px;
+    background: #141414;
+    position: relative;
+
+    h1 {
+        color: #dfdfdf;
+        @include main-font;
+        font-weight: bold;
+        font-size: calc(max(45px, min(7vw, 97px)));
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        line-height: 0.75em;
+        left: 20vw;
+    }
+}
+
+.page-template-contact {
+    
+    p, .contact .phone {
+        @include main-font;
+    }
+
+    h2, .contact p {
+        @include title-font;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        letter-spacing: 0.14em;
+        font-size: calc(max(16px, min(2vw, 28px)));
+        color: #141414;
+        margin-top: 3em;
+    }
+
+    div:not(.contact) > p {
+        font-size: calc(max(20px, min(3vw, 54px)));
+        color: #404040;
+        line-height: 1em;
+        margin: 1em 0 2em;
+    }
+
+    .contact p, .contact a {
+        color: #141414;
+        font-size: calc(max(12px, min(2vw, 16px)));
+        letter-spacing: 0.14em;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 40ch;
+
+        span {
+            color: #bf1e2e;
+        }
+    }
+
+    .contact .phone {
+        font-size: calc(max(30px, min(5vw, 40px)));
+        color: #bbbbbb;
+        max-width: 17.25ch;
+        margin: 4rem auto;
+    }
+
+    .contact {
+        position: relative;
+        
+        @include respond-above(xl) {
+            top: -200px;
+            left: 50px;
+        }
+    }
+
+    img {
+        margin: 0 auto 4rem;
+        display: block;
+        width: calc(max(275px, min(30vw, 562px)));
+
+        @include respond-above(xl) {
+            margin: 0 auto 10rem;
+        }
+    }
+}
+
+#form_contact {
+
+    label {
+        @include title-font;
+        text-transform: uppercase;
+        color: #141414;
+    }
+
+    input, textarea, select {
+        background: #c0c0c0;
+        resize: none;
+        border-radius: 0;
+        padding: 0 1em;
+        min-height: 4em;
+        font-weight: normal;
+        appearance: none;
+        position: relative;
+    }
+
+    #frm_field_15_container {
+        position: relative;
+    }
+
+    #frm_field_15_container::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 16px;
+        background: #999999;
+        clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+        top: calc(50% + 12px);
+        right: 1em;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+    textarea {
+        padding: 1em;
+    }
+
+    .form-field {
+        margin-bottom: 5px;
+    }
+
+    .frm_submit {
+        text-align: center;
+
+        @include respond-above(xl) {
+            text-align: right;
+        }
+
+        button {
+            background: #bf1e2e;
+            color: #ffffff;
+            border-radius: 50px;
+            padding: 0.5em 2.5em;
+            text-transform: uppercase;
+            font-size: 18px;
+            @include main-font;
+        }
+    }
+}
