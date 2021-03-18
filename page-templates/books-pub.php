@@ -1,6 +1,6 @@
 <?php
     /*
-    Template Name: Books and Publications
+    Template Name: Resources
     */
     if ( ! defined( 'ABSPATH' ) ) {
         exit; // Exit if accessed directly.
@@ -95,30 +95,20 @@
         <h2 class="subtitle">PODCAST</h2>
         <h2>catch<span>fire</span> daily</h2>
         <div class="podcast-links">
-            <a href="" class="mb-3">
+            <?php while(have_rows('podcast')) : the_row();
+                $url = get_sub_field('url');
+                $title = get_sub_field('title');
+                $duration = get_sub_field('duration');
+
+                ?>
+            <a href="<?php echo $url; ?>" class="mb-3">
                 <?php echo file_get_contents(__DIR__ . '/../img/play-btn.svg'); ?>
-                <p>Title of podcast here<span>&nbsp;[12:32]</span></p>
+                <p><?php echo $title; ?><span>&nbsp;<?php echo $duration; ?></span></p>
             </a>
-            <a href="" class="mb-3">
-                <?php echo file_get_contents(__DIR__ . '/../img/play-btn.svg'); ?>
-                <p>Title of podcast here<span>&nbsp;[12:32]</span></p>
-            </a>
-            <a href="" class="mb-3">
-                <?php echo file_get_contents(__DIR__ . '/../img/play-btn.svg'); ?>
-                <p>Title of podcast here<span>&nbsp;[12:32]</span></p>
-            </a>
-            <a href="" class="mb-3">
-                <?php echo file_get_contents(__DIR__ . '/../img/play-btn.svg'); ?>
-                <p>Title of podcast here<span>&nbsp;[12:32]</span></p>
-            </a>
-            <a href="" class="mb-3">
-                <?php echo file_get_contents(__DIR__ . '/../img/play-btn.svg'); ?>
-                <p>Title of podcast here<span>&nbsp;[12:32]</span></p>
-            </a>
+            <?php endwhile; ?>
         </div>
         <a href="" class="more mt-5">
             <p>Listen To More</p>
-            <?php // Arrow is after pseudo element of p tag ?>
         </a>
     </div>
 </section>
@@ -127,7 +117,33 @@
     <div class="row justify-content-center">
         <div class="col-12"><h2 class="subtitle">FLASH PAPER</h2></div>
         <div class="col-12"><h2>We are all busy and at the same time, we want to be in the know about ideas and insights.</h2></div>
-        <div class="col-lg-6 col-xl-4">
+        <?php 
+        $i = 0;  
+        while(have_rows('flash')) : the_row();
+            $url = get_sub_field('url');
+            $title = get_sub_field('title');
+            $number = get_sub_field('number');
+
+            ?>
+
+            <?php if ($i == 0) : ?>
+                <div class="col-lg-6 col-xl-4">
+            <?php endif; ?>
+                    <a href="<?php echo $url; ?>" class="mb-4">
+                        <div class="flash-paper">
+                            <?php echo file_get_contents(__DIR__ . '/../img/document.svg'); ?>
+                            <p><?php echo get_row_index(); ?></p>
+                        </div>
+                        <p><?php echo $title; ?></p>
+                    </a>
+            <?php $i++; ?>
+            <?php if ($i == 4 ) : ?>
+                </div>
+                <?php $i = 0; ?>
+            <?php endif; ?>
+        <?php endwhile; ?>
+        
+        <?php /*div class="col-lg-6 col-xl-4">
         <?php for($i = 55; $i >= 52; $i--) : ?>
             <a href="" class="mb-4">
                 <div class="flash-paper">
@@ -159,7 +175,7 @@
                 <p>Lorem ipsum dolor sit amet.</p>
             </a>
         <?php endfor; ?>
-        </div>
+        </div */?>
     </div>
 </section>
 
