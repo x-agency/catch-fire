@@ -1,4 +1,5 @@
 <section class="container latest-resources">
+    <div class="anchor" id="latest-resources"></div>
     <div class="row">
         <div class="col-lg-6 order-1 text-center text-lg-start">
             <h2 class="subtitle">LATEST RESOURCES</h2>

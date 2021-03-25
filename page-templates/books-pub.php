@@ -47,6 +47,7 @@
 <?php get_template_part('template-parts/books-pub-books'); ?>
 
 <section class="podcast">
+    <div class="anchor" id="catchfire-podcast"></div>
     <img src="/wp-content/themes/catch-fire/img/podcast-hero.jpg" alt="" class="bg">
     <div class="content">
         <h2 class="subtitle">PODCAST</h2>
@@ -71,6 +72,7 @@
 </section>
 
 <section class="container flash-papers">
+    <div class="anchor" id="flash-paper"></div>
     <div class="row justify-content-center">
         <div class="col-12"><h2 class="subtitle">FLASH PAPER</h2></div>
         <div class="col-12"><h2>We are all busy and at the same time, we want to be in the know about ideas and insights.</h2></div>
