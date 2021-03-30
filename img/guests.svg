@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 70 70" style="enable-background:new 0 0 70 70;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#5D5D5D;stroke-width:2;stroke-linejoin:round;}
+	.st1{fill:none;stroke:#5D5D5D;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<g>
+	<circle class="st0" cx="34.58" cy="17.19" r="4.81"/>
+	<circle class="st0" cx="51.43" cy="17.19" r="4.81"/>
+	<path class="st1" d="M57.45,31.63v30.08c0,0.66-0.54,1.2-1.2,1.2h-9.63c-0.66,0-1.2-0.54-1.2-1.2V55.7"/>
+	<line class="st1" x1="51.43" y1="44.87" x2="51.43" y2="62.92"/>
+	<circle class="st0" cx="17.74" cy="17.19" r="4.81"/>
+	<path class="st1" d="M23.75,55.7v6.02c0,0.66-0.54,1.2-1.2,1.2h-9.63c-0.66,0-1.2-0.54-1.2-1.2V31.63"/>
+	<line class="st1" x1="17.74" y1="44.87" x2="17.74" y2="62.92"/>
+	<line class="st1" x1="34.58" y1="50.89" x2="34.58" y2="67.73"/>
+	<line class="st1" x1="38.79" y1="8.7" x2="41.2" y2="4.53"/>
+	<line class="st1" x1="41.88" y1="11.78" x2="46.05" y2="9.37"/>
+	<line class="st1" x1="23.12" y1="9.37" x2="27.29" y2="11.78"/>
+	<line class="st1" x1="27.97" y1="4.53" x2="30.37" y2="8.7"/>
+	<line class="st1" x1="34.58" y1="2.75" x2="34.58" y2="7.57"/>
+	<path class="st1" d="M34.58,29.23"/>
+	<path class="st1" d="M28.57,32.84l-4.81,18.05h4.81v15.64c0,0.66,0.54,1.2,1.2,1.2h9.63c0.66,0,1.2-0.54,1.2-1.2V50.89h4.81
+		L40.6,32.84"/>
+	<path class="st1" d="M44.23,46.44l0.3-0.1c2.46-0.82,3.83-3.44,3.1-5.92l-3.62-12.53c-0.59-2.05-2.47-3.47-4.61-3.47l0,0
+		l-4.81,6.02l-4.81-6.02l0,0c-2.14,0-4.02,1.41-4.61,3.47l-3.62,12.53c-0.73,2.49,0.64,5.1,3.1,5.92l0.3,0.1"/>
+	<path class="st0" d="M57.45,44.87c2.66,0,4.81-2.16,4.81-4.81v-9.98c0-1.97-1.2-3.74-3.03-4.47l-2.99-1.2l-4.81,4.81l-4.81-4.81
+		l-2.99,1.2c-0.25,0.1-0.48,0.22-0.7,0.36"/>
+	<path class="st0" d="M11.72,44.87c-2.66,0-4.81-2.16-4.81-4.81v-9.98c0-1.97,1.2-3.74,3.03-4.47l2.99-1.2l4.81,4.81l4.81-4.81
+		l2.99,1.2c0.25,0.1,0.48,0.22,0.7,0.36"/>
+</g>
+</svg>

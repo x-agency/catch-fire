@@ -9,6 +9,10 @@
     font-family: 'Source Code Pro', monospace;
 }
 
+@mixin special-font {
+    font-family: 'Bebas Neue', cursive;
+}
+
 // If Custom Font - Drop the @font-face items here
 // @font-face {
 
@@ -43,10 +47,35 @@ h4 {}
 
 h5 {}
 
-p {}
+p {
+    color: #3f3f3f;
+    @include main-font;
+    font-size: 20px;
+}
 
 #main-menu {
     .menu-item {}
+}
+
+.title {
+    @include main-font;
+    font-size: 48px;
+    color: #3f3f3f;
+    line-height: 58px;
+    margin-top: 55px !important;
+
+    span {
+        color: $red;
+    }
+}
+
+.title__small {
+    @include main-font;
+    font-size: 37px;
+    color: #3f3f3f;
+    line-height: 40px;
+    margin-top: 55px !important;
+
 }
 
 
@@ -55,4 +84,18 @@ p {}
     font-size: 28px;
     text-transform: uppercase;
     letter-spacing: .14em;
+}
+
+.subtitle__red {
+    color: $red;
+}
+
+.number,
+.pre-title {
+    @include special-font;
+    font-size: 36px;
+    font-weight: 600;
+    color: $red;
+
+    margin-bottom: -17px;
 }
