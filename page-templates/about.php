@@ -53,6 +53,20 @@
 <section id="tools">
     <div class="container">
         <div class="page-divider"></div>
+        <?php
+            //get_posts to retrieve an array of posts
+            $training = get_posts( array(
+                    'numberposts' => 4,
+                    'post_type'   => 'publications'      
+                ) 
+            );
+
+            $books = get_posts( array(
+                'numberposts' => 4,
+                'post_type'   => 'books'      
+            ) 
+        );   
+        ?>
         <div class="row tools--wrapper">
             <div class="col-12">
                 <div class="subtitle subtitle__red">TOOLS FOR LEADERS</div>
@@ -60,7 +74,7 @@
             <div class="col-lg-4 tools--column">
                 <div class="title">Training</div>
                 <div class="tools--item">
-                    <a href="">Keynote Talks</a>
+                    <a href="<?php echo get_permalink($train->ID);?>">Keynote Talks</a>
                 </div>
                 <div class="tools--item">
                     <a href="">Team Workshops</a>
@@ -71,10 +85,12 @@
             </div>
             <div class="col-lg-4 tools--column">
                 <div class="title">Books</div>
-                <div class="tools--item">
-                    <a href="">The Come Back Effect</a>
-                </div>
-                <div class="tools--item">
+                <?php foreach($books as $book) : ?>
+                    <div class="tools--item">
+                        <a href="<?php echo get_permalink($book->ID);?>"><?php echo $book->post_title;?></a>
+                    </div>
+                <?php endforeach; ?>
+                <!--div class="tools--item">
                     <a href="">The Volunteer Effect</a>
                 </div>
                 <div class="tools--item">
@@ -82,18 +98,18 @@
                 </div>
                 <div class="tools--item">
                     <a href="">The Table of Influcence</a>
-                </div>
+                </div-->
             </div>
             <div class="col-lg-4 tools--column">
                 <div class="title">Resources</div>
                 <div class="tools--item">
-                    <a href="">Leader Resources</a>
+                    <a href="/resources-for-success/#latest-resources">Leader Resources</a>
                 </div>
                 <div class="tools--item">
-                    <a href="">CatchFire Podcast</a>
+                    <a href="/resources-for-success/#catchfire-podcast">CatchFire Podcast</a>
                 </div>
                 <div class="tools--item">
-                    <a href="">Flash Paper</a>
+                    <a href="/resources-for-success/#flash-paper">Flash Paper</a>
                 </div>
             </div>
         </div>
