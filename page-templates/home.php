@@ -21,31 +21,36 @@
     </div>
 </section>
 
+<?php
+$goal = get_field('goal');
+?>
 <section id="goal" class="home">
     <div class="page-divider"></div>
         <div class="container goal--wrapper">
             <div class="row goal--inner">
                 <div class="number">01 —</div>
-                <div class="subtitle">the goal</div>
-                <div class="title">We help leaders to engage their team members, boost brand likability with guests, and ignite a culture that can’t be extinguished. This is CatchFire.</div>
+                <div class="subtitle"><?php echo $goal['title']; ?></div>
+                <div class="title"><?php echo $goal['body']; ?></div>
             </div>
         </div>
     <div class="page-divider"></div>
 </section>
+
+<?php
+$leaders = get_field('leaders');
+?>
 <section id="leaders" class="home">
     <div class="container leaders--wrapper">
         <div class="row leaders--inner">
             <div class="col-xl-5 leaders--inner__left">
-                <div class="title__small">Remarkable organizations and guest experiences begin right here—with you.</div>
-                <p>Being a remarkable organization can be challenging. You and your team want to get it right. And that’s where we come in. </p>
-                <p>Imagine if a few simple and intentional decisions gave your organization permission to create an experience for guests and team members alike. Identifying the feeling you want each person to feel can help you create an experience they will not only come back for but share with other people.</p>
-                <p>This is how you Catch Fire.</p>
-                <img src="/wp-content/themes/catch-fire/img/about-img-2.jpg" alt="">
+                <div class="title__small"><?php echo $leaders['title']; ?></div>
+                <?php echo $leaders['body']; ?>
+                <!--img src="/wp-content/themes/catch-fire/img/about-img-2.jpg" alt=""-->
             </div>
             <div class="col-xl-5 offset-lg-2 leaders--inner__right">
                 <div class="number">— 02</div>
                 <div class="subtitle">for modern-day leaders</div>
-                <img src="/wp-content/themes/catch-fire/img/home-img-1.jpg" alt="">
+                <img src="<?php echo $leaders['image']; ?>" alt="">
             </div>
         </div>
         <div class="row icon-wrapper">
