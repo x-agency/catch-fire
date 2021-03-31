@@ -50,6 +50,50 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 </section>
 
+<!-- MENU -->
+<div class="modal fade menu" id="menuModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-body">
+			<div class="modal-nav">
+				<div class="logo">
+					<img src="/wp-content/themes/catch-fire/img/nav-flame.svg" alt="">
+				</div>
+				<div id="navbarNav">
+					<?php
+						wp_nav_menu( array(
+						'menu'              => 'main',
+						'theme_location'    => 'primary',
+						'depth'             => 2,
+						'container'         => 'div',
+						'container_class'   => '',
+						'container_id'      => '',
+						'menu_class'        => 'navbar-nav',
+						'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+						'walker'            => new wp_bootstrap_navwalker())
+						);
+					?>
+           		</div>
+			</div>
+			<div class="modal-bottom">
+				<div class="social-link-wrapper">
+					<div class="social-link">
+						<a href="">FB</a>
+					</div>
+					<div class="social-link">
+						<a href="">IG</a>
+					</div>
+					<div class="social-link">
+						<a href="">IN</a>
+					</div>
+				</div>
+				<div class="copyright">copyright © 2020 catchfire daily</div>
+			</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 	</div><!-- #page -->
 <?php 
 	astra_body_bottom();    

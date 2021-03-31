@@ -1,25 +1,66 @@
 // Navbar Scrolled Styles
 .navbar.scrolled {
-    // background-color:;
-    -webkit-box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.54);
-    -moz-box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.54);
-    box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.54);
+    // background-color: rgba(0, 0, 0, 0.85);
+    // -webkit-box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.54);
+    // -moz-box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.54);
+    // // box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.54);
     transition: 0.3s ease;
+    transform: translateY(-10px);
+
+
+    &:before {
+
+        height: 100%;
+        transition: .4s ease all;
+
+    }
 
     // Other elements to be changed on scroll within the navbar go here
+    .navbar-brand {
+        height: 95px;
 
 
-}
 
-.modal-open {
-    .navbar.scrolled {
-        background-color: white;
-        transition: 0.3s ease;
-        -webkit-box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0);
-        -moz-box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0);
-        box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0);
+
+        // .nav-text {
+        //     transform: rotate(0) translate(0px, -20px);
+        //     transition: $ease;
+        //     font-size: 18px;
+
+        // }
+
+        .nav-text {
+            transform: rotate(-90deg) translate(55px, -35px);
+            transition: .4s ease all;
+            font-size: 18px;
+
+        }
+
+
+
+        svg {
+            width: 45px;
+            min-width: 25px;
+
+
+        }
+
+
     }
+
 }
+
+// .modal-open {
+//     .navbar.scrolled {
+//         background-color: white;
+//         transition: 0.3s ease;
+//         -webkit-box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0);
+//         -moz-box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0);
+//         box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0);
+
+
+//     }
+// }
 
 
 //  Default Navbar Settings - Change as needed to match style
@@ -30,6 +71,84 @@
     position: fixed;
     top: 0;
     padding: 0 0 4px 0;
+    z-index: 9999 !important;
+    padding-right: 2.5%;
+
+    .menu {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        cursor: pointer;
+
+
+        &:hover {
+
+
+            .hamburger {
+                span {
+                    width: 100%;
+                    transition: $ease;
+
+                    &:nth-child(2) {
+                        width: 100%;
+                        transition: $ease;
+                    }
+                }
+            }
+        }
+
+        .menu-title {
+            @include title-font;
+            color: white;
+            font-size: 17px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-right: 10px;
+            transition: $ease;
+        }
+
+        .hamburger {
+            width: 25px;
+            transform: translateY(4px);
+
+            span {
+                width: 20px;
+                height: 3px;
+                background-color: white;
+                position: absolute;
+                right: 0;
+                transition: $ease;
+
+                &:first-child {
+                    top: 0;
+
+                }
+
+                &:nth-child(2) {
+                    top: 7px;
+                    width: 15px;
+                    right: 0;
+                }
+
+                &:last-child {
+                    top: 14px;
+                }
+            }
+        }
+    }
+
+
+    &:before {
+        content: "";
+        height: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: .4s ease all;
+        z-index: 0;
+    }
 
 
     // Styles for Navigation Menu Items - USE Class .nav-right 
@@ -37,14 +156,49 @@
 
     // Default Styles for Theme Logo - Change as Needed
     .navbar-brand {
-        padding-left: 50px;
+        padding-left: 25px;
+        position: relative;
+        z-index: 1;
 
         @include respond-below(md) {
             padding-left: 25px;
         }
 
+        &:hover {
+
+            path {
+                fill: white;
+                transition: $ease;
+            }
+
+            .st2 {
+                fill: rgba(0, 0, 0, 0);
+            }
+
+
+        }
+
+        .nav-text {
+            font-family: myriad-pro, sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            color: white;
+            font-size: 23px;
+            transform: rotate(-90deg) translate(-14px, 1px);
+            transition: $ease;
+
+            span {
+                color: $red;
+            }
+        }
+
         svg {
-            width: 150px;
+            width: 50px;
+            min-width: 50px;
+
+            path {
+                transition: $ease;
+            }
         }
     }
 }
@@ -59,4 +213,206 @@
             font-size: 14px;
         }
     }
+}
+
+// Modal Menu 
+
+#menuModal {
+    height: 100%;
+    transition: .4s ease all;
+    clip-path: circle(0% at 100% 0);
+
+
+    .modal-dialog {
+        max-width: 100%;
+        height: 100%;
+        margin: 0;
+
+        .modal-content {
+            height: 100%;
+            border-radius: 0px;
+            border: 0px;
+
+            .modal-body {
+                background-image: url('/wp-content/themes/catch-fire/img/menu-bg.jpg');
+                background-size: cover;
+                display: flex;
+                flex-wrap: wrap;
+
+                .modal-nav {
+                    width: 100%;
+                    text-align: center;
+                    padding: 4%;
+                    width: 100%;
+
+                    .logo {
+                        img {
+                            width: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#navbarNav {
+    transform: translateY(-150px);
+    opacity: 0;
+
+
+    #menu-main {
+        margin: 0;
+
+        .menu-item.active {
+            a {
+                color: $red !important;
+            }
+        }
+
+        .menu-item {
+
+
+            a {
+                font-size: 3vw;
+                @include title-font;
+                color: white;
+                text-transform: uppercase;
+                transition: $ease;
+
+                &:hover {
+                    transition: $ease;
+                    color: $red;
+                }
+            }
+        }
+    }
+
+}
+
+.modal-bottom {
+    width: 100%;
+    padding: 5%;
+    transform: translateY(150px);
+    animation: fadeUp;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: .7s;
+    animation-delay: .3s;
+
+    .social-link-wrapper {
+        text-align: center;
+
+        .social-link {
+            margin: 0 20px;
+            display: inline-block;
+
+            a {
+                font-size: 32px;
+                color: $red;
+                @include title-font;
+            }
+        }
+    }
+
+    .copyright {
+        width: 100%;
+        @include title-font;
+        color: white;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+}
+
+
+.modal-open {
+    .navbar.scrolled {
+        &:before {
+            height: 0;
+        }
+    }
+
+    #navbarNav {
+        animation: fadeDown;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-duration: .5s;
+        animation-delay: .3s;
+    }
+
+    .navbar {
+        .navbar-brand {
+            transform: translateX(-100%);
+        }
+
+        .menu {
+            .hamburger {
+                span {
+                    &:first-child {
+                        transform: rotate(45deg);
+                        top: 7px;
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+
+                    &:last-child {
+                        top: 7px;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+
+    #menuModal {
+        animation: modal;
+        animation-duration: .6s;
+        animation-fill-mode: forwards;
+        // animation-delay: .1s;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+
+@keyframes modal {
+    from {
+        // height: 0%;
+        clip-path: circle(0% at 100% 0);
+    }
+
+    to {
+        // height: 100%;
+        clip-path: circle(125% at 78% 28%);
+
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.modal-backdrop.show {
+    opacity: 0 !important;
 }

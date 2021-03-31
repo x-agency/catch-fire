@@ -245,6 +245,7 @@ body {
 .page-template-home {
     .latest-resources {
         margin-top: 75px;
+        margin-bottom: 100px;
     }
 }
 
@@ -1127,6 +1128,12 @@ a {
     color: #141414;
     padding-bottom: 225px;
 
+    #form_contact {
+        input {
+            background-color: white;
+        }
+    }
+
     .title {
         font-size: 28px;
         @include title-font;
@@ -1241,4 +1248,13 @@ a {
         }
 
     }
+}
+
+
+#frm_form_10_container button[type="submit"] {
+    background: #bf1e2e url(/wp-content/themes/catch-fire/img/submit-arrow.png) no-repeat center;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    padding: 0;
 }

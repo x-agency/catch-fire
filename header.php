@@ -13,8 +13,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <?php astra_html_before(); ?>
 <html <?php language_attributes(); ?>>
 <head>
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <link rel="profile" href="https://gmpg.org/xfn/11">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://use.typekit.net/eyp1ftn.css">
 <?php wp_head(); ?>
 <?php astra_head_bottom(); ?>
 </head>
@@ -41,18 +41,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'class' => 'hfeed site',
 		)
 	);
-	?>
->
-	<a class="skip-link screen-reader-text" href="#content"><?php echo esc_html( astra_default_strings( 'string-header-skip-link', false ) ); ?></a>
-	<?php 
-	astra_header_before(); 
+	?>>
 
-	astra_header(); 
+<nav class="navbar fixed-top">
 
-	astra_header_after();
-
-	astra_content_before(); 
-	?>
-	<div id="content" class="site-content">
-		<div class="ast-container">
-		<?php astra_content_top(); ?>
+  	<div class="container-fluid">
+		<a class="navbar-brand" href="#">
+			<?php
+				echo file_get_contents( get_theme_file_uri( '/img/header-icon.svg' ) );
+			?>
+			<div class="nav-text">catch<span>fire</span></div>
+		</a>
+		<div class="menu" data-bs-toggle="modal" data-bs-target="#menuModal">
+			<div class="menu-title">menu</div>
+			<div class="hamburger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+    </div>
+</nav>
+<div id="content" class="site-content">
+	<div class="ast-container">
+		

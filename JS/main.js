@@ -1,33 +1,42 @@
 $(document).ready(function () {
-    $(".hamburger-menu").click(function () {
+    $(".menu").click(function () {
         $(this).toggleClass("is-active");
     });
 
     // Close modal on button click
-    $(".menu-item").click(function () {
-        $("#nav-menu").modal('hide');
+    $(".menu").click(function () {
+        $("#menuModal").modal('hide');
     });
 
     // when the modal is opened autoplay it
     $(".video-modal")
-    .on("shown.bs.modal", function (e) {
-        // set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
-        var $modalVideoFrame = $(this).find(".modal-video-frame");
-        var videoSrc = $modalVideoFrame.attr("src");
-        $modalVideoFrame.attr(
-        "src",
-        videoSrc.replace("autoplay=0", "autoplay=1")
-        );
+        .on("shown.bs.modal", function (e) {
+            // set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+            var $modalVideoFrame = $(this).find(".modal-video-frame");
+            var videoSrc = $modalVideoFrame.attr("src");
+            $modalVideoFrame.attr(
+                "src",
+                videoSrc.replace("autoplay=0", "autoplay=1")
+            );
+        })
+        .on("hidden.bs.modal", function (e) {
+            // stop playing the youtube video when I close the modal
+            var $modalVideoFrame = $(this).find(".modal-video-frame");
+            var videoSrc = $modalVideoFrame.attr("src");
+            $modalVideoFrame.attr(
+                "src",
+                videoSrc.replace("autoplay=1", "autoplay=0")
+            );
+        });
+
+    var myModalEl = document.getElementById('menuModal')
+    myModalEl.addEventListener('show.bs.modal', function (event) {
+        document.querySelector('html').style.overflow = 'hidden';
     })
-    .on("hidden.bs.modal", function (e) {
-        // stop playing the youtube video when I close the modal
-        var $modalVideoFrame = $(this).find(".modal-video-frame");
-        var videoSrc = $modalVideoFrame.attr("src");
-        $modalVideoFrame.attr(
-        "src",
-        videoSrc.replace("autoplay=1", "autoplay=0")
-        );
-    });
+
+    myModalEl.addEventListener('hidden.bs.modal', function (event) {
+        document.querySelector('html').style.overflow = 'unset';
+    })
 });
 
 //this is immediately invoked, separate from the document ready status
@@ -50,7 +59,7 @@ $(document).ready(function () {
                 offsetAdjustment = 50;
             }
             $("html, body").animate({
-                scrollTop: target.offset().top - offsetAdjustment
+                    scrollTop: target.offset().top - offsetAdjustment
                 },
                 1000,
                 function () {
@@ -79,24 +88,24 @@ $(document).ready(function () {
     // Scroll on click
     // Select all links with hashes
     $('a[href*="#"]')
-    // Remove links that don't actually link to anything
-    .not('[href="#"]')
-    .not('[href="#0"]')
-    .click(function (e) {
-        // On-page links
-        if (
-            location.pathname.replace(/^\//, "") ==
-            this.pathname.replace(/^\//, "") &&
-            location.hostname == this.hostname
-        ) {
-            // Figure out element to scroll to
-            var $target = $(this.hash);
-            $target = $target.length ?
-            $target :
-            $("[name=" + this.hash.slice(1) + "]");
-            scrollToTarget($target, e);
-        }
-    });
+        // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function (e) {
+            // On-page links
+            if (
+                location.pathname.replace(/^\//, "") ==
+                this.pathname.replace(/^\//, "") &&
+                location.hostname == this.hostname
+            ) {
+                // Figure out element to scroll to
+                var $target = $(this.hash);
+                $target = $target.length ?
+                    $target :
+                    $("[name=" + this.hash.slice(1) + "]");
+                scrollToTarget($target, e);
+            }
+        });
 
     function stopVideo() {
         var $frame = $('iframe#mainvideo');
@@ -114,4 +123,5 @@ $(document).ready(function () {
     $('.video-modal').on('hidden.bs.modal', function (e) {
         stopVideo();
     })
-});
+
+})(jQuery);
