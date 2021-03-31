@@ -7,40 +7,47 @@
     }
     ?>
 <?php get_header(); ?>
-
+<?php
+$hero = get_field('hero');
+?>
 <section id="about-hero" class="about">
     <img src="/wp-content/themes/catch-fire/img/about-header.jpg" alt="" class="bg">
     
     <div class="hero-inner">
-        <h1>The Catch<span>Fire</span><br> Culture</h1>
+        <h1><?php echo $hero['title']; ?></h1>
         <div class="divider"></div>
-        <div class="subtitle">catalyst for growth</div>
-        <div class="title">A successful organization begins with the people who craft an experience for those that follow. We are the catalyst to engage and empower an environment that fuels growth.</div>
+        <div class="subtitle"><?php echo $hero['subtitle']; ?></div>
+        <div class="title"><?php echo $hero['body']; ?></div>
         <div class="divider"></div>
         <div class="quote">“Jason’s wisdom and experience have been invaluable in developing our guest services. He is simply the best at what he does.”</div>
     </div>
 </section>
+
 <section id="about-intro">
     <div class="container">
         <div class="row">
             <div class="col-lg-7 intro__left">
-                <div class="title__small">Developing the guest experience is more than an idea or action. It’s the culture that permeates every aspect of your organization.</div>
-                <p>The guest experience is how people perceive your organization based on the sum total of their interactions. These perceptions drive behaviors that have enormous organizational impact – including engagement, guest loyalty, retention, and advocacy – making this one of the most critical challenges that organizations face today.</p>
-                <p>To design and deliver a strong guest experience, you need to understand both the needs and perceptions of your guests, as well as the challenges of your organization and leaders in embracing and executing the desired guest experience. That’s where we come in.</p>
-                <p>Let us help you take the experience to the next level through organizational understanding and actionable strategies. We work alongside you and your team to develop a model for growth and success</p>
-                <img src="/wp-content/themes/catch-fire/img/about-img-2.jpg" alt="">
+                <?php
+                    $intro = get_field('intro');
+                ?>
+                <div class="title__small"><?php echo $intro['title']; ?></div>
+                <?php echo $intro['body']; ?>
+                <img src="<?php echo $intro['image']; ?>" alt="">
             </div>
             <div class="col-lg-5 intro__right">
+                <?php
+                    $about = get_field('about');
+                ?>
                 <div class="pre-title">CATCHFIRE</div>
                 <div class="subtitle">fuel the experience</div>
-                <img src="/wp-content/themes/catch-fire/img/about-img-1.jpg" alt="">
+                <img src="<?php echo $about['image']; ?>" alt="">
                 <div class="title"><span>About</span> Dr. Jason Young—</div>
-                <p>With a doctoral degree in Hospitality, Jason is a nationally recognized leadership advisor and guest experience coach, as well has a published author and speaker. Most recently, he was the Director of Guest Experience at Buckhead Church and North Point Ministries, a nationally known network of churches with over 40,000 people in average weekly attendance. </p>
-                <p>Having spent years working alongside leadership teams in both personal and organizational development at Fortune 500 companies and national non-profits, Jason has helped them address issues both simple and complex. He’s developed the formula for building a successful guest experience and now shares with companies and organizations across the U.S.</p>
+                <?php echo $about['body']; ?>
             </div>
         </div>
     </div>
 </section>
+
 <section id="partners">
     <div class="container">
         <div class="row">
@@ -55,11 +62,11 @@
         <div class="page-divider"></div>
         <?php
             //get_posts to retrieve an array of posts
-            $training = get_posts( array(
+            /*$training = get_posts( array(
                     'numberposts' => 4,
                     'post_type'   => 'publications'      
                 ) 
-            );
+            );*/
 
             $books = get_posts( array(
                 'numberposts' => 4,
@@ -73,15 +80,20 @@
             </div>
             <div class="col-lg-4 tools--column">
                 <div class="title">Training</div>
-                <div class="tools--item">
-                    <a href="<?php echo get_permalink($train->ID);?>">Keynote Talks</a>
+                <?php while ( have_rows('training') ) : the_row(); 
+                        $text = get_sub_field('link_text');
+                        $url = get_sub_field('link_url');
+                    ?>
+                        <div class="tools--item">
+                            <a href="<?php echo $url;?>"><?php echo $text;?></a>
+                        </div>
+                <?php endwhile; ?>
+                <!--div class="tools--item">
+                    <a href="<?php echo $training['link_url'];?>">Team Workshops</a>
                 </div>
                 <div class="tools--item">
-                    <a href="">Team Workshops</a>
-                </div>
-                <div class="tools--item">
-                    <a href="">One-on-One Coaching<br><span>*virtual or in person</span></a>
-                </div>
+                    <a href="<?php echo $training['link_url'];?>">One-on-One Coaching<br><span>*virtual or in person</span></a>
+                </div-->
             </div>
             <div class="col-lg-4 tools--column">
                 <div class="title">Books</div>
