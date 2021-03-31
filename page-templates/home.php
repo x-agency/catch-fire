@@ -15,8 +15,10 @@
 				?></div>
         <div class="hero-text">Speaking, Writing, <br>Coaching, and ConsuLting<br> for modern-day leaders</div>
         <div class="hero-scroll">
-          <div class="scroll-arrow"><img src="/wp-content/themes/catch-fire/img/scroll-arrow.png" alt=""></div>
-          <div class="scroll-text">scroll</div>
+          <a href="#goal">
+            <div class="scroll-arrow"><img src="/wp-content/themes/catch-fire/img/scroll-arrow.png" alt=""></div>
+            <div class="scroll-text">scroll</div>
+          </a>
         </div>
     </div>
 </section>
@@ -25,7 +27,7 @@
 $goal = get_field('goal');
 ?>
 <section id="goal" class="home">
-    <div class="page-divider"></div>
+    <div id="goal-sec"class="page-divider"></div>
         <div class="container goal--wrapper">
             <div class="row goal--inner">
                 <div class="number">01 —</div>
@@ -90,7 +92,9 @@ $leaders = get_field('leaders');
             <div class="col-12 title">
                 get updates direct to your inbox:
             </div>
-            <div class="col-12 form"></div>
+            <div class="col-12 form">
+            <?php echo FrmFormsController::get_form_shortcode( array( 'id' => 10, 'title' => false, 'description' => false ) ); ?>
+            </div>
             <div class="col-12 info">*no spam, Just valuable resources for modern-day leaders.</div>
         </div>
     </div>
