@@ -19,12 +19,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div> <!-- ast-container -->
 	</div><!-- #content -->
 
+<?php
+	$social = get_field('social_media', 'option');
+?>
 <section id="footer">
 	<div class="container footer--wrapper">
 		<div class="row footer--social">
-			<div class="social--item"><a href="">FB</a></div>
-			<div class="social--item"><a href="">IG</a></div>
-			<div class="social--item"><a href="">IN</a></div>
+			<div class="social--item"><a href="<?php echo $social['fb']; ?>">FB</a></div>
+			<div class="social--item"><a href="<?php echo $social['insta']; ?>">IG</a></div>
+			<div class="social--item"><a href="<?php echo $social['linked']; ?>">IN</a></div>
 		</div>
 		<div class="row footer--links">
 			<div class="footer--item">

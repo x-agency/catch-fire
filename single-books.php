@@ -9,6 +9,12 @@
 <?php get_header(); ?>
 <?php get_template_part('template-parts/books-pub-hero'); ?>
 
+<?php
+    $bb = get_field('bb_link');
+    $amazon = get_field('amazon_link');
+    $free = get_field('free_chapter');
+?>
+
 <section class="container">
     <div class="row">
         <div class="col-lg-6 content">
@@ -18,9 +24,9 @@
         </div>
         <div class="col-lg-6 buy-now">
             <h2 class="subtitle">BUY NOW:</h2>
-            <a href="" class=""><?php echo file_get_contents(__DIR__ . '/img/baker-book-house.svg'); ?></a>
-            <a href="" class=""><img src="/wp-content/themes/catch-fire/img/amazon.png" alt=""></a>
-            <a href="" class="btn">GET FREE CHAPTER</a>
+            <a href="<?php echo $bb; ?>" class=""><?php echo file_get_contents(__DIR__ . '/img/baker-book-house.svg'); ?></a>
+            <a href="<?php echo $amazon; ?>" class=""><img src="/wp-content/themes/catch-fire/img/amazon.png" alt=""></a>
+            <a href="<?php echo $free; ?>" class="btn">GET FREE CHAPTER</a>
         </div>
     </div>
 </section>
