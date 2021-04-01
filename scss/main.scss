@@ -317,6 +317,31 @@ body {
         color: #757373;
         text-align: center;
         padding: 0 5%;
+        max-width: unset;
+        max-height: unset;
+        flex: 0 0 100%;
+        cursor: grab;
+    }
+
+    .controls {
+        margin: 0 auto;
+    }
+
+    .dots {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px auto 0;
+        .dot {
+            width: 11px;
+            height: 11px;
+            background: #858585;
+            cursor: pointer;
+            border-radius: 50%;
+
+            &.active {
+                background: $red;
+            }
+        }
     }
 }
 
