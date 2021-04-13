@@ -1283,3 +1283,60 @@ a {
     min-width: 50px;
     padding: 0;
 }
+
+/** Case Studies Page **/
+.page-template-case-studies {
+    #books-pub-hero {
+        margin-bottom: 0;
+    }
+
+    section:nth-child(2) {
+        display: flex;
+
+        .sidebar {
+            flex: 0 0 33%;
+            background: #171717;
+            padding: 10rem 4rem 2rem 10rem;
+        }
+
+        .content {
+            padding: 10rem 10rem 2rem 5rem;
+        }
+
+        h2:not(.subtitle) {
+            font-family: 'Helvetica Neue';
+            font-size: calc(max(26px, min(3vw, 54px)));
+            letter-spacing: 0;
+            font-weight: normal;
+            margin: 3rem 0;
+        }
+
+        .subtitle {
+            color: $red;
+        }
+
+        .study {
+            padding: 2rem;
+            background: #dfdfdf;
+            border: 2px solid transparent;
+            transition: border 0.3s, background 0.3s;
+
+            &.active {
+                border: 2px solid $red;
+                background: #333;
+            }
+        }
+
+        .content { 
+            
+            .subtitle:nth-child(1) {
+                margin-bottom: 3rem;
+            }
+
+            p {
+                margin-top: 2rem;
+                margin-bottom: 4rem;
+            }
+        }
+    }
+}
