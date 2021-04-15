@@ -36,12 +36,9 @@
 
 // **GLOBAL STYLES ** //
 
-html {
-    overflow-x: hidden;
-}
-
 body {
     background-color: #1b1b1b;
+    overflow-x: hidden;
 }
 
 .site-content {
@@ -1286,6 +1283,10 @@ a {
 
 /** Case Studies Page **/
 .page-template-case-studies {
+    #page {
+        overflow: hidden;
+    }
+    
     #books-pub-hero {
         margin-bottom: 0;
         z-index: 1;
@@ -1321,6 +1322,10 @@ a {
             &.active {
                 border: 2px solid $red;
                 background: #333;
+            }
+
+            &:hover {
+                border: 2px solid $red;
             }
 
             img {
@@ -1421,6 +1426,9 @@ a {
         }
 
         .carousel {
+            .slide, .study {
+                cursor: pointer;
+            }
             .slide + .slide {
                 margin-top: 2rem;
             }

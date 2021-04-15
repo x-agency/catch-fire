@@ -105,11 +105,13 @@
 <script>
 jQuery(document).ready(function($) {
 
+    $height = $('#books-pub-hero img').height();
+
     function activateStudy(target) {
         $('.study, .content').removeClass('active');
         target.addClass('active');
         $('.content[data-study="' + target.attr("id") + '"').addClass('active');
-        $(window).scrollTop($('#books-pub-hero img').height() - 50);
+        window.scrollTo(0, $height);
     }
 
     if ( $(window).width() < 1200 ) {
