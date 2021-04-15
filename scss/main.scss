@@ -1288,6 +1288,7 @@ a {
 .page-template-case-studies {
     #books-pub-hero {
         margin-bottom: 0;
+        z-index: 1;
     }
 
     section:nth-child(2) {
@@ -1297,10 +1298,6 @@ a {
             flex: 0 0 33%;
             background: #171717;
             padding: 10rem 4rem 2rem 10rem;
-        }
-
-        .content {
-            padding: 10rem 10rem 2rem 5rem;
         }
 
         h2:not(.subtitle) {
@@ -1325,17 +1322,210 @@ a {
                 border: 2px solid $red;
                 background: #333;
             }
+
+            img {
+                max-height: 200px;
+                object-fit: cover;
+                width: 100%;
+            }
         }
 
-        .content { 
-            
-            .subtitle:nth-child(1) {
-                margin-bottom: 3rem;
+        .case {
+            padding: 10rem 10rem 2rem 5rem;
+
+            .content { 
+                pointer-events: none;
+                animation: fadeOut 0.6s both;
+
+                &.active {
+                    pointer-events: auto;
+                    animation: fadeIn 0.6s 0.3s both;
+                }
+
+                @keyframes fadeIn {
+                    0% {
+                        opacity: 0;
+                        width: unset;
+                        height: unset;
+                    }
+
+                    50% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes fadeOut {
+                    0% {
+                        opacity: 1;
+                    }
+
+                    50% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 0;
+                        width: 0;
+                        height: 0;
+                    }
+                }
+                
+                .subtitle:nth-child(1) {
+                    margin-bottom: 3rem;
+                }
+
+                p {
+                    margin-top: 2rem;
+                    margin-bottom: 4rem;
+                }
             }
 
-            p {
+            .controls {
+                display: flex;
+                justify-content: space-between;
+
+                * {
+                    display: inline-block;
+                }
+
+                .prev, .next {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        margin: 0;
+                        font-family: 'Source Code Pro', monospace;
+                        text-transform: uppercase;
+                        letter-spacing: 0.14em;
+                    }
+                }
+
+                .prev .arrow {
+                    transform: rotate(180deg);
+                    margin-right: 2rem;
+                }
+
+                .next .arrow {
+                    margin-left: 2rem;
+                }
+
+                .arrow * {
+                    fill: $red;
+                }
+            }
+        }
+
+        .carousel {
+            .slide + .slide {
                 margin-top: 2rem;
-                margin-bottom: 4rem;
+            }
+            .controls {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1199px) {
+            flex-direction: column;
+
+            .carousel {
+                padding: 3rem;
+
+                //https://www.sitepoint.com/introduction-to-hardware-acceleration-css-animations/
+                //This code works with the will-change for .track
+                position: relative;
+                top: -1px;
+
+                .track {
+                    display: flex;
+                    justify-content: space-evenly;
+
+                    //keeps gpu in check so there is no jitter and no gpu to cpu handoff between transitions
+                    will-change: transform;
+                }
+
+                .controls {
+                    display: block;
+                    position: absolute;
+                    width: 90%;
+                    display: flex;
+                    justify-content: space-between;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    top: 50%;
+
+                    .prev {
+                        transform: rotate(-180deg) translateY(25%);
+                        position: absolute;
+                    }
+
+                    .next {
+                        position: absolute;
+                        transform: translateY(-25%);
+                        right: 0;
+                    }
+
+                    .arrow * {
+                        fill: $red;
+                    }
+                }
+            } 
+
+            .study, .study + .study {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .slide {
+                flex: 0 0 100vw;
+                max-width: unset;
+                max-height: unset;
+            }
+
+            .content {
+                img {
+                    margin: 0 auto;
+                    display: block;
+                }
+            }
+
+            .case {
+                padding: 3rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .carousel {
+
+                .controls {
+                    position: relative;
+                    transform: translateX(-50%);
+                    top: 0;
+                    margin-top: 3rem;
+                    
+                    .prev, .next {
+                        position: relative;
+                        width: 50px;
+                        height: 50px;
+                        overflow: hidden;
+                        
+                        .arrow {
+                            position: absolute;
+                            left: -80px;
+                        }
+                    }
+                }
+            }
+
+            .case {
+                .controls {
+                    flex-direction: column;
+                }
             }
         }
     }
