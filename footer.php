@@ -90,7 +90,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<a href="">IN</a>
 					</div>
 				</div>
-				<div class="copyright">copyright © 2020 catchfire daily</div>
+				<div class="copyright">copyright © 2021 catchfire daily</div>
 			</div>
       </div>
     </div>
