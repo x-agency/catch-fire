@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <nav class="navbar fixed-top">
 
   	<div class="container-fluid">
-		<a class="navbar-brand" href="#">
+		<a class="navbar-brand" href="/">
 			<?php
 				echo file_get_contents( get_theme_file_uri( '/img/header-icon.svg' ) );
 			?>

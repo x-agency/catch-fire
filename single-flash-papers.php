@@ -12,7 +12,8 @@
 <section class="container" style="max-width: 900px;">
    <div class="row">
         <div class="col-12">
-            <?php echo get_the_content(); ?>
+            <h1><?php the_title(); ?><span style="float: right;"><?php echo get_the_date(); ?></span></h1>
+            <?php the_content(); ?>
         </div>
         <?php while( have_rows('linked_articles') ) : the_row();
                 $link = get_sub_field('link');

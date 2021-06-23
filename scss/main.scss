@@ -907,7 +907,7 @@ a {
 
     .container {
         max-width: 1350px;
-        margin-bottom: 7.5rem;
+        padding-bottom: 7.5rem;
         width: 90vw;
 
         .subtitle {
@@ -985,6 +985,42 @@ a {
     .btn {
         display: inline-block;
         font-size: 18px;
+    }
+}
+
+// ** Flash Papers Single ** //
+.single-flash-papers .container {
+
+    .card {
+        background: transparent;
+        border: none;
+        margin: 1.5rem 0;
+        padding: 1em 0.75em;
+
+        &:hover {
+            box-shadow: 0 0 7px 2px #0000003f;
+            background: white;
+        }
+
+        .source {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// ** Archive General Styles ** //
+body[class*="page-template-archive"] .container {
+    margin-bottom: 200px;
+}
+
+// ** Flash Papers Archive ** //
+.page-template-archive-flash-papers {
+    .read-more a {
+        color: $red;
+
+        &:hover {
+            color: #3f3f3f;
+        }
     }
 }
 
@@ -1073,6 +1109,10 @@ a {
         @include respond-above(xl) {
             margin: 0 auto 10rem;
         }
+    }
+
+    #footer {
+        padding-top: 100px;
     }
 }
 
@@ -1176,8 +1216,8 @@ a {
 #cta {
     background-color: #141414;
     padding-bottom: 75px;
-    margin-top: 107px;
-
+    position: relative;
+    z-index: 10;
 
     .cta--inner {
         justify-content: center;

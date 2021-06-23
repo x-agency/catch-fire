@@ -21,10 +21,12 @@
     <?php //loop through each array object to get the thumbnail ?>
     <?php foreach($posts as $post) : ?>
         <div class="row">
-            <div class="col-12 d-xl-flex flex-column justify-content-xl-center text-xl-start text-center">
-                <h2><?php echo get_the_title($post->ID); ?></h2>
-                <p><?php echo get_the_excerpt($post->ID); ?></p>
-            </div>
+            <a href="<?php echo get_permalink($post->ID);?>">
+                <div class="col-12 d-xl-flex flex-column justify-content-xl-center text-xl-start text-center">
+                    <h2><?php echo get_the_title($post->ID); ?></h2>
+                    <p><?php echo get_the_excerpt($post->ID); ?></p>
+                </div>
+            </a>
         </div>
     <?php endforeach; ?>
 </section>
