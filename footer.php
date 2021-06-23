@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<div class="row footer--links">
 			<div class="footer--item">
-				<div class="footer--item__inner">copyright © 2020 Catch<span>Fire</span> Daily</div>
+				<div class="footer--item__inner">copyright © 2021 Catch<span>Fire</span> Daily</div>
 			</div>
 			<div class="footer--item">
 				<img src="/wp-content/themes/catch-fire/img/footer-flame.svg" alt="">
