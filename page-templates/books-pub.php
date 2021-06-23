@@ -72,9 +72,9 @@
 
 <section class="container flash-papers">
     <div class="row justify-content-center">
-        <div class="col-12"><h2 class="subtitle">FLASH PAPER</h2></div>
+        <div class="col-12"><h2 class="subtitle">FLASH PAPERS</h2></div>
         <div class="col-12"><h2>We are all busy and at the same time, we want to be in the know about ideas and insights.</h2></div>
-        <?php 
+        <?php /*
         $i = 0;  
         while(have_rows('flash')) : the_row();
             $url = get_sub_field('url');
@@ -98,7 +98,7 @@
                 </div>
                 <?php $i = 0; ?>
             <?php endif; ?>
-        <?php endwhile; ?>
+        <?php endwhile; */?>
         
         <?php /*div class="col-lg-6 col-xl-4">
         <?php for($i = 55; $i >= 52; $i--) : ?>
@@ -133,7 +133,28 @@
             </a>
         <?php endfor; ?>
         </div */?>
+
+        <?php
+            $posts = get_posts( array(
+                'numberposts' => 12,
+                'post_type'   => 'flash-papers'  
+                ) 
+            );   
+            $i = wp_count_posts('flash-papers')->publish;
+        ?>
+        <?php foreach($posts as $post) : ?>
+            <div class="col-lg-6 col-xl-4">
+                <a href="<?php echo get_permalink($pub->ID); ?>" class="mb-4 justify-content-center">
+                    <div class="flash-paper">
+                        <p><?php echo $i; ?></p>
+                    </div>
+                    <p><?php echo get_the_title($post->ID); ?></p>
+                </a>
+            </div>
+            <?php $i--; ?>
+        <?php endforeach; ?>
     </div>
+    <a href="/flash-papers" class="btn d-block" style="max-width: 250px;">View All Flash Papers</a>
 </section>
 
 <?php get_template_part('template-parts/cta'); ?>

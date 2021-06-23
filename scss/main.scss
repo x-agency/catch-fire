@@ -868,13 +868,13 @@ a {
             }
 
             p {
-                position: absolute;
+                // position: absolute;
                 margin: 0;
                 @include title-font;
                 color: $red;
                 top: calc(50% - 0.25em);
                 left: 50%;
-                transform: translate(-50%, -50%);
+                // transform: translate(-50%, -50%);
                 font-size: calc(max(16px, min(3vw, 23px)));
             }
         }
@@ -1176,6 +1176,7 @@ a {
 #cta {
     background-color: #141414;
     padding-bottom: 75px;
+    margin-top: 107px;
 
 
     .cta--inner {

@@ -28,6 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="social--item"><a href="<?php echo $social['fb']; ?>">FB</a></div>
 			<div class="social--item"><a href="<?php echo $social['insta']; ?>">IG</a></div>
 			<div class="social--item"><a href="<?php echo $social['linked']; ?>">IN</a></div>
+			<div class="social--item"><a href="<?php echo $social['youtube']; ?>">YT</a></div>
 		</div>
 		<div class="row footer--links">
 			<div class="footer--item">
@@ -81,13 +82,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="modal-bottom">
 				<div class="social-link-wrapper">
 					<div class="social-link">
-						<a href="">FB</a>
+						<a href="<?php echo $social['fb']; ?>">FB</a>
 					</div>
 					<div class="social-link">
-						<a href="">IG</a>
+						<a href="<?php echo $social['insta']; ?>">IG</a>
 					</div>
 					<div class="social-link">
-						<a href="">IN</a>
+						<a href="<?php echo $social['linked']; ?>">IN</a>
+					</div>
+					<div class="social-link">
+						<a href="<?php echo $social['youtube']; ?>">YT</a>
 					</div>
 				</div>
 				<div class="copyright">copyright © 2021 catchfire daily</div>
