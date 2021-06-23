@@ -27,7 +27,7 @@
                 </a>
             </div>
             <div class="col-xl-8 d-xl-flex flex-column justify-content-xl-center text-xl-start text-center">
-                <h2><?php echo get_the_title($post->ID); ?></h2>
+                <a href="<?php echo get_permalink($post->ID);?>" target="_blank"><h2><?php echo get_the_title($post->ID); ?></h2></a>
                 <p><?php echo get_the_excerpt($post->ID); ?></p>
                 <a class="btn my-1 mx-xl-0 mx-auto" style="max-width: 200px;" href="<?php echo get_permalink($post->ID);?>">View Book</a>
             </div>
