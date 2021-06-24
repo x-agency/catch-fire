@@ -70,7 +70,7 @@
     </div>
 </section>
 
-<section class="container flash-papers">
+<section class="container flash-papers" id="flash-paper">
     <div class="row justify-content-center">
         <div class="col-12"><a href="/flash-papers" target="_blank"><h2 class="subtitle">FLASH PAPERS</h2></a></div>
         <div class="col-12"><h2>We are all busy and at the same time, we want to be in the know about ideas and insights.</h2></div>
