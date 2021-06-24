@@ -635,7 +635,7 @@ a {
                 flex-shrink: 0;
 
                 @include respond-below(lg) {
-                    min-width: 95vw;
+                    //min-width: 95vw;
                     display: flex;
                     justify-content: center;
                 }
@@ -1046,8 +1046,22 @@ body[class*="page-template-archive"] {
         margin-bottom: 100px;
     }
 
+    @media (max-width: 1199px) {
+        #books-pub-hero {
+            margin-bottom: 50px;
+        }
+
+        .ast-container > .container {
+            margin-bottom: 50px;
+        }
+    }
+
     #contact {
         padding-bottom: 200px;
+
+        @include respond-below(lg) {
+            padding-bottom: 50px;
+        }
     }
 
     #footer {
@@ -1238,6 +1252,10 @@ body[class*="page-template-archive"] {
     color: #141414;
     padding-bottom: 225px;
 
+    @include respond-below(lg) {
+        padding-bottom: 50px;
+    }
+
     #form_contact {
         input {
             background-color: white;
@@ -1272,6 +1290,15 @@ body[class*="page-template-archive"] {
 
         .cta--item {
             margin: -107px 25px 0;
+
+            @include respond-below(lg) {
+                margin: 15px 25px 0;
+
+                a {
+                    display: block;
+                    text-align: center;
+                }
+            }
         }
     }
 }
@@ -1368,6 +1395,9 @@ body[class*="page-template-archive"] {
     height: 50px;
     min-width: 50px;
     padding: 0;
+    position: relative;
+    top: calc(50% + 12px);
+    transform: translateY(-50%);
 }
 
 /** Case Studies Page **/

@@ -39,42 +39,68 @@
 
 <script>
 jQuery(document).ready(function($) {
-
+    //init variables
     $carousel = $('.carousel'),
     $track = $('.track'),
     slideCount = $('.slide').length,
-    width = $('.slide').width(),
-    carouselWidth = $('.carousel').width(),
-    threshold = width / 4;
+    width = parseInt($('.slide').css("width")),
+    carouselWidth = parseInt($('.carousel').css("width")),
+    threshold = width / 4,
     dragStart = 0,
     dragEnd = 0,
     count = 1,
-    $item = $('.slide');
+    $slide = $('.slide'),
+    resizeId = '';
 
-    for (var i = 0; i < (slideCount * 2); i++) {
+    //clone slides
+    for (var i = 0; i < slideCount * 2; i++) {
         $('.slide').eq(slideCount - 1).clone().prependTo('.track');
     }
 
-    slideCountTotal = $('.slide').length;
-    if ( $(window).width() > 1439 ) {
-        space = ( carouselWidth - ( width * 3 )) / 2;
-        $('.track').css("width", (carouselWidth * (slideCountTotal / 3)) + space + "px");
-    } else if ( $(window).width() > 991 ) {
-        space = ( carouselWidth - ( width * 2 )) / 2;
-        $('.track').css("width", (carouselWidth * (slideCountTotal / 2)) + "px");
-    } else {
-        $('.track').css("width", (width * slideCountTotal) + "px");
-    }
+    //reinit variables on screen resize
+    function resize() {
+        width = parseInt($('.slide').css("width"));
+        threshold = width / 4;
+        slideCountTotal = $('.slide').length;
+        offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
+        $('.carousel').css("width", "100%");
+        carouselWidth = parseFloat($('.carousel').css("width"));
+        $('.slide').css("max-width", "429px");
 
-    offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
-    if ( $(window).width() > 1439 ) {
-        $track.css("left", ( (-offsetWidth * (slideCount) ) + "px"));
-    } else if ( $(window).width() > 991 ) {
-        $track.css("left", ( (-offsetWidth * (slideCount) ) - ((offsetWidth - width) / 2) + "px"));
-    } else {
-        $track.css("left", ( (-offsetWidth * (slideCount) ) + "px"));
-    }
-    
+        if ($(window).width() > 1920) {
+            threshold = 480;
+            $('.carousel').css("width", "1344px");
+            $('.track').css({"width":"2716.5px", "left":"-1374px"});
+        } else if ( $(window).width() > 1439 ) {
+            $('.slide').css("width", "calc(" + carouselWidth + "px / " + slideCount + " - 20px)");
+            width = parseInt($('.slide').css("width"));
+            space = ( carouselWidth - ( width * 3 )) / 2;
+            $('.track').css("width", (carouselWidth * (slideCountTotal / 3)) + space + "px");
+            $('.track').css("left", "calc(-" + $('.track').css("width") + " / 3)");
+
+            offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
+        } else if ( $(window).width() > 991 ) {
+            $('.slide').css("width", "calc(" + carouselWidth + "px / 2 - 20px)");
+            width = parseInt($('.slide').css("width"));
+            $('.track').css("width", (carouselWidth * (slideCountTotal / 2)) + "px");
+            $('.track').css("left", "calc(-" + $('.track').css("width") + " / 3)");
+
+            offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
+        } else {
+            $('.slide').css("max-width", carouselWidth + "px");
+            width = parseInt($('.slide').css("width"));
+            $('.track').css("width", (carouselWidth * slideCountTotal) + "px");
+            $('.track').css("left", "-" + ((parseFloat($('.track').css("width")) / 3) + ((carouselWidth - width) / slideCountTotal)) + "px");
+
+            offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
+        }
+    } resize();
+
+    //listen and wait until screen is done resizing
+    $(window).on('resize', function() {
+        clearTimeout(resizeId);
+        resizeId = setTimeout(resize, 500);
+    });    
 
     $('.slide').on('mousedown touchstart', function(e) {
         if ($track.hasClass('transition')) return; //if the carousel is in motion, prevent new movement until complete
@@ -86,12 +112,12 @@ jQuery(document).ready(function($) {
             if (e.type == 'touchmove') dragEnd = e.originalEvent.touches[0].pageX;
             if (e.type == 'mousemove') dragEnd = e.pageX;
             $track.css('transform','translateX('+ dragPos() +'px)');
-            $item.css('cursor', 'grabbing');
+            $slide.css('cursor', 'grabbing');
             dragDistance = dragPos();
         });
         $(document).on('mouseup touchend', function(){
             count = dragDistance / width;
-            $item.css('cursor', 'grab');
+            $slide.css('cursor', 'grab');
             if (dragPos() > threshold) { return shiftSlide(1) } //to the left
             if (dragPos() < -threshold) { return shiftSlide(-1) } //to the right
             count = 0;

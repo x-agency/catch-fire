@@ -79,11 +79,6 @@ $leaders = get_field('leaders');
 </section>
 <div class="page-divider"></div>
 
-
-
-
-
-
 <?php get_template_part('template-parts/covers'); ?>
 
 <section id="contact">
