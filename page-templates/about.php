@@ -63,7 +63,7 @@ $hero = get_field('hero');
                 <img class="logo-row" src="/wp-content/themes/catch-fire/img/logos-row.jpg" alt="">
                 <img src="/wp-content/themes/catch-fire/img/fedex.png" alt="">
                 <img src="/wp-content/themes/catch-fire/img/gorilla.png" alt="">
-                <img src="/wp-content/themes/catch-fire/img/bayside.png" alt="">
+                <img style="filter: invert(1)" src="/wp-content/themes/catch-fire/img/bayside.png" alt="">
                 <img src="/wp-content/themes/catch-fire/img/crossings.png" alt="">
             </div>
         </div>
