@@ -55,15 +55,20 @@ $hero = get_field('hero');
     </div>
 </section>
 
-<section id="partners">
+<section class="partners" id="partners">
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 mb-5">
                 <div class="partner-title">Trusted By:</div>
-                <img src="/wp-content/themes/catch-fire/img/logos-row.jpg" alt="">
+                <img class="logo-row" src="/wp-content/themes/catch-fire/img/logos-row.jpg" alt="">
+                <img src="/wp-content/themes/catch-fire/img/fedex.png" alt="">
+                <img src="/wp-content/themes/catch-fire/img/gorilla.png" alt="">
+                <img src="/wp-content/themes/catch-fire/img/bayside.png" alt="">
+                <img src="/wp-content/themes/catch-fire/img/crossings.png" alt="">
             </div>
         </div>
 </section>
+
 <section id="tools">
     <div class="container">
         <div class="page-divider"></div>
@@ -137,14 +142,6 @@ $hero = get_field('hero');
 
 <script>
 jQuery(document).ready(function($) {
-    //$('.slide').clone().appendTo('.track');
-    //$('.slide').clone().appendTo('.track');
-    /*$('.slide:last-child').addClass('last').prependTo('.track');
-    $('.slide:nth-child(1)').clone().appendTo('.track').addClass('two');
-    $('.slide:nth-child(1)').clone().appendTo('.track').addClass('three');
-    $('.slide:nth-child(1)').clone().appendTo('.track').addClass('four');
-    $('.slide:nth-child(1)').clone().appendTo('.track').addClass('five');*/
-
     $carousel = $('.carousel'),
     $track = $('.track'),
     slideCount = $('.slide').length,

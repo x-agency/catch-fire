@@ -28,7 +28,7 @@
             </a>
         </div>
         <div class="col-lg-6 col-xl-3 text-center">
-            <a href="#catchfire-podcast">
+            <a href="#podcast">
                 <?php echo file_get_contents(__DIR__ . '/../img/mic.svg'); ?>
                 <button class="btn">CATCHFIRE PODCAST</button>
             </a>
@@ -46,7 +46,7 @@
 
 <?php get_template_part('template-parts/books-pub-books'); ?>
 
-<section class="podcast">
+<section class="podcast" id="podcast">
     <img src="/wp-content/themes/catch-fire/img/podcast-hero.jpg" alt="" class="bg">
     <div class="content">
         <h2 class="subtitle">PODCAST</h2>
@@ -157,6 +157,18 @@
     <a href="/flash-papers" class="btn d-block" style="max-width: 250px;">View All Flash Papers</a>
 </section>
 
-<?php get_template_part('template-parts/cta'); ?>
+<section id="contact">
+    <div class="container">
+        <div class="row contact--wrapper">
+            <div class="col-12 title">
+                get updates direct to your inbox:
+            </div>
+            <div class="col-12 form">
+            <?php echo FrmFormsController::get_form_shortcode( array( 'id' => 10, 'title' => false, 'description' => false ) ); ?>
+            </div>
+            <div class="col-12 info">*no spam, Just valuable resources for modern-day leaders.</div>
+        </div>
+    </div>
+</section>
 
 <?php get_footer(); ?>
