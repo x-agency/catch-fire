@@ -1013,39 +1013,41 @@ a {
 }
 
 // ** Flash Papers Single ** //
-.single-flash-papers .container {
+.single-flash-papers {
+    
+    .ast-container > .container {
 
-    .card {
-        background: transparent;
-        border: none;
-        margin: 1.5rem 0;
-        padding: 1em 0.75em;
+        .card {
+            background: transparent;
+            border: none;
+            margin: 1.5rem 0;
+            padding: 1em 0.75em;
 
-        &:hover {
-            box-shadow: 0 0 7px 2px #0000003f;
-            background: white;
-        }
+            &:hover {
+                box-shadow: 0 0 7px 2px #0000003f;
+                background: white;
+            }
 
-        .source {
-            margin-bottom: 0;
+            .source {
+                margin-bottom: 0;
+            }
         }
     }
+
+    #cta {
+        padding-bottom: 0;
+    }
+
 }
 
 // ** Archive General Styles ** //
 body[class*="page-template-archive"] {
-    .container {
+    .ast-container > .container {
         margin-bottom: 100px;
     }
 
     #contact {
-        padding-bottom: 100px;
-    }
-
-    #cta {
-        .container {
-            margin-bottom: 0;
-        }
+        padding-bottom: 200px;
     }
 
     #footer {
