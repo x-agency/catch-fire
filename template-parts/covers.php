@@ -48,8 +48,8 @@ jQuery(document).ready(function($) {
     threshold = width / 4,
     dragStart = 0,
     dragEnd = 0,
+    dragDistance = 0,
     count = 1,
-    $slide = $('.slide'),
     resizeId = '';
 
     //clone slides
@@ -65,7 +65,8 @@ jQuery(document).ready(function($) {
         offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
         $('.carousel').css("width", "100%");
         carouselWidth = parseFloat($('.carousel').css("width"));
-        $('.slide').css("max-width", "429px");
+        $('.slide').css({"max-width":"429px", "cursor":"grab"});
+        $('.slide *').css("pointer-events", "none");
 
         if ($(window).width() > 1920) {
             threshold = 480;
@@ -106,20 +107,28 @@ jQuery(document).ready(function($) {
         if ($track.hasClass('transition')) return; //if the carousel is in motion, prevent new movement until complete
         if (e.type == 'touchstart') dragStart = e.originalEvent.touches[0].pageX; 
         if (e.type == 'mousedown') dragStart = e.pageX;
+        //reset dragEnd value
+        dragEnd = dragStart;
         $target = $(e.target);
+        //get how long user has held to determine if a click or not
+        now = new Date();
         $carousel.on('mousemove touchmove', function(e){ 
             grabbed = true;
             if (e.type == 'touchmove') dragEnd = e.originalEvent.touches[0].pageX;
             if (e.type == 'mousemove') dragEnd = e.pageX;
             $track.css('transform','translateX('+ dragPos() +'px)');
-            $slide.css('cursor', 'grabbing');
-            dragDistance = dragPos();
+            $('.slide').css('cursor', 'grabbing');
+            dragDistance = dragPos(); 
         });
         $(document).on('mouseup touchend', function(){
             count = dragDistance / width;
-            $slide.css('cursor', 'grab');
+            $('.slide').css('cursor', 'grab');
             if (dragPos() > threshold) { return shiftSlide(1) } //to the left
             if (dragPos() < -threshold) { return shiftSlide(-1) } //to the right
+            if ((now.getTime() + 50) < new Date().getTime()) {
+                //window.location = $target.children('a').attr("href");
+                window.open($target.children('a').attr("href"), "_blank");
+            }
             count = 0;
             shiftSlide(0);
         });

@@ -47,6 +47,7 @@ $(document).ready(function () {
         $nav.toggleClass("scrolled", $(this).scrollTop() > 10);
     });
 
+    /*
     // Smooth Scroll to Anchor
     var scrollToTarget = function (target, clickEvent) {
         // Does a scroll target exist?
@@ -88,24 +89,24 @@ $(document).ready(function () {
     // Scroll on click
     // Select all links with hashes
     $('a[href*="#"]')
-        // Remove links that don't actually link to anything
-        .not('[href="#"]')
-        .not('[href="#0"]')
-        .click(function (e) {
-            // On-page links
-            if (
-                location.pathname.replace(/^\//, "") ==
-                this.pathname.replace(/^\//, "") &&
-                location.hostname == this.hostname
-            ) {
-                // Figure out element to scroll to
-                var $target = $(this.hash);
-                $target = $target.length ?
-                    $target :
-                    $("[name=" + this.hash.slice(1) + "]");
-                scrollToTarget($target, e);
-            }
-        });
+    // Remove links that don't actually link to anything
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function (e) {
+        // On-page links
+        if (
+            location.pathname.replace(/^\//, "") ==
+            this.pathname.replace(/^\//, "") &&
+            location.hostname == this.hostname
+        ) {
+            // Figure out element to scroll to
+            var $target = $(this.hash);
+            $target = $target.length ?
+                $target :
+                $("[name=" + this.hash.slice(1) + "]");
+            scrollToTarget($target, e);
+        }
+    }); */
 
     function stopVideo() {
         var $frame = $('iframe#mainvideo');

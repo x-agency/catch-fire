@@ -5,6 +5,8 @@
     if ( ! defined( 'ABSPATH' ) ) {
         exit; // Exit if accessed directly.
     }
+
+    $id = get_the_id();
 ?>
 <?php get_header(); ?>
 <?php get_template_part('template-parts/books-pub-hero'); ?>
@@ -46,9 +48,10 @@
 
 <?php get_template_part('template-parts/books-pub-books'); ?>
 
-<section class="podcast" id="podcast">
+<section class="podcast">
+    <div class="anchor" id="podcast"></div>
     <img src="/wp-content/themes/catch-fire/img/podcast-hero.jpg" alt="" class="bg">
-    <div class="content">
+    <div class="content text-center text-lg-start">
         <h2 class="subtitle">PODCAST</h2>
         <h2>catch<span>fire</span> daily</h2>
         <div class="podcast-links">
@@ -58,7 +61,7 @@
                 $duration = get_sub_field('duration');
 
                 ?>
-            <a href="<?php echo $url; ?>" class="mb-3">
+            <a href="<?php echo $url; ?>" class="mb-3 justify-content-lg-start justify-content-center">
                 <?php echo file_get_contents(__DIR__ . '/../img/play-btn.svg'); ?>
                 <p><?php echo $title; ?><span>&nbsp;<?php echo $duration; ?></span></p>
             </a>
@@ -70,7 +73,8 @@
     </div>
 </section>
 
-<section class="container flash-papers" id="flash-paper">
+<section class="container flash-papers">
+<div class="anchor" id="flash-paper"></div>
     <div class="row justify-content-center">
         <div class="col-12"><a href="/flash-papers" target="_blank"><h2 class="subtitle">FLASH PAPERS</h2></a></div>
         <div class="col-12"><h2>We are all busy and at the same time, we want to be in the know about ideas and insights.</h2></div>
@@ -157,6 +161,35 @@
     <a href="/flash-papers" class="btn d-block" style="max-width: 250px;">View All Flash Papers</a>
 </section>
 
+<section class="container videos" id="videos">
+    <div class="row mb-5">
+        <div class="col-12"><a href="https://www.youtube.com/channel/UCGpM37SRr3NXLml84rWxE2A" target="_blank"><h2 class="subtitle">Videos</h2></a></div>
+        <div class="col-12"><h2>We are all busy and at the same time, we want to be in the know about ideas and insights.</h2></div>
+        <?php while( have_rows('videos', $id) ) : the_row(); 
+            $url = get_sub_field('url');
+            $title = get_sub_field('title');
+
+            //https://coderwall.com/p/nihgwq/get-a-thumbnail-from-a-youtube-video
+            preg_match('/(?<=v=).*/', $url, $matches);
+            $thumbnail = "https://img.youtube.com/vi/" . $matches[0] . "/0.jpg";
+            ?>
+
+            <div class="col-lg-4 video">
+                <img src="<?php echo $thumbnail; ?>" data-src="<?php echo "https://www.youtube.com/embed/" . $matches[0] . "?autoplay=1"; ?>">
+            </div>
+
+        <?php endwhile; ?>
+    </div>
+    <a href="https://www.youtube.com/channel/UCGpM37SRr3NXLml84rWxE2A" target="_blank" class="btn d-block" style="max-width: 250px;">Visit Youtube Channel</a>
+</section>
+
+<div class="modal">
+    <div class="content">
+        <div class="modal-close">+</div>
+        <iframe src="" frameborder="0" width="100%" height="100%" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
 <section id="contact">
     <div class="container">
         <div class="row contact--wrapper">
@@ -172,3 +205,24 @@
 </section>
 
 <?php get_footer(); ?>
+
+<script>
+    jQuery(document).ready(function($) {
+        $('.video').click(function() {
+            src = $(this).children('img').attr("data-src");
+            $(".modal").css({
+                "opacity":"1",
+                "pointer-events":"auto"
+            });
+            $('.modal iframe').attr("src", src);
+        });
+
+        $(".modal-close").click(function() {
+            $(".modal").css({
+                "opacity":"0",
+                "pointer-events":"none"
+            });
+            $('.modal iframe').attr("src", "");
+        })
+    });
+</script>

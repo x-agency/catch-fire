@@ -21,7 +21,7 @@
     <?php //loop through each array object to get the thumbnail ?>
     <?php foreach($posts as $post) : ?>
         <div class="row my-5">
-            <div class="col-xl-4 text-center">
+            <div class="col-xl-4 text-center mb-5 mb-xl-0">
                 <a href="<?php echo get_permalink($post->ID);?>" target="_blank">
                     <img src="<?php echo get_the_post_thumbnail_url($post->ID, '')?>" alt="">
                 </a>

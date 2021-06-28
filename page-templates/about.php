@@ -142,18 +142,20 @@ $hero = get_field('hero');
 
 <script>
 jQuery(document).ready(function($) {
+    //init variables
     $carousel = $('.carousel'),
     $track = $('.track'),
     slideCount = $('.slide').length,
-    width = parseFloat($('.slide').css("width")),
+    width = parseInt($('.slide').css("width")),
+    carouselWidth = parseInt($('.carousel').css("width")),
     threshold = width / 4,
     dragStart = 0,
     dragEnd = 0,
+    dragDistance = 0,
     count = 1,
-    $item = $('.slide');
+    resizeId = '';
 
-    $carousel.css("overflow", "hidden");
-    $track.css("left", ( ( slideCount * -1 ) + "00%")).css({"display":"flex", "position":"relative"});
+    //clone slides
     for (var i = 0; i < slideCount; i++) {
         $('.controls .dots').append('<span class="dot"></span>');
         $('.slide').eq(slideCount - 1).clone().prependTo('.track');
@@ -163,7 +165,54 @@ jQuery(document).ready(function($) {
     $('.dot').eq(0).addClass('active');
     $('.dots').css("max-width", (slideCount * 25) + "px");
     $('.controls').css("max-width", (slideCount * 25 + 100) + "px");
-    //$track.css("width", (100 * ( slideCount * 2 ) + "vw")); dont set width, since track should be set to 100vw, and slide should be set to flex-shrink: 0 so that it obeys whatever width you set within display flex
+
+    
+
+    //reinit variables on screen resize
+    function resize() {
+        threshold = width / 4;
+        slideCountTotal = $('.slide').length;
+
+        $('.carousel').css({"width":"100%", "overflow":"hidden"});
+        carouselWidth = parseFloat($('.carousel').css("width"));
+
+        $track.css({"display":"flex", "position":"relative"});        
+
+        width = parseInt($('.slide').css("width"));
+        $('.slide').css({"cursor":"grab", "max-width":carouselWidth});
+        $('.slide *').css("pointer-events", "none");
+        offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
+
+        if ($(window).width() > 1920) {
+            threshold = 480;
+            $('.carousel').css("width", "1344px");
+            $('.track').css({"width":"2716.5px", "left":"-1374px"});
+        } else if ( $(window).width() > 1439 ) {
+            width = parseInt($('.slide').css("width"));
+            $('.track').css("width", (carouselWidth * (slideCountTotal / 3)) + "px");
+            $('.track').css("left", "-" + width);
+
+            offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
+        } else if ( $(window).width() > 991 ) {
+            width = parseInt($('.slide').css("width"));
+            $('.track').css("width", (carouselWidth * (slideCountTotal / 2)) + "px");
+            $('.track').css("left", "-" + width);
+
+            offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
+        } else {
+            width = parseInt($('.slide').css("width"));
+            $('.track').css("width", (carouselWidth * slideCountTotal) + "px");
+            $('.track').css("left", "-" + ((parseFloat($('.track').css("width")) / 3) + ((carouselWidth - width) / slideCountTotal)) + "px");
+
+            offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
+        }
+    } resize();
+
+    //listen and wait until screen is done resizing
+    $(window).on('resize', function() {
+        clearTimeout(resizeId);
+        resizeId = setTimeout(resize, 500);
+    });  
 
     $('.slide').on('mousedown touchstart', function(e) {
         if ($track.hasClass('transition')) return; //if the carousel is in motion, prevent new movement until complete
@@ -175,12 +224,12 @@ jQuery(document).ready(function($) {
             if (e.type == 'touchmove') dragEnd = e.originalEvent.touches[0].pageX;
             if (e.type == 'mousemove') dragEnd = e.pageX;
             $track.css('transform','translateX('+ dragPos() +'px)');
-            $item.css('cursor', 'grabbing');
+            $('.slide').css('cursor', 'grabbing');
             dragDistance = dragPos();
         });
         $(document).on('mouseup touchend', function(){
             count = dragDistance / width;
-            $item.css('cursor', 'grab');
+            $('.slide').css('cursor', 'grab');
             if (dragPos() > threshold) { return shiftSlide(1) } //to the left
             if (dragPos() < -threshold) { return shiftSlide(-1) } //to the right
             count = 0;
