@@ -167,16 +167,27 @@
         <div class="col-12"><h2>We are all busy and at the same time, we want to be in the know about ideas and insights.</h2></div>
         <?php while( have_rows('videos', $id) ) : the_row(); 
             $url = get_sub_field('url');
+            $thumbnail = get_sub_field('thumbnail');
             $title = get_sub_field('title');
 
             //https://coderwall.com/p/nihgwq/get-a-thumbnail-from-a-youtube-video
             preg_match('/(?<=v=).*/', $url, $matches);
-            $thumbnail = "https://img.youtube.com/vi/" . $matches[0] . "/0.jpg";
+            if ( $thumbnail == "" ) {
+                $thumbnail = "https://img.youtube.com/vi/" . $matches[0] . "/0.jpg";
+            }
             ?>
 
-            <div class="col-lg-4 video">
-                <img src="<?php echo $thumbnail; ?>" data-src="<?php echo "https://www.youtube.com/embed/" . $matches[0] . "?autoplay=1"; ?>">
-            </div>
+            <?php if ( get_row_index() % 3 == 1 ) {
+                echo '<div class="row mb-5">';
+            } ?>
+
+                <div class="col-lg-4 video">
+                    <img src="<?php echo $thumbnail; ?>" data-src="<?php echo "https://www.youtube.com/embed/" . $matches[0] . "?autoplay=1"; ?>">
+                </div>
+
+            <?php if ( get_row_index() % 3 == 0 ) {
+                echo '</div>';
+            } ?>
 
         <?php endwhile; ?>
     </div>
