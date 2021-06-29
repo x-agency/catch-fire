@@ -183,7 +183,7 @@
     <a href="https://www.youtube.com/channel/UCGpM37SRr3NXLml84rWxE2A" target="_blank" class="btn d-block" style="max-width: 250px;">Visit Youtube Channel</a>
 </section>
 
-<div class="modal">
+<div class="modal videoModal">
     <div class="content">
         <div class="modal-close">+</div>
         <iframe src="" frameborder="0" width="100%" height="100%" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -210,19 +210,19 @@
     jQuery(document).ready(function($) {
         $('.video').click(function() {
             src = $(this).children('img').attr("data-src");
-            $(".modal").css({
+            $(".videoModal").css({
                 "opacity":"1",
                 "pointer-events":"auto"
             });
-            $('.modal iframe').attr("src", src);
+            $('.videoModal iframe').attr("src", src);
         });
 
         $(".modal-close").click(function() {
-            $(".modal").css({
+            $(".videoModal").css({
                 "opacity":"0",
                 "pointer-events":"none"
             });
-            $('.modal iframe').attr("src", "");
+            $('.videoModal iframe').attr("src", "");
         })
     });
 </script>

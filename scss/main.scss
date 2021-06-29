@@ -990,6 +990,7 @@ a {
     .video {
         cursor: pointer;
         position: relative;
+        text-align: center;
 
         &::after {
             width: 100%;
@@ -1010,12 +1011,14 @@ a {
         }
 
         + .video {
-            margin-top: 3rem;
+            @include respond-below(lg) {
+                margin-top: 3rem;
+            }
         }
     }
 }
 
-.modal {
+.videoModal {
     display: block;
     opacity: 0;
     pointer-events: none;
