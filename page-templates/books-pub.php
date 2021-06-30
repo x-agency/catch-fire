@@ -231,7 +231,7 @@
         <div class="col-12"><a href="https://www.youtube.com/channel/UCGpM37SRr3NXLml84rWxE2A" target="_blank"><h2 class="subtitle">Christian Resources</h2></a></div>
         <div class="col-12"><h2>We are all busy and at the same time, we want to be in the know about ideas and insights.</h2></div>
     </div>
-    <div class="row">
+ <div class="row">
         <div class="col-4">
             <h3>Foundational Teachings</h3>
             <p class="pdf-descrip">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -243,7 +243,6 @@
             <a href="/wp-content/themes/catch-fire/img/Old_and_New_Testament_Hospitality.pdf" target="_blank" class="btn">Download PDF</a>
         </div>
     </div>
-   
 </section>
 
 <section id="contact">
