@@ -19,7 +19,7 @@
                         //get_posts to retrieve an array of posts
                         $pubs = get_posts( array(
                                 'numberposts' => 6,
-                                'post_type'   => 'publications'      
+                                'post_type'   => 'articles'      
                             ) 
                         );   
                     ?>

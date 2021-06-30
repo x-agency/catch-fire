@@ -1,6 +1,6 @@
 <?php
     /*
-    Template Name: Pubs Archive
+    Template Name: Articles Archive
     */
     if ( ! defined( 'ABSPATH' ) ) {
         exit; // Exit if accessed directly.
@@ -14,7 +14,7 @@
     <?php
         //get_posts to retrieve an array of posts
         $posts = get_posts( array(
-                'post_type'   => 'publications'      
+                'post_type'   => 'Articles'      
             ) 
         );   
     ?>
