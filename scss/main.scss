@@ -877,24 +877,29 @@ a {
         }
     }
 
-    .content {
+    > img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
         position: absolute;
-        top: 50%;
+    }
+
+    .content {
+        position: relative;
         left: 55%;
-        transform: translateY(-50%);
         z-index: 1;
+        padding: 3rem 0;
+        width: 40%;
 
         @include respond-below(xl) {
-            left: unset;
-            right: 5%;
-            min-width: 50%;
+            left: 45%;
+            width: 50%;
         }
 
         @include respond-below(lg) {
             width: 90%;
-            right: unset;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
         }
 
         .subtitle {
@@ -958,6 +963,11 @@ a {
         display: flex;
         flex-wrap: wrap;
 
+        @include respond-below(lg) {
+            text-align: center;
+            justify-content: center;
+        }
+
         p {
             color: #dfdfdf;
             @include main-font;
@@ -991,6 +1001,7 @@ a {
             display: flex;
             justify-content: start;
             align-items: center;
+            text-align: left;
 
             +a {
                 margin-left: 2rem;
