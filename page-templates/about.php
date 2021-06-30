@@ -60,9 +60,8 @@ $hero = get_field('hero');
         <div class="row">
             <div class="col-12 mb-5">
                 <div class="partner-title">Trusted By:</div>
-                <img class="logo-row" src="/wp-content/themes/catch-fire/img/logos-row.jpg" alt="">
-                <?php while( have_rows('clients') ) : the_row();
-                    $image = get_sub_field('image');
+                <?php while( have_rows('images') ) : the_row();
+                    $image = get_sub_field('brand');
                 ?>
                     <img src="<?php echo $image; ?>">
                 <?php endwhile; ?>

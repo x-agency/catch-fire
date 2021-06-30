@@ -13,7 +13,7 @@
 
 <section class="container tools">
     <div class="row">
-        <div class="col-lg-6 col-xl-3 text-center">
+        <div class="col-lg-6 col-xl-3 offset-xl-2 text-center">
             <a href="#latest-resources">
                 <?php echo file_get_contents(__DIR__ . '/../img/latest.svg'); ?>
                 <button class="btn">SPEAKING EVENTS</button>
