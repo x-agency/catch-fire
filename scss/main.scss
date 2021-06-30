@@ -54,7 +54,7 @@ body {
 .anchor {
     position: absolute;
     margin-top: -160px; //height of navbar plus 50px
-    
+
 }
 
 // ** HOME PAGE ** //
@@ -275,7 +275,7 @@ body {
     .hero-inner {
         width: 75%;
         margin: auto;
-        padding-top: 21vw;//405px;
+        padding-top: 21vw; //405px;
         padding-bottom: 100px;
         position: relative;
         min-width: 290px;
@@ -287,6 +287,7 @@ body {
 
         .title {
             font-size: calc(max(28px, min(3vw, 48px)));
+
             @include respond-below(lg) {
                 margin-top: 25px !important;
             }
@@ -328,7 +329,7 @@ body {
         line-height: 0.95em;
         color: #dfdfdf;
         font-weight: bold;
-        margin: 0 0 11.75vw 50px;//225px 50px;
+        margin: 0 0 11.75vw 50px; //225px 50px;
 
         @include respond-below(xxl) {
             margin: 0 0 11.75vw 0px;
@@ -364,6 +365,7 @@ body {
         display: flex;
         justify-content: space-between;
         margin: 20px auto 0;
+
         .dot {
             width: 11px;
             height: 11px;
@@ -393,9 +395,10 @@ body {
             @include respond-below(xl) {
                 margin: 15px;
             }
-    
-            + img {
+
+            +img {
                 margin-left: 15px;
+
                 @include respond-below(xl) {
                     margin-left: unset;
                 }
@@ -464,6 +467,7 @@ body {
 // tools for leaders
 #tools {
     margin-bottom: 200px;
+
     @include respond-below(lg) {
         margin-bottom: 50px;
     }
@@ -519,7 +523,7 @@ body {
 
 // ** Books and Publications Page ** //
 .page-template-books-pub {
-    .ast-container > .container {
+    .ast-container>.container {
         max-width: 1400px;
         width: 95vw;
         margin-bottom: 7.5rem;
@@ -532,19 +536,31 @@ body {
             margin: 0;
             margin-left: 1rem;
         }
-    
+
         h2:not(.subtitle) {
             font-size: 20px;
             @include main-font;
             letter-spacing: 0;
             color: $dark-gray;
-            margin-bottom: 4em;
+            margin-bottom: 1em;
         }
-    
+
         .subtitle {
             margin-bottom: 1em;
         }
+
+
+
     }
+
+    #resources {
+        .pdf-descrip {
+            font-size: 18px;
+            margin: 10px 0 20px;
+        }
+    }
+
+
 }
 
 //hero
@@ -643,7 +659,7 @@ a {
 }
 
 //Tools for Success
-.page-template-books-pub .ast-container > .container.tools {
+.page-template-books-pub .ast-container>.container.tools {
     max-width: 1340px;
     width: 95vw;
     margin-bottom: 7.5rem;
@@ -774,7 +790,7 @@ a {
     }
 }
 
-.page-template-books-pub .ast-container > .container.books-pubs {
+.page-template-books-pub .ast-container>.container.books-pubs {
     position: relative;
     z-index: 1;
     background-image: linear-gradient(to bottom, transparent 30%, #c0c0c0 0%);
@@ -958,7 +974,7 @@ a {
             justify-content: start;
             align-items: center;
 
-            + a {
+            +a {
                 margin-left: 2rem;
             }
 
@@ -1048,6 +1064,15 @@ a {
     width: 95vw;
     margin-bottom: 7.5rem;
 
+    .video-grid {
+
+        &:first-child {
+            margin-top: 40px;
+        }
+    }
+
+
+
     h2:not(.subtitle) {
         font-size: 20px;
         @include main-font;
@@ -1083,7 +1108,7 @@ a {
             }
         }
 
-        + .video {
+        +.video {
             @include respond-below(lg) {
                 margin-top: 3rem;
             }
@@ -1155,6 +1180,10 @@ a {
         display: inline-block;
         width: 60%;
     }
+
+
+
+
 }
 
 // ** Publications Single ** //
@@ -1253,8 +1282,8 @@ a {
 
 // ** Flash Papers Single ** //
 .single-flash-papers {
-    
-    .ast-container > .container {
+
+    .ast-container>.container {
 
         .card {
             background: transparent;
@@ -1281,7 +1310,7 @@ a {
 
 // ** Archive General Styles ** //
 body[class*="page-template-archive"] {
-    .ast-container > .container {
+    .ast-container>.container {
         margin-bottom: 100px;
         width: 80vw;
         min-width: 290px;
@@ -1292,7 +1321,7 @@ body[class*="page-template-archive"] {
             margin-bottom: 50px;
         }
 
-        .ast-container > .container {
+        .ast-container>.container {
             margin-bottom: 50px;
         }
     }
@@ -1655,7 +1684,7 @@ body[class*="page-template-archive"] {
     #page {
         overflow: hidden;
     }
-    
+
     #books-pub-hero {
         margin-bottom: 0;
         z-index: 1;
@@ -1707,7 +1736,7 @@ body[class*="page-template-archive"] {
         .case {
             padding: 10rem 10rem 2rem 5rem;
 
-            .content { 
+            .content {
                 pointer-events: none;
                 animation: fadeOut 0.6s both;
 
@@ -1747,7 +1776,7 @@ body[class*="page-template-archive"] {
                         height: 0;
                     }
                 }
-                
+
                 .subtitle:nth-child(1) {
                     margin-bottom: 3rem;
                 }
@@ -1766,7 +1795,8 @@ body[class*="page-template-archive"] {
                     display: inline-block;
                 }
 
-                .prev, .next {
+                .prev,
+                .next {
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -1795,12 +1825,16 @@ body[class*="page-template-archive"] {
         }
 
         .carousel {
-            .slide, .study {
+
+            .slide,
+            .study {
                 cursor: pointer;
             }
-            .slide + .slide {
+
+            .slide+.slide {
                 margin-top: 2rem;
             }
+
             .controls {
                 display: none;
             }
@@ -1850,9 +1884,10 @@ body[class*="page-template-archive"] {
                         fill: $red;
                     }
                 }
-            } 
+            }
 
-            .study, .study + .study {
+            .study,
+            .study+.study {
                 width: 100%;
                 max-width: 300px;
                 margin: 0 auto;
@@ -1884,13 +1919,14 @@ body[class*="page-template-archive"] {
                     transform: translateX(-50%);
                     top: 0;
                     margin-top: 3rem;
-                    
-                    .prev, .next {
+
+                    .prev,
+                    .next {
                         position: relative;
                         width: 50px;
                         height: 50px;
                         overflow: hidden;
-                        
+
                         .arrow {
                             position: absolute;
                             left: -80px;
@@ -1910,10 +1946,11 @@ body[class*="page-template-archive"] {
 
 /*Form*/
 @media (max-width: 990px) {
-    .frm_section_heading > .frm_form_field, 
-    .frm_fields_container > .frm_submit, 
-    .frm_grid_container > .frm_form_field, 
-    .frm_fields_container > .frm_form_field {
+
+    .frm_section_heading>.frm_form_field,
+    .frm_fields_container>.frm_submit,
+    .frm_grid_container>.frm_form_field,
+    .frm_fields_container>.frm_form_field {
         grid-column: 1 / span 12 !important;
     }
 }
@@ -1921,10 +1958,10 @@ body[class*="page-template-archive"] {
 /* Workshops Page */
 .page-template-workshop {
 
-    .ast-container > .container {
+    .ast-container>.container {
         max-width: unset;
         padding: 100px 250px;
-        
+
     }
 
     .coaching {
