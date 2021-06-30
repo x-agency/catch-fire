@@ -138,14 +138,10 @@
 
     //clone slides
     for (var i = 0; i < slideCount; i++) {
-        $('.controls .dots').append('<span class="dot"></span>');
         $('.slide').eq(slideCount - 1).clone().prependTo('.track');
         $('.slide').eq(slideCount - 1).clone().appendTo('.track');
     }
-
-    $('.dot').eq(0).addClass('active');
-    $('.dots').css("max-width", (slideCount * 25) + "px");
-    $('.controls').css("max-width", (slideCount * 25 + 100) + "px");
+    //$('.controls').css("max-width", (slideCount * 25 + 100) + "px");
 
     
 
@@ -229,28 +225,6 @@
         $(document).off('mouseup touchend');
         $carousel.off('mousemove touchmove');
         $track.addClass('transition').css('transform','translateX(' + (width * count) + 'px)');
-        if (direction >= 1) { // to the left
-            while (count > 0) {
-                if ($('.dot.active').is(".dot:first-child")) {
-                    $('.dot.active').removeClass('active')
-                    $('.dot').last().addClass('active');
-                } else {
-                    $('.dot.active').removeClass('active').prev().addClass('active');
-                }
-                count--;
-            }
-        } else if (direction <= -1) { //to the right
-            while (count < 0) {
-                if ($('.dot.active').is(".dot:last-child")) {
-                    $('.dot.active').removeClass('active')
-                    $('.dot').first().addClass('active');
-                } else {
-                    $('.dot.active').removeClass('active').next().addClass('active');
-                }
-                count++;
-            }
-        }
-        count = direction;
         setTimeout(function(){
             if (direction >= 1) { // to the left
                 while (count > 0) {

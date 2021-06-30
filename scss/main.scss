@@ -2082,7 +2082,7 @@ body[class*="page-template-archive"] {
 
     .testimonials {
         background: #bbb;
-        padding-bottom: 10rem;
+        padding: 3rem 15rem 10rem;
         text-align: center;
 
         h2, .quote, .author {
@@ -2103,7 +2103,9 @@ body[class*="page-template-archive"] {
 
         .controls {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between;    
+            width: calc(79px * 2 + 2rem);
+            margin: 0 auto;
 
             * {
                 display: inline-block;
