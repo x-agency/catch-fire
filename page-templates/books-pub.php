@@ -295,7 +295,7 @@
 <script>
     jQuery(document).ready(function($) {
         $('.video').click(function() {
-            src = $(this).children('img').attr("data-src");
+            src = $(this).find('img').attr("data-src");
             $(".videoModal").css({
                 "opacity":"1",
                 "pointer-events":"auto"

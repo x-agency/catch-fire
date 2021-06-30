@@ -1843,8 +1843,9 @@ body[class*="page-template-archive"] {
     min-width: 50px;
     padding: 0;
     position: relative;
-    top: calc(50% + 12px);
-    transform: translateY(-50%);
+    top: 6px;
+    // top: calc(50% + 12px);
+    // transform: translateY(-50%);
 }
 
 /** Case Studies Page **/
