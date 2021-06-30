@@ -16,18 +16,20 @@
         $posts = get_posts( array(
                 'post_type'   => 'flash-papers'      
             ) 
-        );   
+        );
+        $i = wp_count_posts('flash-papers')->publish;
     ?>
     <?php //loop through each array object to get the thumbnail ?>
     <?php foreach($posts as $post) : ?>
         <div class="row">
             <a href="<?php echo get_permalink($post->ID);?>">
-                <div class="col-12 d-xl-flex flex-column justify-content-xl-center text-xl-start text-center">
-                    <h2><?php echo get_the_title($post->ID); ?></h2>
+                <div class="col-12 d-xl-flex flex-column justify-content-xl-center text-xl-start text-center mb-4">
+                    <h2><span><?php echo $i; ?></span>&nbsp;<?php echo get_the_title($post->ID); ?></h2>
                     <p><?php echo get_the_excerpt($post->ID); ?></p>
                 </div>
             </a>
         </div>
+        <?php $i--; ?>
     <?php endforeach; ?>
 </section>
 

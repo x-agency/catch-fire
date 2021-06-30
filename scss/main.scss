@@ -1377,6 +1377,14 @@ body[class*="page-template-archive"] {
             color: #3f3f3f;
         }
     }
+
+    h2 {
+        @include main-font;
+
+        span {
+            color: $red;
+        }
+    }
 }
 
 // ** Contact Page ** //
