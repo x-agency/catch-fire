@@ -2001,6 +2001,10 @@ body[class*="page-template-archive"] {
             padding: 25px 20vw;
         }
 
+        @media (max-width: 991px) {
+            padding: 25px 10vw;
+        }
+
         a {
             display: flex;
             flex-direction: column;
@@ -2048,6 +2052,10 @@ body[class*="page-template-archive"] {
 
         .btn {
             width: 290px;
+            @media (max-width: 600px) {
+                width: 100%;
+                max-width: 250px;
+            }
         }
 
         img {
@@ -2098,6 +2106,10 @@ body[class*="page-template-archive"] {
         padding: 5rem 12vw 10rem;
         text-align: center;
 
+        @media (max-width: 600px) {
+            padding: 5rem 5vw 10rem;
+        }
+
         h2, .quote, .author {
             font-family: 'Source Code Pro', monospace;
         }
@@ -2118,6 +2130,10 @@ body[class*="page-template-archive"] {
             flex: 0 0 100%;
             padding: 2rem 5rem;
             max-height: unset;
+
+            @media (max-width: 600px) {
+                padding: 2rem 0;
+            }
 
             .author {
                 text-transform: uppercase;
