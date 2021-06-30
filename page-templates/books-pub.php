@@ -62,32 +62,62 @@
                 $title = get_sub_field('title');
 
                 ?>
-                <div class="podcast-link mb-3 justify-content-lg-start justify-content-center">
+                <div class="podcast-link mb-3">
+                    
                     <p><?php echo $title; ?></p>
-                    <a href="<?php echo $apple; ?>">
-                        <img src="/wp-content/themes/catch-fire/img/apple-podcasts.png">
-                    </a>
-                    <a href="<?php echo $spotify; ?>">
-                        <img src="/wp-content/themes/catch-fire/img/spotify.png">
-                    </a>
-                    <a href="<?php echo $google; ?>">
-                        <img src="/wp-content/themes/catch-fire/img/google-podcasts.png">
-                    </a>
+                    <div class="pod-links">
+                        <a  href="<?php echo $apple; ?>" target="_blank">
+                        <div class="icon apple">
+                        <?php
+				echo file_get_contents( get_theme_file_uri( '/img/apple-podcast.svg' ) );
+			?>
+                        </div>
+            
+                        </a>
+                        <a  href="<?php echo $spotify; ?>" target="_blank">
+                        <div class="icon spotify">
+                        <?php
+				echo file_get_contents( get_theme_file_uri( '/img/spotify-podcast.svg' ) );
+			?>
+                        </div>
+                
+                        </a>
+                        <a  href="<?php echo $google; ?>" target="_blank">
+                        <div class="icon google">
+                        <?php
+				echo file_get_contents( get_theme_file_uri( '/img/google-podcast.svg' ) );
+			?>
+                        </div>
+             
+                        </a>
+                    </div>
                 </div>
             <?php endwhile; ?>
         </div>
         <div class="more">
             <p class="mt-5">Listen to all episodes on:</p>
-            <a href="">
-                <img src="/wp-content/themes/catch-fire/img/apple-podcasts.png">
+            <a href="https://podcasts.apple.com/us/podcast/catch-fire/id1573966315" target="_blank">
+            <div class="icon apple">
+                        <?php
+				echo file_get_contents( get_theme_file_uri( '/img/apple-podcast.svg' ) );
+			?>
+                        </div>
                 <span>Apple <br>Podcasts</span>
             </a>
-            <a href="">
-                <img src="/wp-content/themes/catch-fire/img/spotify.png">
+            <a href="https://open.spotify.com/show/3JTtBW2RkYYxLjondwKuEa" target="_blank">
+            <div class="icon spotify">
+                        <?php
+				echo file_get_contents( get_theme_file_uri( '/img/spotify-podcast.svg' ) );
+			?>
+                        </div>
                 <span>Spotify</span>
             </a>
-            <a href="">
-                <img src="/wp-content/themes/catch-fire/img/google-podcasts.png">
+            <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5zb3VuZGVyLmZtLzEzODg2L3Jzcy54bWw" target="_blank">
+            <div class="icon google">
+                        <?php
+				echo file_get_contents( get_theme_file_uri( '/img/google-podcast.svg' ) );
+			?>
+                        </div>
                 <span>Google <br>Podcasts</span>
             </a>
         </div>
