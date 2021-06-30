@@ -57,24 +57,6 @@ body {
 
 }
 
-.mobile-only {
-    display: none;
-}
-
-.desktop-only {
-    display: block;
-}
-
-@media (max-width: 1199px) {
-    .mobile-only {
-        display: block;
-    }
-    
-    .desktop-only {
-        display: none;
-    } 
-}
-
 // ** HOME PAGE ** //
 
 .page-template-home {
@@ -560,25 +542,13 @@ body {
             @include main-font;
             letter-spacing: 0;
             color: $dark-gray;
-            margin-bottom: 1em;
+            margin-bottom: 4em;
         }
 
         .subtitle {
             margin-bottom: 1em;
         }
-
-
-
     }
-
-    #resources {
-        .pdf-descrip {
-            font-size: 18px;
-            margin: 10px 0 20px;
-        }
-    }
-
-
 }
 
 //hero
@@ -857,6 +827,10 @@ a {
     margin-bottom: 7.5rem;
     min-height: 470px;
 
+    // @media (max-width: 1335px) {
+    //     min-height: 520px;
+    // }
+
     @include respond-below(xl) {
         .bg {
             width: 100%;
@@ -864,15 +838,17 @@ a {
             object-fit: cover;
             position: absolute;
         }
+
+
     }
 
-    @include respond-below(lg) {
+    @include respond-below(xl) {
         &::before {
             position: absolute;
             width: 100%;
             height: 100%;
             content: '';
-            background: #0000007f;
+            background: #000000b1;
             z-index: 1;
         }
     }
@@ -920,10 +896,31 @@ a {
 
     .podcast-links {
 
+        .pod-links {
+            display: flex;
+
+            @include respond-below(lg) {
+                margin: 20px auto;
+            }
+
+            @media(max-width: 1499px) {
+                margin-top: 10px;
+            }
+        }
+
+        @include respond-above(lg) {
+            padding-right: 30px;
+
+
+        }
+
         .podcast-link {
             display: flex;
-            align-items: center;
+            // align-items: center;
             text-decoration: none;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            display: flex !important;
 
             svg {
                 width: calc(min(3vw, 29px));
@@ -932,28 +929,91 @@ a {
                 min-height: 16px;
                 min-width: 16px;
 
-                * {
-                    fill: #ffffff;
-                }
+                // * {
+                //     fill: #ffffff;
+                // }
             }
 
             p {
                 margin: 0;
                 @include title-font;
-                font-size: calc(max(12px, min(3vw, 20px)));
-                letter-spacing: 0.14em;
+                font-size: calc(max(12px, min(2.5vw, 17px)));
+                letter-spacing: 0.10em;
                 color: #dfdfdf;
                 text-transform: uppercase;
+
+                @media (max-width: 1449px) {
+                    width: 100%;
+                }
 
                 span {
                     color: #bf1e2e;
                 }
             }
 
-            img {
-                width: 24px;
-                height: 24px;
+            .apple {
+                svg {
+                    path {
+                        fill: #ffffff;
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: #aa1dd3;
+                            transition: .3s ease all;
+                        }
+                    }
+                }
+            }
+
+            .spotify {
+                svg {
+                    path {
+                        fill: #ffffff;
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: #1DB954;
+                            transition: .3s ease all;
+                        }
+                    }
+                }
+            }
+
+            .google {
+                &:not(:hover) {
+                    svg {
+                        path {
+                            fill: white;
+                            transition: .3s ease all;
+                        }
+                    }
+                }
+            }
+
+            a {
                 margin-left: 1rem;
+
+
+
+                &:first-child {
+                    margin-left: 0px;
+                }
+            }
+
+            img,
+            svg {
+                width: 25px;
+                height: 25px;
+                transition: .3s ease all;
+
+
+
             }
         }
     }
@@ -1020,6 +1080,74 @@ a {
                 letter-spacing: 0.14em;
                 line-height: 0.85em;
                 text-transform: uppercase;
+            }
+
+            .spotify,
+            .apple,
+            .google {
+                svg {
+                    path {
+                        transition: .3s ease all;
+                    }
+                }
+            }
+
+            .apple {
+                svg {
+                    width: 50px;
+                    height: 50px;
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: #aa1dd3;
+                            transition: .3s ease all;
+                        }
+                    }
+                }
+            }
+
+            .spotify {
+
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: #1DB954;
+                            transition: .3s ease all;
+                        }
+                    }
+                }
+            }
+
+            .google {
+                &:not(:hover) {
+                    svg {
+                        path {
+                            fill: white;
+                            transition: .3s ease all;
+                        }
+                    }
+                }
+            }
+
+
+            .apple,
+            .spotify {
+                svg {
+                    path {
+                        fill: white;
+                    }
+                }
+            }
+
+            svg {
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+                min-height: 40px;
+
             }
         }
     }
@@ -1092,15 +1220,6 @@ a {
     max-width: 1400px;
     width: 95vw;
     margin-bottom: 7.5rem;
-
-    .video-grid {
-
-        &:first-child {
-            margin-top: 40px;
-        }
-    }
-
-
 
     h2:not(.subtitle) {
         font-size: 20px;
@@ -1209,10 +1328,6 @@ a {
         display: inline-block;
         width: 60%;
     }
-
-
-
-
 }
 
 // ** Publications Single ** //
@@ -1597,7 +1712,6 @@ body[class*="page-template-archive"] {
 
         .cta--item {
             margin: -107px 25px 0;
-            text-align: center;
 
             @include respond-below(lg) {
                 margin: 15px 25px 0;
@@ -1995,7 +2109,6 @@ body[class*="page-template-archive"] {
 
 /* Workshops Page */
 .page-template-workshop {
-
     #books-pub-hero {
         margin-bottom: 3rem;
     }
