@@ -61,10 +61,11 @@ $hero = get_field('hero');
             <div class="col-12 mb-5">
                 <div class="partner-title">Trusted By:</div>
                 <img class="logo-row" src="/wp-content/themes/catch-fire/img/logos-row.jpg" alt="">
-                <img src="/wp-content/themes/catch-fire/img/fedex.png" alt="">
-                <img src="/wp-content/themes/catch-fire/img/gorilla.png" alt="">
-                <img style="filter: invert(1)" src="/wp-content/themes/catch-fire/img/bayside.png" alt="">
-                <img src="/wp-content/themes/catch-fire/img/crossings.png" alt="">
+                <?php while( have_rows('clients') ) : the_row();
+                    $image = get_sub_field('image');
+                ?>
+                    <img src="<?php echo $image; ?>">
+                <?php endwhile; ?>
             </div>
         </div>
 </section>
