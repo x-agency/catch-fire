@@ -14,19 +14,19 @@
 <section class="container tools">
     <div class="row justify-content-center">
         <div class="col-lg-6 col-xl-3 offset-xl-2 text-center my-5">
-            <a href="#latest-resources">
+            <a href="#speaking">
                 <img src="/wp-content/themes/catch-fire/img/speaking.png" alt="">
                 <button class="btn">SPEAKING EVENTS</button>
             </a>
         </div>
         <div class="col-lg-6 col-xl-3 text-center my-5">
-            <a href="#books-and-publications">
+            <a href="#coaching">
                 <img src="/wp-content/themes/catch-fire/img/coaching.png" alt="">
                 <button class="btn">COACHING WORKSHOPS</button>
             </a>
         </div>
         <div class="col-lg-6 col-xl-3 text-center my-5">
-            <a href="#podcast">
+            <a href="#consulting">
                 <img src="/wp-content/themes/catch-fire/img/consulting.png" alt="">
                 <button class="btn">IN-DEPTH CONSULTING</button>
             </a>
@@ -36,6 +36,7 @@
 
 <?php $speaking = get_field('speaking'); ?>
 <section class="container speaking">
+    <div class="anchor" id="speaking"></div>
     <div class="row">
         <div class="col-xl-6 text-xl-start text-center">
             <h3><?php echo $speaking['subtitle1']; ?></h3>
@@ -55,6 +56,7 @@
 
 <?php $coaching = get_field('coaching'); ?>
 <section class="container coaching">
+    <div class="anchor" id="coaching"></div>
     <div class="row">
         <div class="col-xl-6 text-center order-2 order-xl-1">
             <img class="desktop-only" src="<?php echo $coaching['image']; ?>" alt="">
@@ -74,6 +76,7 @@
 
 <?php $consulting = get_field('consulting'); ?>
 <section class="container consulting">
+    <div class="anchor" id="consulting"></div>
     <div class="row">
         <div class="col-xl-6 text-xl-start text-center">
             <h3><?php echo $consulting['subtitle1']; ?></h3>
@@ -91,32 +94,34 @@
     </div>
 </section>
 
-<div class="carousel testimonials">
+<section class="testimonials">
     <h2>WHAT OTHERS ARE SAYING:</h2>
-    <div class="track">
-        <?php while(have_rows('testimonials')) : the_row();
-            $quote = get_sub_field('quote');
-            $author = get_sub_field('author');
-            ?>
-                <div class="slide">
-                    <p class="quote"><?php echo $quote; ?></p>
-                    <p class="author"><?php echo $author; ?></p>
+    <div class="carousel">
+        <div class="track">
+            <?php while(have_rows('testimonials')) : the_row();
+                $quote = get_sub_field('quote');
+                $author = get_sub_field('author');
+                ?>
+                    <div class="slide">
+                        <p class="quote"><?php echo $quote; ?></p>
+                        <p class="author"><?php echo $author; ?></p>
+                    </div>
+                <?php endwhile; ?>
+        </div>
+        <div class="controls">
+            <div class="prev">
+                <div class="arrow">
+                    <?php echo file_get_contents(__DIR__ . '/../img/arrow.svg'); ?>
                 </div>
-            <?php endwhile; ?>
-    </div>
-    <div class="controls">
-        <div class="prev">
-            <div class="arrow">
-                <?php echo file_get_contents(__DIR__ . '/../img/arrow.svg'); ?>
             </div>
-        </div>
-        <div class="next">
-            <div class="arrow">
-                <?php echo file_get_contents(__DIR__ . '/../img/arrow.svg'); ?>
+            <div class="next">
+                <div class="arrow">
+                    <?php echo file_get_contents(__DIR__ . '/../img/arrow.svg'); ?>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <?php get_template_part('template-parts/cta') ?>
 <?php get_footer(); ?>
