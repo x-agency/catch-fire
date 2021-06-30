@@ -853,24 +853,29 @@ a {
         }
     }
 
-    .content {
+    > img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
         position: absolute;
-        top: 50%;
+    }
+
+    .content {
+        position: relative;
         left: 55%;
-        transform: translateY(-50%);
         z-index: 1;
+        padding: 3rem 0;
+        width: 40%;
 
         @include respond-below(xl) {
-            left: unset;
-            right: 5%;
-            min-width: 50%;
+            left: 45%;
+            width: 50%;
         }
 
         @include respond-below(lg) {
             width: 90%;
-            right: unset;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
         }
 
         .subtitle {
@@ -1018,6 +1023,11 @@ a {
         display: flex;
         flex-wrap: wrap;
 
+        @include respond-below(lg) {
+            text-align: center;
+            justify-content: center;
+        }
+
         p {
             color: #dfdfdf;
             @include main-font;
@@ -1051,6 +1061,7 @@ a {
             display: flex;
             justify-content: start;
             align-items: center;
+            text-align: left;
 
             +a {
                 margin-left: 2rem;
@@ -1479,6 +1490,14 @@ body[class*="page-template-archive"] {
 
         &:hover {
             color: #3f3f3f;
+        }
+    }
+
+    h2 {
+        @include main-font;
+
+        span {
+            color: $red;
         }
     }
 }
@@ -2090,15 +2109,124 @@ body[class*="page-template-archive"] {
 
 /* Workshops Page */
 .page-template-workshop {
-
-    .ast-container>.container {
+    #books-pub-hero {
+        margin-bottom: 3rem;
+    }
+    
+    .ast-container > .container {
         max-width: unset;
-        padding: 100px 250px;
+        padding: 100px 225px;
 
+        @media (max-width: 1199px) {
+            padding: 50px 20vw;
+        }
+
+        @media (max-width: 991px) {
+            padding: 50px 10vw;
+        }
+    }
+
+    .ast-container > .tools {
+        padding: 25px 225px;
+
+        @media (max-width: 1199px) {
+            padding: 25px 20vw;
+        }
+
+        @media (max-width: 991px) {
+            padding: 25px 10vw;
+        }
+
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: auto;
+                height: 81px;
+                margin-bottom: 1.5rem;
+            }
+
+            button {
+                max-width: 350px;
+                width: 100%;
+            }
+        }
+    }
+
+    .speaking, .coaching, .consulting {
+        h2 {
+            @include main-font;
+            font-size: calc(max(26px, min(2.25vw, 41px)));
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            font-family: 'Source Code Pro', monospace;
+            font-size: 28px;
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+
+        h4 {
+            color: $red;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 22px;
+            margin-bottom: 1em;
+            text-transform: uppercase;
+
+            span {
+                color: #000000;
+            }
+        }
+
+        .btn {
+            width: 290px;
+            @media (max-width: 600px) {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        img {
+            margin: 0 auto;
+
+            @media (max-width: 1199px) {
+                margin: 2rem auto;
+            }
+        }
     }
 
     .coaching {
-        background: linear-gradient(to bottom, transparent 25%, #bbb 0%);
+        background: linear-gradient(to bottom, transparent 18%, #c0c0c0 0%);
+
+        @media (max-width: 1199px) {
+            background: linear-gradient(to bottom, transparent 10%, #c0c0c0 0%);
+        }
+
+        h4 {
+            margin-bottom: 3em;
+        }
+
+        @media (min-width: 1200px) {
+            .col-xl-6:nth-child(1) {
+                position: relative;
+                left: -4.9vw;
+            }
+        }
+    }
+
+    .coaching, .consulting {
+        
+        img {
+            margin-top: -2.75rem;
+
+            @media (max-width: 1199px) {
+                margin: 0 auto;
+            }
+        }
     }
 
     .btn {
@@ -2107,6 +2235,89 @@ body[class*="page-template-archive"] {
 
     .testimonials {
         background: #bbb;
-        padding-bottom: 10rem;
+        padding: 5rem 12vw 10rem;
+        text-align: center;
+
+        @media (max-width: 600px) {
+            padding: 5rem 5vw 10rem;
+        }
+
+        h2, .quote, .author {
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        .quote, .author {
+            font-size: 22px;
+        }
+
+        .author {
+            color: $red;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            padding: 2rem 5rem;
+            max-height: unset;
+
+            @media (max-width: 600px) {
+                padding: 2rem 0;
+            }
+
+            .author {
+                text-transform: uppercase;
+            }
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;    
+            width: calc(79px * 2 + 2rem);
+            margin: 0 auto;
+
+            * {
+                display: inline-block;
+            }
+
+            .prev, .next {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                p {
+                    margin: 0;
+                    font-family: 'Source Code Pro', monospace;
+                    text-transform: uppercase;
+                    letter-spacing: 0.14em;
+                }
+            }
+
+            .prev .arrow {
+                transform: rotate(180deg);
+            }
+
+            .next {
+                margin-left: 2rem;
+            }
+
+            .arrow * {
+                fill: $red;
+            }
+
+            .arrow {
+                width: 79px;
+                height: 28px;
+                margin: 0;
+                
+                svg {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                }
+            }
+        }
     }
 }

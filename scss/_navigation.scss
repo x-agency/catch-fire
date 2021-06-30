@@ -274,7 +274,7 @@
 
 
             a {
-                font-size: 3vw;
+                font-size: calc(max(20px, min(4vw, 38px)));
                 @include title-font;
                 color: white;
                 text-transform: uppercase;
@@ -308,9 +308,9 @@
             display: inline-block;
 
             a {
-                font-size: 32px;
+                font-size: 38px;
                 color: $red;
-                @include title-font;
+                @include title-font; 
             }
         }
     }
