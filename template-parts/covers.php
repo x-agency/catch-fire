@@ -2,7 +2,7 @@
     <div class="anchor" id="latest-resources"></div>
     <div class="row">
         <div class="col-lg-6 order-1 text-center text-lg-start">
-            <a href="/publications" target="_blank"><h2 class="subtitle">LATEST RESOURCES</h2></a>
+            <a href="/articles" target="_blank"><h2 class="subtitle">LATEST RESOURCES</h2></a>
         </div>
         <div class="col-lg-6 order-3 order-lg-2 text-center text-lg-end mt-lg-0 mt-5">
             <div class="prev me-lg-0 me-5">

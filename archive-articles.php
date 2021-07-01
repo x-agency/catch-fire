@@ -29,7 +29,15 @@
             <div class="col-xl-8 d-xl-flex flex-column justify-content-xl-center text-xl-start text-center">
                 <a href="<?php echo get_permalink($post->ID);?>" target="_blank"><h2><?php echo get_the_title($post->ID); ?></h2></a>
                 <p><?php echo get_the_excerpt($post->ID); ?></p>
-                <a class="btn my-1 mx-xl-0 mx-auto" style="max-width: 200px;" href="<?php echo get_permalink($post->ID);?>">View Publication</a>
+                <a class="btn my-1 mx-xl-0 mx-auto" style="max-width: 200px;" href="<?php echo get_permalink($post->ID);?>">
+                    <?php 
+                        if ( sizeof(get_the_category($post->ID)) == 0 ) {
+                            echo 'Read More';
+                        } else {
+                            echo 'View ' . get_the_category($post->ID)[0]->name; 
+                        }
+                    ?>
+                </a>
             </div>
         </div>
     <?php endforeach; ?>
