@@ -49,7 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</div>
 		<div class="row made-by">
-			<div class="made-title"><a href="">BUILT BY X</a></div>
+			<div class="made-title"><a href="https://www.xagency.io/">BUILT BY X</a></div>
 		</div>
 	</div>
 </section>

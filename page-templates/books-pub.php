@@ -26,7 +26,7 @@
         <div class="col-lg-6 col-xl-3 text-center">
             <a href="#books-and-publications">
                 <?php echo file_get_contents(__DIR__ . '/../img/book.svg'); ?>
-                <button class="btn">BOOKS & PUBLICATIONS</button>
+                <button class="btn">BOOKS</button>
             </a>
         </div>
         <div class="col-lg-6 col-xl-3 text-center">
@@ -252,7 +252,7 @@
     </div>
 </div>
 
-<section class="container resources" id="resources">
+<!--section class="container resources" id="resources">
     <div class="row mb-5">
         <div class="col-12"><a href="https://www.youtube.com/channel/UCGpM37SRr3NXLml84rWxE2A" target="_blank"><h2 class="subtitle">Christian Resources</h2></a></div>
         <div class="col-12"><h2>We are all busy and at the same time, we want to be in the know about ideas and insights.</h2></div>
@@ -269,8 +269,8 @@
             <a href="/wp-content/themes/catch-fire/img/Old_and_New_Testament_Hospitality.pdf" target="_blank" class="btn">Download PDF</a>
         </div>
     </div>
-    <!-- <a href="https://www.youtube.com/channel/UCGpM37SRr3NXLml84rWxE2A" target="_blank" class="btn d-block" style="max-width: 250px;">All Resources</a> -->
-</section>
+    <a href="https://www.youtube.com/channel/UCGpM37SRr3NXLml84rWxE2A" target="_blank" class="btn d-block" style="max-width: 250px;">All Resources</a>
+</section -->
 
 <?php get_template_part('template-parts/contact') ?>
 <?php get_footer(); ?>

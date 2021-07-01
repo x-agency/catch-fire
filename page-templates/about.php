@@ -130,7 +130,7 @@ $hero = get_field('hero');
                     <a href="/resources-for-success/#latest-resources">Leader Resources</a>
                 </div>
                 <div class="tools--item">
-                    <a href="/resources-for-success/#catchfire-podcast">CatchFire Podcast</a>
+                    <a href="/resources-for-success/#podcast">CatchFire Podcast</a>
                 </div>
                 <div class="tools--item">
                     <a href="/resources-for-success/#flash-paper">Flash Paper</a>
