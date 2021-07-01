@@ -71,6 +71,12 @@ $leaders = get_field('leaders');
             <div class="icon">
                 <div class="icon-inner">
                     <img src="/wp-content/themes/catch-fire/img/growth.svg" alt="">
+                    <div class="icon-text">leadership<br>development</div>
+                </div>
+            </div>
+            <div class="icon">
+                <div class="icon-inner">
+                    <img src="/wp-content/themes/catch-fire/img/growth.svg" alt="">
                     <div class="icon-text">organizational<br>growth</div>
                 </div>
             </div>
