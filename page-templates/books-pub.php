@@ -191,18 +191,14 @@
 
         <?php
             $posts = get_posts( array(
-                'numberposts' => 12,
+                'numberposts' => 9,
                 'post_type'   => 'flash-papers'  
                 ) 
             );   
-            $i = wp_count_posts('flash-papers')->publish;
         ?>
         <?php foreach($posts as $post) : ?>
             <div class="col-lg-6 col-xl-4">
                 <a href="<?php echo get_permalink($pub->ID); ?>" class="mb-4 justify-content-center">
-                    <div class="flash-paper">
-                        <p><?php echo $i; ?></p>
-                    </div>
                     <p><?php echo get_the_title($post->ID); ?></p>
                 </a>
             </div>
@@ -276,20 +272,7 @@
     <!-- <a href="https://www.youtube.com/channel/UCGpM37SRr3NXLml84rWxE2A" target="_blank" class="btn d-block" style="max-width: 250px;">All Resources</a> -->
 </section>
 
-<section id="contact">
-    <div class="container">
-        <div class="row contact--wrapper">
-            <div class="col-12 title">
-                get updates direct to your inbox:
-            </div>
-            <div class="col-12 form">
-            <?php echo FrmFormsController::get_form_shortcode( array( 'id' => 10, 'title' => false, 'description' => false ) ); ?>
-            </div>
-            <div class="col-12 info">*no spam, Just valuable resources for modern-day leaders.</div>
-        </div>
-    </div>
-</section>
-
+<?php get_template_part('template-parts/contact') ?>
 <?php get_footer(); ?>
 
 <script>
