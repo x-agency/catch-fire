@@ -53,7 +53,7 @@ jQuery(document).ready(function($) {
     resizeId = '';
 
     //clone slides
-    for (var i = 0; i < slideCount * 2; i++) {
+    for (var i = 0; i < slideCount; i++) {
         $('.slide').eq(slideCount - 1).clone().prependTo('.track');
     }
 
@@ -70,28 +70,32 @@ jQuery(document).ready(function($) {
 
         if ($(window).width() > 1920) {
             threshold = 480;
-            $('.carousel').css("width", "1344px");
-            $('.track').css({"width":"2716.5px", "left":"-1374px"});
+            trackWidth = 1400 * (slideCountTotal / 3) + "px";
+            $('.carousel').css("width", "1400px");
+            $('.track').css({"width":trackWidth, "left":"calc(-477px * 3)"});
         } else if ( $(window).width() > 1439 ) {
-            $('.slide').css("width", "calc(" + carouselWidth + "px / " + slideCount + " - 20px)");
+            $('.slide').css("width", "100%");
             width = parseInt($('.slide').css("width"));
-            space = ( carouselWidth - ( width * 3 )) / 2;
-            $('.track').css("width", (carouselWidth * (slideCountTotal / 3)) + space + "px");
-            $('.track').css("left", "calc(-" + $('.track').css("width") + " / 3)");
+
+            $('.track').css("width", (carouselWidth * (slideCountTotal / 3)) + "px");
+            $('.track').css("left", "calc(-" + (carouselWidth / 3) + "px * 3)");
 
             offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
         } else if ( $(window).width() > 991 ) {
-            $('.slide').css("width", "calc(" + carouselWidth + "px / 2 - 20px)");
+            //$('.slide').css("width", "calc(" + carouselWidth + "px / 2 - 20px)");
+            $('.slide').css("width", "100%");
             width = parseInt($('.slide').css("width"));
             $('.track').css("width", (carouselWidth * (slideCountTotal / 2)) + "px");
-            $('.track').css("left", "calc(-" + $('.track').css("width") + " / 3)");
+            //$('.track').css("left", "calc(-" + $('.track').css("width") + " / 3)");
+            $('.track').css("left", "calc(-" + (carouselWidth / 2) + "px * 3)");
 
             offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
         } else {
             $('.slide').css("max-width", carouselWidth + "px");
             width = parseInt($('.slide').css("width"));
             $('.track').css("width", (carouselWidth * slideCountTotal) + "px");
-            $('.track').css("left", "-" + ((parseFloat($('.track').css("width")) / 3) + ((carouselWidth - width) / slideCountTotal)) + "px");
+            //$('.track').css("left", "-" + ((parseFloat($('.track').css("width")) / 3) + ((carouselWidth - width) / slideCountTotal)) + "px");
+            $('.track').css("left", "calc(-" + (carouselWidth) + "px * 3)");
 
             offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
         }
