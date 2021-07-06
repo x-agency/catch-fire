@@ -111,12 +111,11 @@ jQuery(document).ready(function($) {
         dragStart = 0,
         dragEnd = 0,
         count = 1,
-        grabbed = false,
-        $item = $('.slide');
+        grabbed = false;
 
-        $carousel.css("overflow", "hidden");
-        $track.css("left", "100vw").css({"display":"flex", "position":"relative"});
-        for (var i = 0; i < (slideCount * 2); i++) {
+        $('.carousel').css("overflow", "hidden");
+        $('.track').css("left", "-50vw").css({"display":"flex", "position":"relative"});
+        for (var i = 0; i < slideCount; i++) {
             $('.slide').eq(slideCount - 1).clone().prependTo('.track');
         }    
 
@@ -126,18 +125,18 @@ jQuery(document).ready(function($) {
             if (e.type == 'mousedown') dragStart = e.pageX;
             $target = $(e.target);
             $this = $(this);
-            $carousel.on('mousemove touchmove', function(e){ 
+            $('.carousel').on('mousemove touchmove', function(e){ 
                 grabbed = true;
                 if (e.type == 'touchmove') dragEnd = e.originalEvent.touches[0].pageX;
                 if (e.type == 'mousemove') dragEnd = e.pageX;
-                $track.css('transform','translateX('+ dragPos() +'px)');
-                $item.css('cursor', 'grabbing');
+                $('.track').css('transform','translateX('+ dragPos() +'px)');
+                $('.slide').css('cursor', 'grabbing');
                 dragDistance = dragPos();
             });
             $(document).on('mouseup touchend', function(){
                 if (grabbed == true) {
                     count = dragDistance / width;
-                    $item.css('cursor', 'grab');
+                    $('.slide').css('cursor', 'grab');
                     if (dragPos() > threshold) { return shiftSlide(1) } //to the left
                     if (dragPos() < -threshold) { return shiftSlide(-1) } //to the right
                 } else {
@@ -153,27 +152,27 @@ jQuery(document).ready(function($) {
         }
 
         function shiftSlide(direction) {
-            if($track.hasClass('transition')) return;
+            if($('.track').hasClass('transition')) return;
             grabbed = false;
             dragEnd = dragStart;
             count = direction === -1 ? Math.floor(count) : Math.ceil(count);
             $(document).off('mouseup touchend');
-            $carousel.off('mousemove touchmove');
-            $track.addClass('transition').css('transform','translateX(' + (width * count) + 'px)');
+            $('.carousel').off('mousemove touchmove');
+            $('.track').addClass('transition').css('transform','translateX(' + (width * count) + 'px)');
             setTimeout(function(){
                 if (direction >= 1) { // to the left
                     while (count > 0) {
-                        $track.find('.slide:first-child').before($track.find('.slide:last-child'));
+                        $('.track').find('.slide:first-child').before($('.track').find('.slide:last-child'));
                         count--;
                     }
                 } else if (direction <= -1) { //to the right
                     while (count < 0) {
-                        $track.find('.slide:last-child').after($track.find('.slide:first-child'));
+                        $('.track').find('.slide:last-child').after($('.track').find('.slide:first-child'));
                         count++;
                     }
                 }
-                $track.removeClass('transition')
-                $track.css('transform','translateX(0px)');
+                $('.track').removeClass('transition')
+                $('.track').css('transform','translateX(0px)');
             }, 600);
         }
 

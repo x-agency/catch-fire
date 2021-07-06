@@ -70,7 +70,7 @@ $leaders = get_field('leaders');
             </div>
             <div class="icon">
                 <div class="icon-inner">
-                    <img src="/wp-content/themes/catch-fire/img/growth.svg" alt="">
+                    <?php echo file_get_contents(__DIR__ . '/../img/leadership.svg'); ?>
                     <div class="icon-text">leadership<br>development</div>
                 </div>
             </div>

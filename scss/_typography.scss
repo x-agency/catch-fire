@@ -51,7 +51,7 @@ h5 {}
 p, ul {
     color: #3f3f3f;
     @include main-font;
-    font-size: 20px;
+    font-size: calc(max(14px, min(1.5vw, 20px)));
 }
 
 #main-menu {
@@ -60,9 +60,9 @@ p, ul {
 
 .title {
     @include main-font;
-    font-size: 48px;
+    font-size: calc(max(28px, min(3vw, 48px)));
     color: #3f3f3f;
-    line-height: 58px;
+    line-height: 1.2em;
     margin-top: 55px !important;
 
     span {
@@ -73,8 +73,9 @@ p, ul {
 .title__small {
     @include main-font;
     font-size: 37px;
+    font-size: calc(max(22px, min(2.5vw, 37px)));
     color: #3f3f3f;
-    line-height: 40px;
+    line-height: 1.15em;
     margin-top: 55px !important;
 
 }
@@ -83,6 +84,7 @@ p, ul {
 .subtitle {
     @include title-font;
     font-size: 28px;
+    font-size: calc(max(18px, min(2.5vw, 28px)));
     text-transform: uppercase;
     letter-spacing: .14em;
 }
@@ -95,6 +97,7 @@ p, ul {
 .pre-title {
     @include special-font;
     font-size: 36px;
+    font-size: calc(max(22px, min(2.5vw, 36px)));
     font-weight: 600;
     color: $red;
 

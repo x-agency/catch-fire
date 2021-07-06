@@ -17,28 +17,34 @@
             <h2 class="subtitle">TOOLS FOR SUCCESS</h2>
             <h2>Resources and information for the modern-day leader.</h2>
         </div>
-        <div class="col-lg-6 col-xl-3 text-center">
+        <div class="col-lg-6 col-xl-2 text-center py-4 py-lg-3 py-xl-0">
             <a href="#latest-resources">
                 <?php echo file_get_contents(__DIR__ . '/../img/latest.svg'); ?>
                 <button class="btn">LATEST RESOURCES</button>
             </a>
         </div>
-        <div class="col-lg-6 col-xl-3 text-center">
+        <div class="col-lg-6 col-xl-2 text-center py-4 py-lg-3 py-xl-0">
             <a href="#books-and-publications">
                 <?php echo file_get_contents(__DIR__ . '/../img/book.svg'); ?>
                 <button class="btn">BOOKS</button>
             </a>
         </div>
-        <div class="col-lg-6 col-xl-3 text-center">
+        <div class="col-lg-6 col-xl-2 text-center py-4 py-lg-3 py-xl-0">
             <a href="#podcast">
                 <?php echo file_get_contents(__DIR__ . '/../img/mic.svg'); ?>
                 <button class="btn">CATCHFIRE PODCAST</button>
             </a>
         </div>
-        <div class="col-lg-6 col-xl-3 text-center">
+        <div class="col-lg-6 col-xl-2 text-center py-4 py-lg-3 py-xl-0">
             <a href="#flash-paper">
                 <?php echo file_get_contents(__DIR__ . '/../img/flash-paper.svg'); ?>
                 <button class="btn">FLASH PAPER</button>
+            </a>
+        </div>
+        <div class="col-lg-6 col-xl-2 text-center py-4 py-lg-3 py-xl-0">
+            <a href="#videos">
+                <?php echo file_get_contents(__DIR__ . '/../img/videos.svg'); ?>
+                <button class="btn">VIDEOS</button>
             </a>
         </div>
     </div>
@@ -206,9 +212,13 @@
         <?php endforeach; ?>
     </div>
     <a href="/flash-papers" class="btn d-block mt-5" style="max-width: 250px;">View All Flash Papers</a>
+
+    <div class="col-12 text-center form-title"><h2 class="subtitle">RECEIVE UPDATES FOR upcoming FLASH PAPER releases:</h2></div>
+    <?php echo FrmFormsController::get_form_shortcode( array( 'id' => 13, 'title' => false, 'description' => false ) ); ?>
 </section>
 
-<section class="container videos" id="videos">
+<section class="container videos">
+<div class="anchor" id="videos"></div>
     <div class="row mb-5">
         <div class="col-12"><a href="https://www.youtube.com/channel/UCGpM37SRr3NXLml84rWxE2A" target="_blank"><h2 class="subtitle">Videos</h2></a></div>
         <div class="col-12"><h2>We are all busy and at the same time, we want to be in the know about ideas and insights.</h2></div>

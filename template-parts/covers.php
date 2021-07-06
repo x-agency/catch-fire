@@ -25,11 +25,19 @@
                     ?>
                     <?php //loop through each array object to get the thumbnail ?>
                     <?php foreach($pubs as $pub) : ?>
-                    <div class="slide">
-                        <a href="<?php echo get_permalink($pub->ID);?>" target="_blank">
-                            <img src="<?php echo get_the_post_thumbnail_url($pub->ID, '')?>" alt="">
-                        </a>
-                    </div>
+                        <?php if ( get_field('open', $pub->ID) == true ) : ?>
+                            <div class="slide">
+                                <a href="<?php the_field('pdf', $pub->ID); ?>" target="_blank">
+                                    <img src="<?php echo get_the_post_thumbnail_url($pub->ID, '')?>" alt="">
+                                </a>
+                            </div>
+                        <?php else : ?>
+                            <div class="slide">
+                                <a href="<?php echo get_permalink($pub->ID);?>" target="_blank">
+                                    <img src="<?php echo get_the_post_thumbnail_url($pub->ID, '')?>" alt="">
+                                </a>
+                            </div>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
             </div>
