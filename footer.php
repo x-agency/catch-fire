@@ -25,10 +25,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section id="footer">
 	<div class="container footer--wrapper">
 		<div class="row footer--social">
-			<div class="social--item"><a href="<?php echo $social['fb']; ?>">FB</a></div>
-			<div class="social--item"><a href="<?php echo $social['insta']; ?>">IG</a></div>
-			<div class="social--item"><a href="<?php echo $social['linked']; ?>">IN</a></div>
-			<div class="social--item"><a href="<?php echo $social['youtube']; ?>">YT</a></div>
+			<div class="social--item"><a target="_blank" href="<?php echo $social['fb']; ?>">FB</a></div>
+			<div class="social--item"><a target="_blank" href="<?php echo $social['insta']; ?>">IG</a></div>
+			<div class="social--item"><a target="_blank" href="<?php echo $social['linked']; ?>">IN</a></div>
+			<div class="social--item"><a target="_blank" href="<?php echo $social['youtube']; ?>">YT</a></div>
 		</div>
 		<div class="row footer--links">
 			<div class="footer--item">

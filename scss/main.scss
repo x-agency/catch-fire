@@ -380,6 +380,7 @@ body {
     .quote {
         @include main-font;
         font-size: 34px;
+        font-size: calc(max(18px, min(3vw, 34px)));
         font-style: italic;
         color: #757373;
         text-align: center;
@@ -446,6 +447,9 @@ body {
 
 #about-intro {
     margin-bottom: 100px;
+    @include respond-below(lg) {
+        margin-bottom: 25px
+    }
 
 
     .intro__left {
@@ -453,6 +457,9 @@ body {
 
         img {
             margin-top: 100px;
+            @include respond-below(lg) {
+                margin: 20px 0 50px;
+            }
         }
     }
 
@@ -466,6 +473,10 @@ body {
 
     .title__small {
         margin-bottom: 60px;
+        @include respond-below(lg) {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
     }
 
     .subtitle {
@@ -512,6 +523,10 @@ body {
     .page-divider {
         width: 100%;
         margin-bottom: 75px;
+
+        @include respond-below(lg) {
+            margin-bottom: 25px;
+        }
     }
 
     .tools--wrapper {
@@ -526,22 +541,21 @@ body {
             padding-left: 4%;
 
             .title {
-                margin-bottom: 50px;
                 font-size: 45px;
-
+                font-size: calc(max(28px, min(4vw, 45px)));
+                margin: 1em 0;
             }
 
             .tools--item {
-                margin: 25px 0;
+                margin: 1em 0;
 
 
                 a {
                     @include main-font;
                     color: #3f3f3f;
-                    font-size: 25px;
+                    font-size: calc(max(20px, min(2.5vw, 25px)));
                     transition: $ease;
-                    line-height: 30px;
-
+                    line-height: 1.2em;
 
                     &:hover {
                         color: $red;
@@ -1705,7 +1719,7 @@ body[class*="page-template-archive"] {
         position: relative;
 
         @include respond-above(xl) {
-            top: -200px;
+            top: -100px;
             left: 50px;
         }
     }
@@ -1716,7 +1730,7 @@ body[class*="page-template-archive"] {
         width: calc(max(275px, min(30vw, 562px)));
 
         @include respond-above(xl) {
-            margin: 0 auto 10rem;
+            margin: 0 auto 5rem;
         }
     }
 

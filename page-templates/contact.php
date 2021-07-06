@@ -21,7 +21,7 @@
         <div class="col-xl-5 offset-xl-1">
             <h2>GET IN TOUCH</h2>
             <p>Start the conversation and let’s spark change together.</p>
-            <?php echo FrmFormsController::get_form_shortcode( array( 'id' => 10, 'title' => false, 'description' => false ) ); ?>
+            <?php echo FrmFormsController::get_form_shortcode( array( 'id' => 11, 'title' => false, 'description' => false ) ); ?>
         </div>
         <div class="col-xl-5 contact">
             <img src="/wp-content/themes/catch-fire/img/contact.jpg" alt="">

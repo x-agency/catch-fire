@@ -63,7 +63,7 @@ p, ul {
     font-size: calc(max(28px, min(3vw, 48px)));
     color: #3f3f3f;
     line-height: 1.2em;
-    margin-top: 55px !important;
+    margin-top: 55px;
 
     span {
         color: $red;
@@ -76,8 +76,7 @@ p, ul {
     font-size: calc(max(22px, min(2.5vw, 37px)));
     color: #3f3f3f;
     line-height: 1.15em;
-    margin-top: 55px !important;
-
+    margin-top: 55px;
 }
 
 
