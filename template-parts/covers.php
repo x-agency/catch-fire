@@ -82,11 +82,9 @@ jQuery(document).ready(function($) {
 
             offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
         } else if ( $(window).width() > 991 ) {
-            //$('.slide').css("width", "calc(" + carouselWidth + "px / 2 - 20px)");
             $('.slide').css("width", "100%");
             width = parseInt($('.slide').css("width"));
             $('.track').css("width", (carouselWidth * (slideCountTotal / 2)) + "px");
-            //$('.track').css("left", "calc(-" + $('.track').css("width") + " / 3)");
             $('.track').css("left", "calc(-" + (carouselWidth / 2) + "px * 3)");
 
             offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
@@ -94,7 +92,6 @@ jQuery(document).ready(function($) {
             $('.slide').css("max-width", carouselWidth + "px");
             width = parseInt($('.slide').css("width"));
             $('.track').css("width", (carouselWidth * slideCountTotal) + "px");
-            //$('.track').css("left", "-" + ((parseFloat($('.track').css("width")) / 3) + ((carouselWidth - width) / slideCountTotal)) + "px");
             $('.track').css("left", "calc(-" + (carouselWidth) + "px * 3)");
 
             offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
