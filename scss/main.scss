@@ -78,7 +78,7 @@ body {
 // ** HOME PAGE ** //
 
 .page-template-home {
-    .container {
+    .container:not(.cta--wrapper) {
         width: 70%;
         margin: 0 auto;
     }
@@ -420,7 +420,7 @@ body {
 
 // about intro
 .page-template-about {
-    .container {
+    .container:not(.cta--wrapper) {
         width: 70%;
         margin: 0 auto;
         min-width: 290px;
@@ -1324,7 +1324,7 @@ a {
             position: relative;
         }
 
-        #frm_field_36_container {
+        #frm_field_36_container, #frm_field_37_container {
             max-width: 600px;
             width: 100%;
             margin: 0 auto;
@@ -1668,6 +1668,10 @@ body[class*="page-template-archive"] {
 
 .page-template-contact {
 
+    .ast-container > .container {
+        margin-bottom: 10rem;
+    }
+
     p,
     .contact .phone a {
         @include main-font;
@@ -1739,9 +1743,21 @@ body[class*="page-template-archive"] {
     }
 
     #footer {
-        margin-top: -100px;
+        //margin-top: -100px;
+        padding-top: 0;
         position: relative;
         z-index: 10;
+    }
+}
+
+#frm_form_11_container {
+    .frm_submit {
+        text-align: right;
+
+        button {
+            background: $red;
+            border-radius: 50px;
+        }
     }
 }
 
@@ -1817,7 +1833,8 @@ body[class*="page-template-archive"] {
     text-align: center;
     text-transform: uppercase;
     color: #141414;
-    padding-bottom: 225px;
+    padding-top: 5rem;
+    padding-bottom: 150px;
 
     @include respond-below(lg) {
         padding-bottom: 50px;
@@ -1848,15 +1865,16 @@ body[class*="page-template-archive"] {
 
 #cta {
     background-color: #141414;
-    padding-bottom: 75px;
+    //padding-bottom: 75px;
     position: relative;
     z-index: 10;
+    bottom: -1px;
 
     .cta--inner {
         justify-content: center;
 
         .cta--item {
-            margin: -107px 25px 0;
+            margin: -75px 25px 0;
 
             @include respond-below(lg) {
                 margin: 15px 25px 0;
@@ -1874,7 +1892,7 @@ body[class*="page-template-archive"] {
 
 #footer {
     background-color: #141414;
-    padding: 0 0 100px;
+    padding: 75px 0 100px;
 
     .footer--social {
         justify-content: center;

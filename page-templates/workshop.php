@@ -101,6 +101,7 @@
             <?php while(have_rows('testimonials')) : the_row();
                 $quote = get_sub_field('quote');
                 $author = get_sub_field('author');
+                $i = get_row_index();
                 ?>
                     <div class="slide">
                         <p class="quote"><?php echo $quote; ?></p>
@@ -108,18 +109,20 @@
                     </div>
                 <?php endwhile; ?>
         </div>
-        <div class="controls">
-            <div class="prev">
-                <div class="arrow">
-                    <?php echo file_get_contents(__DIR__ . '/../img/arrow.svg'); ?>
+        <?php if ($i >= 2) : //only create controls if there is more than one slide?>
+            <div class="controls">
+                <div class="prev">
+                    <div class="arrow">
+                        <?php echo file_get_contents(__DIR__ . '/../img/arrow.svg'); ?>
+                    </div>
+                </div>
+                <div class="next">
+                    <div class="arrow">
+                        <?php echo file_get_contents(__DIR__ . '/../img/arrow.svg'); ?>
+                    </div>
                 </div>
             </div>
-            <div class="next">
-                <div class="arrow">
-                    <?php echo file_get_contents(__DIR__ . '/../img/arrow.svg'); ?>
-                </div>
-            </div>
-        </div>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -142,13 +145,10 @@
     resizeId = '';
 
     //clone slides
-    for (var i = 0; i < slideCount; i++) {
+    for (var i = 0; i < slideCount * 2; i++) {
         $('.slide').eq(slideCount - 1).clone().prependTo('.track');
-        $('.slide').eq(slideCount - 1).clone().appendTo('.track');
     }
     //$('.controls').css("max-width", (slideCount * 25 + 100) + "px");
-
-    
 
     //reinit variables on screen resize
     function resize() {
