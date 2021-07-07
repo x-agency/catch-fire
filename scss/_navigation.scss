@@ -187,6 +187,11 @@
             transform: rotate(-90deg) translate(-14px, 1px);
             transition: $ease;
 
+            @include respond-below(md) {
+                transform: rotate(-90deg) translate(55px, -35px);
+                font-size: 18px;
+            }
+
             span {
                 color: $red;
             }

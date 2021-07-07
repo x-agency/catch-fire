@@ -257,7 +257,7 @@ body {
                 text-align: center;
             }
 
-            img {
+            img, svg {
                 width: 75px;
                 margin-bottom: 10px;
             }
@@ -906,7 +906,7 @@ a {
             transition: transform 0.6s;
 
             @include respond-below(lg) {
-                height: 90vw;
+                height: 75vw;
                 max-height: 429px;
             }
         }
@@ -1426,6 +1426,15 @@ a {
                 transform: translate(-50%, -75%);
                 opacity: 0;
                 transition: transform 0.3s, opacity 0.3s;
+                width: 50px;
+                height: 50px;
+
+                path {
+                    fill: transparent;
+                    stroke: white;
+                    stroke-width: 3px;
+                    transform: translate(-25%, 105%) scale(0.9);
+                }
             }
         }
 
@@ -1899,7 +1908,7 @@ body[class*="page-template-archive"] {
 
 #footer {
     background-color: #141414;
-    padding: 75px 0 100px;
+    padding: 75px 0 50px;
 
     .footer--social {
         justify-content: center;
