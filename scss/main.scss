@@ -662,6 +662,7 @@ body {
         svg * {
             stroke: #bf1e2e;
             fill: #bf1e2e;
+            stroke-width: 1px;
         }
     }
 
@@ -753,6 +754,7 @@ a {
     svg * {
         stroke: transparent;
         fill: #929292;
+        stroke-width: 3px;
     }
 
     .row > div:nth-child(6) svg * {
@@ -1040,7 +1042,7 @@ a {
                 color: #dfdfdf;
                 text-transform: uppercase;
 
-                @media (max-width: 1449px) {
+                @media (max-width: 991px) {
                     width: 100%;
                 }
 
@@ -1351,6 +1353,7 @@ a {
                 left: unset;
                 top: unset;
                 margin: 1.5rem auto 0;
+                transform: unset;
             }
 
             button {

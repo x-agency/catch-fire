@@ -61,7 +61,7 @@
         <h2 class="subtitle">PODCAST</h2>
         <h2>catch<span>fire</span> daily</h2>
         <div class="podcast-links">
-            <?php while(have_rows('podcast')) : the_row();
+            <?php while(have_rows('podcast', $id)) : the_row();
                 $apple = get_sub_field('apple');
                 $spotify = get_sub_field('spotify');
                 $google = get_sub_field('google');
@@ -69,32 +69,22 @@
 
                 ?>
                 <div class="podcast-link mb-3">
-                    
                     <p><?php echo $title; ?></p>
                     <div class="pod-links">
-                        <a  href="<?php echo $apple; ?>" target="_blank">
-                        <div class="icon apple">
-                        <?php
-				echo file_get_contents( get_theme_file_uri( '/img/apple-podcast.svg' ) );
-			?>
-                        </div>
-            
+                        <a href="<?php echo $apple; ?>" target="_blank">
+                            <div class="icon apple">
+                                <?php echo file_get_contents( get_theme_file_uri( '/img/apple-podcast.svg' ) ); ?>
+                            </div>
                         </a>
-                        <a  href="<?php echo $spotify; ?>" target="_blank">
-                        <div class="icon spotify">
-                        <?php
-				echo file_get_contents( get_theme_file_uri( '/img/spotify-podcast.svg' ) );
-			?>
-                        </div>
-                
+                        <a href="<?php echo $spotify; ?>" target="_blank">
+                            <div class="icon spotify">
+                                <?php echo file_get_contents( get_theme_file_uri( '/img/spotify-podcast.svg' ) ); ?>
+                            </div>
                         </a>
-                        <a  href="<?php echo $google; ?>" target="_blank">
-                        <div class="icon google">
-                        <?php
-				echo file_get_contents( get_theme_file_uri( '/img/google-podcast.svg' ) );
-			?>
-                        </div>
-             
+                        <a href="<?php echo $google; ?>" target="_blank">
+                            <div class="icon google">
+                                <?php echo file_get_contents( get_theme_file_uri( '/img/google-podcast.svg' ) ); ?>
+                            </div>
                         </a>
                     </div>
                 </div>
