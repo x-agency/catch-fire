@@ -1270,26 +1270,30 @@ a {
             margin: 0 auto;
         }
 
-        .flash-paper {
-            position: relative;
+        svg:nth-child(1) {
+            width: 21px;
+            height: 38px;
+            margin: 0.75rem;
+            min-width: unset;
+            min-height: unset;
 
-            svg {
-                width: calc(max(40px, min(6vw, 47px)));
-                height: calc(max(65px, min(6vw, 70px)));
-                min-width: unset;
-                min-height: unset;
-                margin: 0;
+            * {
+                stroke: $red;
+                fill: transparent;
             }
+        }
 
-            p {
-                // position: absolute;
-                margin: 0;
-                @include title-font;
-                color: $red;
-                top: calc(50% - 0.25em);
-                left: 50%;
-                // transform: translate(-50%, -50%);
-                font-size: calc(max(16px, min(3vw, 23px)));
+        svg:nth-child(3) {
+            width: 26px;
+            height: 18px;
+            margin: 0;
+            clip-path: polygon(33% 0%, 100% 0%, 100% 100%, 33% 100%);
+
+            * {
+                stroke-width: 2px;
+                stroke: transparent;
+                fill: #747b7d;
+                stroke-linecap: square;
             }
         }
     }
