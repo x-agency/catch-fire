@@ -25,10 +25,11 @@
                     ?>
                     <?php //loop through each array object to get the thumbnail ?>
                     <?php foreach($pubs as $pub) : ?>
-                        <?php if ( get_field('open', $pub->ID) == true ) : ?>
+                        <?php if ( get_the_category($pub->ID)[0]->name == "Downloadable PDF" ) : ?>
                             <div class="slide">
-                                <a href="<?php the_field('pdf', $pub->ID); ?>" target="_blank">
+                                <a href="<?php if ( get_field('open', $pub->ID) == true ) { the_field('pdf', $pub->ID); } else { echo get_permalink($pub->ID); } ?>" target="_blank">
                                     <img src="<?php echo get_the_post_thumbnail_url($pub->ID, '')?>" alt="">
+                                    <div class="pdf">PDF Download</div>
                                 </a>
                             </div>
                         <?php else : ?>
