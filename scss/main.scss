@@ -97,6 +97,10 @@ body {
         font-size: calc(max(28px, min(3vw, 48px)));
         line-height: 1.2em;
     }
+
+    .ast-container > .page-divider {
+        margin: 0 auto 3rem;
+    }
 }
 
 // Hero
