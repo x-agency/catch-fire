@@ -69,10 +69,10 @@ body {
     .mobile-only {
         display: block;
     }
-    
+
     .desktop-only {
         display: none;
-    } 
+    }
 }
 
 // ** HOME PAGE ** //
@@ -98,7 +98,7 @@ body {
         line-height: 1.2em;
     }
 
-    .ast-container > .page-divider {
+    .ast-container>.page-divider {
         margin: 0 auto 3rem;
     }
 }
@@ -261,7 +261,8 @@ body {
                 text-align: center;
             }
 
-            img, svg {
+            img,
+            svg {
                 width: 75px;
                 margin-bottom: 10px;
             }
@@ -451,6 +452,7 @@ body {
 
 #about-intro {
     margin-bottom: 100px;
+
     @include respond-below(lg) {
         margin-bottom: 25px
     }
@@ -461,6 +463,7 @@ body {
 
         img {
             margin-top: 100px;
+
             @include respond-below(lg) {
                 margin: 20px 0 50px;
             }
@@ -477,6 +480,7 @@ body {
 
     .title__small {
         margin-bottom: 60px;
+
         @include respond-below(lg) {
             margin-top: 0;
             margin-bottom: 20px;
@@ -761,13 +765,13 @@ a {
         stroke-width: 3px;
     }
 
-    .row > div:nth-child(6) svg * {
+    .row>div:nth-child(6) svg * {
         fill: transparent;
         stroke: #929292;
     }
 
     @media (min-width: 1200px) {
-        .row > div:not(.col-12) {
+        .row>div:not(.col-12) {
             width: 20%;
         }
     }
@@ -778,7 +782,7 @@ a {
 }
 
 //Latest resources
-#content .ast-container > .latest-resources {
+#content .ast-container>.latest-resources {
     max-width: 1400px;
     width: 95vw;
     margin-bottom: 7.5rem;
@@ -873,7 +877,8 @@ a {
     }
 }
 
-.page-template-books-pub .ast-container>.container.books-pubs, .single-books {
+.page-template-books-pub .ast-container>.container.books-pubs,
+.single-books {
     position: relative;
     z-index: 1;
     background-image: linear-gradient(to bottom, transparent 30%, #c0c0c0 0%);
@@ -957,7 +962,7 @@ a {
         }
     }
 
-    > img {
+    >img {
         object-fit: cover;
         height: 100%;
         width: 100%;
@@ -1169,13 +1174,13 @@ a {
             align-items: center;
             text-align: left;
 
-            
+
             @include respond-above(lg) {
-                + a {
+                +a {
                     margin-left: 2rem;
                 }
-            }   
-            
+            }
+
 
             // img, svg, .icon {
             //     width: 40px;
@@ -1198,6 +1203,7 @@ a {
                 svg {
                     width: 50px;
                     height: 50px;
+
                     path {
                         transition: .3s ease all;
                     }
@@ -1334,7 +1340,8 @@ a {
             position: relative;
         }
 
-        #frm_field_36_container, #frm_field_37_container {
+        #frm_field_36_container,
+        #frm_field_37_container {
             max-width: 600px;
             width: 100%;
             margin: 0 auto;
@@ -1688,7 +1695,7 @@ body[class*="page-template-archive"] {
 
 .page-template-contact {
 
-    .ast-container > .container {
+    .ast-container>.container {
         margin-bottom: 10rem;
     }
 
@@ -1781,7 +1788,8 @@ body[class*="page-template-archive"] {
     }
 }
 
-#form_contact, #frm_form_13_container {
+#form_contact,
+#frm_form_13_container {
 
     label {
         @include title-font;
@@ -2007,7 +2015,8 @@ body[class*="page-template-archive"] {
 }
 
 
-#frm_form_10_container button[type="submit"], #frm_form_13_container button[type="submit"] {
+#frm_form_10_container button[type="submit"],
+#frm_form_13_container button[type="submit"] {
     background: #bf1e2e url(/wp-content/themes/catch-fire/img/submit-arrow.png) no-repeat center;
     width: 50px;
     height: 50px;
@@ -2301,8 +2310,8 @@ body[class*="page-template-archive"] {
         margin-bottom: 3rem;
         min-height: 350px;
     }
-    
-    .ast-container > .container {
+
+    .ast-container>.container {
         max-width: unset;
         padding: 100px 225px;
 
@@ -2315,7 +2324,7 @@ body[class*="page-template-archive"] {
         }
     }
 
-    .ast-container > .tools {
+    .ast-container>.tools {
         padding: 25px 225px;
 
         @media (max-width: 1199px) {
@@ -2345,7 +2354,9 @@ body[class*="page-template-archive"] {
         }
     }
 
-    .speaking, .coaching, .consulting {
+    .speaking,
+    .coaching,
+    .consulting {
         h2 {
             @include main-font;
             font-size: calc(max(26px, min(2.25vw, 41px)));
@@ -2373,6 +2384,7 @@ body[class*="page-template-archive"] {
 
         .btn {
             width: 290px;
+
             @media (max-width: 600px) {
                 width: 100%;
                 max-width: 250px;
@@ -2407,8 +2419,9 @@ body[class*="page-template-archive"] {
         }
     }
 
-    .coaching, .consulting {
-        
+    .coaching,
+    .consulting {
+
         img {
             margin-top: -2.75rem;
 
@@ -2431,7 +2444,9 @@ body[class*="page-template-archive"] {
             padding: 5rem 5vw 10rem;
         }
 
-        h2, .quote, .author {
+        h2,
+        .quote,
+        .author {
             font-family: 'Source Code Pro', monospace;
         }
 
@@ -2439,7 +2454,8 @@ body[class*="page-template-archive"] {
             font-size: 28px;
         }
 
-        .quote, .author {
+        .quote,
+        .author {
             font-size: 22px;
         }
 
@@ -2463,7 +2479,7 @@ body[class*="page-template-archive"] {
 
         .controls {
             display: flex;
-            justify-content: space-between;    
+            justify-content: space-between;
             width: calc(79px * 2 + 2rem);
             margin: 0 auto;
 
@@ -2471,7 +2487,8 @@ body[class*="page-template-archive"] {
                 display: inline-block;
             }
 
-            .prev, .next {
+            .prev,
+            .next {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -2500,13 +2517,34 @@ body[class*="page-template-archive"] {
                 width: 79px;
                 height: 28px;
                 margin: 0;
-                
+
                 svg {
                     width: 100%;
                     height: 100%;
                     margin: 0;
                 }
             }
+        }
+    }
+}
+
+.slide {
+    a {
+        position: relative;
+
+        .pdf {
+            background-color: #be202f;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 28px;
+            color: white;
+            padding: 15px 5px;
+            text-align: center;
+            font-family: din-condensed, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            width: 100%;
         }
     }
 }
