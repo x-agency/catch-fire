@@ -2527,3 +2527,24 @@ body[class*="page-template-archive"] {
         }
     }
 }
+
+.slide {
+    a {
+        position: relative;
+
+        .pdf {
+            background-color: #be202f;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 28px;
+            color: white;
+            padding: 15px 5px;
+            text-align: center;
+            font-family: din-condensed, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            width: 100%;
+        }
+    }
+}
