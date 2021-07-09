@@ -116,6 +116,11 @@ body {
         position: relative;
         background-position: center;
 
+        @include respond-below(sm) {
+            background-image: url(/wp-content/themes/catch-fire/img/jason-mobile.png);
+            background-position: center top;
+        }
+
         .hero-title {
             position: absolute;
             top: 37%;
