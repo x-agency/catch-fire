@@ -14,7 +14,7 @@
     <?php
         //get_posts to retrieve an array of posts
         $posts = get_posts( array(
-                'post_type'   => 'Articles'      
+                'post_type'   => 'resources'      
             ) 
         );   
     ?>

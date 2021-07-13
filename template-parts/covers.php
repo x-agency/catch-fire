@@ -19,7 +19,7 @@
                         //get_posts to retrieve an array of posts
                         $pubs = get_posts( array(
                                 'numberposts' => 6,
-                                'post_type'   => 'articles'      
+                                'post_type'   => 'resources'      
                             ) 
                         );   
                     ?>
@@ -32,10 +32,11 @@
                                     <div class="pdf">PDF Download</div>
                                 </a>
                             </div>
-                        <?php else : ?>
+                        <?php elseif ( get_the_category($pub->ID)[0]->name == "Article" ) : ?>
                             <div class="slide">
-                                <a href="<?php echo get_permalink($pub->ID);?>" target="_blank">
+                                <a href="<?php if ( get_field('open_article', $pub->ID) == true ) { the_field('link', $pub->ID); } else { echo get_permalink($pub->ID); } ?>" target="_blank">
                                     <img src="<?php echo get_the_post_thumbnail_url($pub->ID, '')?>" alt="">
+                                    <div class="pdf">Read Article</div>
                                 </a>
                             </div>
                         <?php endif; ?>
@@ -105,13 +106,30 @@ jQuery(document).ready(function($) {
 
             offsetWidth = $('.slide')[1].offsetLeft - $('.slide')[0].offsetLeft;
         }
+        
+        //only autoscroll on desktop and laptop
+        if ( $(window).width() > 1439 ) {
+            autoScroll = setInterval(function() {
+                count = -1;
+                return shiftSlide(-1);
+            }, 4000);
+
+            $('.latest-resources').on('touchstart mouseenter', function() {
+                clearInterval(autoScroll);
+            }).on('mouseleave touchend', function() {
+                autoScroll = setInterval(function() {
+                    count = -1;
+                    return shiftSlide(-1);
+                }, 4000);
+            });
+        }
     } resize();
 
     //listen and wait until screen is done resizing
     $(window).on('resize', function() {
         clearTimeout(resizeId);
         resizeId = setTimeout(resize, 500);
-    });    
+    });
 
     $('.slide').on('mousedown touchstart', function(e) {
         if ($track.hasClass('transition')) return; //if the carousel is in motion, prevent new movement until complete

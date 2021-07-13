@@ -136,7 +136,16 @@
             <div class="col-lg-6 col-xl-4">
                 <a href="<?php echo get_permalink($pub->ID); ?>" class="mb-4 justify-content-center">
                     <?php echo file_get_contents( get_theme_file_uri( '/img/flash.svg' ) ); ?>
-                    <p><?php echo get_the_title($post->ID); ?></p>
+                    <p>
+                        <?php 
+                            preg_match('/(.*)(\#\d*)(.*)/', get_the_title($post->ID), $matches);
+                            if (sizeOf($matches) == 0) {
+                                echo get_the_title($post->ID);
+                            } else {
+                                echo $matches[1] . ' <strong>' . $matches[2] . '</strong>';
+                            }
+                        ?>
+                    </p>
                     <?php echo file_get_contents( get_theme_file_uri( '/img/arrow.svg' ) ); ?>
                 </a>
             </div>

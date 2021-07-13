@@ -13,13 +13,16 @@
     <div class="sidebar carousel">
         <div class="track">
             <?php while( have_rows('case_study') ) : the_row();
+                $publish = get_sub_field('publish');
                 $image = get_sub_field('sidebar_image');
             ?>
-                <div class="slide">
-                    <div class="study <?php if ( get_row_index() == 1) echo 'active'; ?>" id="study-<?php echo get_row_index(); ?>">
-                        <img src="<?php echo $image;?>" alt="">
+                <?php if ($publish == 'pub') : ?>
+                    <div class="slide">
+                        <div class="study <?php if ( get_row_index() == 1) echo 'active'; ?>" id="study-<?php echo get_row_index(); ?>">
+                            <img src="<?php echo $image;?>" alt="">
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
             <?php endwhile; ?>
         </div>
         <div class="controls">
@@ -37,6 +40,7 @@
     </div>
     <div class="case">
         <?php while( have_rows('case_study') ) : the_row(); 
+            $publish = get_sub_field('publish');
             $image = get_sub_field('feat_image');
             $excerpt = get_sub_field('excerpt');
             $overview = get_sub_field('overview');
@@ -45,26 +49,28 @@
             $solution = get_sub_field('solution');
             $result = get_sub_field('result');
         ?>
-            <div class="content <?php if ( get_row_index() == 1) echo 'active'; ?>" data-study="study-<?php echo get_row_index(); ?>">
-                <h2 class="subtitle">CASE STUDY</h2>
-                <img src="<?php echo $image;?>" alt="">
-                <h2><?php echo $excerpt; ?></h2>
+            <?php if ($publish == 'pub') : ?>
+                <div class="content <?php if ( get_row_index() == 1) echo 'active'; ?>" data-study="study-<?php echo get_row_index(); ?>">
+                    <h2 class="subtitle">CASE STUDY</h2>
+                    <img src="<?php echo $image;?>" alt="">
+                    <h2><?php echo $excerpt; ?></h2>
 
-                <h2 class="subtitle">OVERVIEW</h2>
-                <?php echo $overview; ?>
+                    <h2 class="subtitle">OVERVIEW</h2>
+                    <?php echo $overview; ?>
 
-                <h2 class="subtitle">CLIENT:</h2>
-                <?php echo $client; ?>
+                    <h2 class="subtitle">CLIENT:</h2>
+                    <?php echo $client; ?>
 
-                <h2 class="subtitle">CHALLENGE:</h2>
-                <?php echo $challenge; ?>
+                    <h2 class="subtitle">CHALLENGE:</h2>
+                    <?php echo $challenge; ?>
 
-                <h2 class="subtitle">SOLUTION:</h2>
-                <?php echo $solution; ?>
+                    <h2 class="subtitle">SOLUTION:</h2>
+                    <?php echo $solution; ?>
 
-                <h2 class="subtitle">RESULT:</h2>
-                <?php echo $result; ?>
-            </div>
+                    <h2 class="subtitle">RESULT:</h2>
+                    <?php echo $result; ?>
+                </div>
+            <?php endif; ?>
         <?php endwhile; ?>
 
         <div class="controls my-5 pt-5">

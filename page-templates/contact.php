@@ -38,3 +38,9 @@
 <?php get_template_part('template-parts/cta'); ?>
 
 <?php get_footer(); ?>
+
+<script>
+    jQuery(document).ready(function($) {
+        $('#field_ui0fb').val("<?php echo ucfirst($_GET['reason']);?>");
+    });
+</script>
